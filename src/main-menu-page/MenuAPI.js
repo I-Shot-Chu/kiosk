@@ -45,7 +45,7 @@ export const decaffeincoffee = ()=>{
 }
 
 
-// 음료신메뉴
+// 음료 신메뉴
 const isNewDrinks = (drinkMenus)=>{
     if(drinkMenus.categoryName === "음료신메뉴"){return true}
 }

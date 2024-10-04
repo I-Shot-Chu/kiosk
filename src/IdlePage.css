@@ -1,15 +1,49 @@
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url('fonts/NotoSansKR-Regular.ttf') format('truetype');
+}
+
 .idle_image
 {
-    position: relative;
+    position: absolute;
+    width: 65%;
+    z-index: 0;
 }
   
 .idle_image_text
 {
+    font-family: "Noto Sans KR";
+    font-size: 28px;
     position: absolute;
-    top: 85%;
-    left: 30%;
+    top: 90%;
+    left: 34%;
     transform: translate( -50%, -50% );
     color: black;
     text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
     opacity: 50%;
+    z-index: 1;
+}
+
+.idle_lang_button
+{
+    position: absolute;
+    top: 2.5%;
+    left: 60%;
+    width: 0px; 
+    height: 0px;
+    padding: 0px; 
+    border: none;
+    background-color: #f1f1f1; 
+    cursor: pointer;
+    z-index: 1;
+}
+  
+.idle_lang_img
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 32px; 
+    height: 32px;
+    object-fit: cover;
 }

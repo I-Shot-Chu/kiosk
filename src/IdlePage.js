@@ -14,6 +14,8 @@ const IdlePage = () =>
 {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const [lang, setLang] = useState(true);
+
     useEffect(() => 
     {
         const intervalid = setInterval(() =>
@@ -24,12 +26,18 @@ const IdlePage = () =>
         return () => clearInterval(intervalid);
     }, [currentIndex]);
 
+    const onClickHandler = () => 
+    {
+        setLang(!lang);
+    }
+
     return (
-        <div className="idle_image">
-            <a href="/mainmenu">
-                <h1 className="idle_image_text">주문을 원하시면 클릭해주세요.</h1>
-                <img src = { img[currentIndex] } alt = "slide" width="60%"/>
+        <div>
+            <a href="/menu/hotcoffee">
+                <h1 className="idle_image_text">{lang ? "주문을 원하시면 클릭해주세요." : "Click to start order."}</h1>
+                <img src = { img[currentIndex] } className="idle_image" alt = "slide"/>
             </a>
+            <button className = "idle_lang_button" onClick = {onClickHandler}><img src = {lang ? "flag3dusa.png" : "flag3dkor.png"} className = "idle_lang_img" alt = "lang"/></button>
         </div>
     )
 }
