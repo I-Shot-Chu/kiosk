@@ -12,7 +12,7 @@ export const ExtraShot = ({extramenu = {}, handleOptionSelect})=>{
                 <div onClick={()=>handleOptionSelect('연하게', 0)} 
                 style={{ border: extramenu.option === '연하게' ? '2px solid red' : '1px solid black', padding: 10, cursor: 'pointer' }}>
                 <img src="연하게_이미지_경로" alt="연하게" style={{width:50}}/>
-                <p>연하게</p>
+                <p>연하게</p> 
                 <p>+0원</p>
                 </div>
                 <div onClick={()=>handleOptionSelect('샷 추가', 500)} 
@@ -30,6 +30,9 @@ export const ExtraShot = ({extramenu = {}, handleOptionSelect})=>{
             </div>
         </div>
     );
+    // 연하게 : Lightly shot
+    // 샷추가 : coffee shot
+    // 2샷추가 : double shot
 }
 
 
