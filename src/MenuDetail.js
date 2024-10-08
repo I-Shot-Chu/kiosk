@@ -1,11 +1,22 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import { getMenuDetail } from "./main-menu-page/MenuAPI";
+import { drinkgetMenuDetail,dessertgetMenuDetail,mdgetMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
 
-const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
+// 리듀서 정의
+const cartReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_ITEM":
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+};
 
+
+const MenuDetail = ({dispatch}) => {
+    
     const navigate = useNavigate();
 
     const {menuCode} = useParams();
@@ -21,11 +32,19 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
 
 
     useEffect(() => {
-        const menuDetail = getMenuDetail(menuCode);
-       
-        setMenu(menuDetail);
-    
-    },[menuCode]);
+        const drinkMenuDetail = drinkgetMenuDetail(menuCode);
+        const dessertMenuDetail = dessertgetMenuDetail(menuCode);
+        const mdMenuDetail = mdgetMenuDetail(menuCode);
+
+        // 메뉴 상세 정보가 있는 것을 우선으로 설정
+        const selectedMenuDetail = drinkMenuDetail || dessertMenuDetail || mdMenuDetail;
+
+        setMenu(selectedMenuDetail || {
+            menuName: '',
+            menuPrice: 0,
+            detail: { description: '', image: '' }
+        });
+    }, [menuCode]);
 
 
     const handleOptionSelect = (option, price) => {
@@ -41,21 +60,21 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
 
 
     const onClickHandler = () => {
-        addCart({
+        dispatch({ type: "ADD_ITEM", payload: {
             ...menu,
             extraMenu,
             finalTotalPrice
-        });
+        }});
+        navigate("/menu/shoppingcart");
     };
-    
+
     const onClickHandler2 = () => {
-        navigate(`/menu/hotcoffee`);
+        navigate(`/menu/newdrinks`);
     }
 
     return(
         <>
             <h2>선택하신 상품의 옵션상품을 모두 선택해주세요</h2>
-            
             
             {menu.menuName ? (
                 <>
@@ -67,6 +86,9 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
             ) : (
                 <p>메뉴를 불러오는 중 입니다..</p>
             )}
+
+            {menu.menuCode < 142 ? 
+            (<>
             {<ExtraShot extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraSugar extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraIce extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
@@ -74,6 +96,12 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
             <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
             <button onClick={onClickHandler2}>취소</button>
+            </>) : 
+            (<>
+            <h3>총 가격: {finalTotalPrice}원</h3>
+            <button onClick={onClickHandler}>주문담기</button>
+            <button onClick={onClickHandler2}>취소</button>
+            </>)}
         </>
     );
 }

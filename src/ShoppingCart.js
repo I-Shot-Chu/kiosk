@@ -41,6 +41,7 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
     );
 };
 
+
 const MenuItem = ({ menu, onRemove, onCountChange }) => {
     const [count, setCount] = useState(0);
 
