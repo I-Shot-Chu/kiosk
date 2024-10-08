@@ -1,83 +1,85 @@
-import { useEffect, useState, useReducer } from "react";
+import { useReducer, useState } from "react";
 
 
-
-const ShoppingCart = ( {cart = [], setCart} ) => {
-    const [itemCounts, setItemCounts] = useState({});
-
-    console.log(cart)
-    console.log('setCart is:', typeof setCart);
+const ShoppingCart = ({ state = {}, dispatch }) => {
+    
+    const { cart = [], itemCounts = {} } = state;
 
     const handleRemove = (menuCode) => {
-        const newCart = cart.filter((menu)=>menu.menuCode !== menuCode);
-        console.log(newCart);
-        setCart(newCart);
-        setItemCounts((prevCounts) => {
-            const newCounts = {...prevCounts};
-            delete newCounts[menuCode];
-            return newCounts;
-        });
-    }
-
-    const handleCountChange = (menuCode, newCount) => {
-        setItemCounts((prevCounts) => ({
-            ...prevCounts,
-            [menuCode]: newCount,
-        }));
-
+        dispatch({ type: "REMOVE_ITEM", payload: menuCode });
     };
 
-    const totalPrice = cart.reduce((acc,menu) => {
+    const handleCountChange = (menuCode, newCount) => {
+        dispatch({ type: "UPDATE_COUNT", payload: { menuCode, count: newCount } });
+    };
+
+    const totalPrice = cart.reduce((acc, menu) => {
         const count = itemCounts[menu.menuCode] || 0;
         const pricePerItem = menu.finalTotalPrice || menu.menuPrice;
         return acc + pricePerItem * count;
     }, 0);
 
-
-    return(
-      <>
-        <h1>장바구니</h1>
-        <div>
-            {cart.length > 0 ? (cart.map(menu => (
-               <MenuItem key = {menu.menuCode} menu={menu} onRemove={handleRemove} onCountChange={handleCountChange}
-               setCart={setCart}/>
-            ))
-        ) : (
-            <span>선택한 커피가 없습니다.</span>
-        )}
-        </div>
-        <h2>총 가격: {totalPrice}원</h2>
-      </>      
+    return (
+        <>
+            <h1>장바구니</h1>
+            <div>
+                {cart.length > 0 ? (
+                    cart.map(menu => (
+                        <MenuItem
+                            key={menu.menuCode}
+                            menu={menu}
+                            onRemove={handleRemove}
+                            onCountChange={handleCountChange}
+                        />
+                    ))
+                ) : (
+                    <span>선택한 커피가 없습니다.</span>
+                )}
+            </div>
+            <h2>총 가격: {totalPrice}원</h2>
+        </>
     );
-}
+};
 
-const MenuItem = ({menu, onRemove, setCart, onCountChange}) => {
-    console.log('setCart is:', typeof setCart);
+const MenuItem = ({ menu, onRemove, onCountChange }) => {
     const [count, setCount] = useState(0);
 
     const increment = () => {
-    const newCount = count + 1;
-    setCount(newCount);
-    onCountChange(menu.menuCode, newCount);
-};
-    const decrement = () => {
-    const newCount = count > 0 ? count - 1 : 0;
-    setCount(newCount);
-    onCountChange(menu.menuCode, newCount);
+        const newCount = count + 1;
+        setCount(newCount);
+        onCountChange(menu.menuCode, newCount);
     };
 
+    const decrement = () => {
+        const newCount = count > 0 ? count - 1 : 0;
+        setCount(newCount);
+        onCountChange(menu.menuCode, newCount);
+    };
 
     const reset = () => {
-            setCount(0);
-            onCountChange(menu.menuCode, 0);
+        setCount(0);
+        onCountChange(menu.menuCode, 0);
     };
 
-    const pricePerItem = menu.finalTotalPrice || menu.menuPrice; 
+    const pricePerItem = menu.finalTotalPrice || menu.menuPrice;
 
     return (
         <div>
             <li>{menu.menuName}</li>
-            <div style={{ display : "flex", alignItems: "center", gap: "5px"}}>
+            <h4>추가 메뉴:</h4>
+            {menu.extraMenu && menu.extraMenu.length > 0? (
+                <ul>
+                    {menu.extraMenu.map((extra, index) => (
+                        <li key={index}>
+                            {extra.option} - {extra.price}원
+                        </li>
+                    ))}
+
+                </ul>
+            ) : (
+                <p>선택한 추가 메뉴가 없습니다.</p>
+            )}
+            <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                 <button onClick={increment}>+</button>
                 <h3>{count}</h3>
                 <button onClick={decrement}>-</button>
@@ -88,7 +90,6 @@ const MenuItem = ({menu, onRemove, setCart, onCountChange}) => {
         </div>
     );
 };
-
 
 export default ShoppingCart;
 /*

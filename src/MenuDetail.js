@@ -6,7 +6,6 @@ import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
 
 const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
 
-
     const navigate = useNavigate();
 
     const {menuCode} = useParams();
@@ -14,13 +13,11 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
     const [menu, setMenu] = useState({
         menuName : '',
         menuPrice : 0,
-        detail : {description:'', image:''}
+        detail : {description:'', image:''} 
     });
 
     const [extraMenu,setExtraMenu] = useState([  //추가메뉴(샷,휘핑)
     ]);
-
-
 
 
     useEffect(() => {

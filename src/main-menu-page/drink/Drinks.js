@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { DrinkMenu } from "../MenuItem";
-import ShoppingCart from "../../ShoppingCart";
 import { hotDrinks, iceDrinks } from "../MenuAPI";
 
 
 
-export const HotDrinks = ({cart})=>{
+export const HotDrinks = ()=>{
 
     const [drinksMenu, setDrinksMenu] = useState([]);
 
@@ -16,13 +15,12 @@ export const HotDrinks = ({cart})=>{
     return(
         <div>
             {drinksMenu.map(hotDrinks => <DrinkMenu key={hotDrinks.menuCode} drinkMenu={hotDrinks}/>)}
-            <ShoppingCart cart= {cart} />
         </div>
     )
 }
 
 
-export const IceDrinks = ({cart})=>{
+export const IceDrinks = ()=>{
 
     const [drinksMenu, setDrinksMenu] = useState([]);
 
@@ -33,7 +31,6 @@ export const IceDrinks = ({cart})=>{
     return(
         <div>
             {drinksMenu.map(iceDrinks => <DrinkMenu key={iceDrinks.menuCode} drinkMenu={iceDrinks}/>)}
-            <ShoppingCart cart={cart} />
         </div>
     )
 }

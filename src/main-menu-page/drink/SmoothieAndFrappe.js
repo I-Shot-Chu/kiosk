@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { smoothieAndFrappe } from "../MenuAPI";
 import { DrinkMenu } from "../MenuItem";
-import ShoppingCart from "../../ShoppingCart";
 
 
 
-const SmoothieAndFrappe = ({cart})=>{
+
+const SmoothieAndFrappe = ()=>{
 
     const [smoothieAndFrappeMenu, setSmoothieAndFrappeMenu] = useState([]);
 
@@ -16,7 +16,6 @@ const SmoothieAndFrappe = ({cart})=>{
     return(
         <div>
             {smoothieAndFrappeMenu.map(smoothieAndFrappe => <DrinkMenu key={smoothieAndFrappe.menuCode} drinkMenu={smoothieAndFrappe}/>)}
-            <ShoppingCart cart= {cart} />
         </div>
     )
 }
