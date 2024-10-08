@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { newDessert } from "../MenuAPI";
 import { DessertMenu } from "../MenuItem";
-import ShoppingCart from "../../ShoppingCart";
 
 
 
-const NewDessert = ({cart})=>{
+
+const NewDessert = ()=>{
 
     const [newDessertMenu, setNewDessertMenu] = useState([]);
 

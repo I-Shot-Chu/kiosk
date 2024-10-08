@@ -22,7 +22,7 @@ export const Cupon = () => {
 
   const useCupon = ()=>{
     nevigate("/result");
-   }
+  }
    
   
   const back = ()=>{

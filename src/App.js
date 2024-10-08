@@ -16,11 +16,15 @@ import MenuDetail from "./MenuDetail";
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
+<<<<<<< HEAD
 //import cartReducer, { initialState } from "./cartReducer"; 
+=======
+>>>>>>> 04bb1b8d2105e014c47a9a60fd8aaf8f432f7ab9
 import AdeAndJuice from "./main-menu-page/drink/AdeAndJuice";
 import SmoothieAndFrappe from "./main-menu-page/drink/SmoothieAndFrappe";
 import { HotDrinks, IceDrinks } from "./main-menu-page/drink/Drinks";
 import MdProduct from "./main-menu-page/dessert-md/Md";
+import cartReducer, { initialState } from "./cartReducer";
 
 function App() {
   
@@ -33,8 +37,8 @@ function App() {
         <Route path="/" element={<Redirect />} />
         <Route path="/idle" element={<IdlePage />} />
         <Route path="/menu" element={<Layout />}>
+          
           {/* 메뉴별 라우트 설정 */}
-
           <Route path="hotcoffee" element={<HotCoffee/>} />
           <Route path="icecoffee" element={<IceCoffee/>} />
           <Route path="hottea" element={<HotTea />} />

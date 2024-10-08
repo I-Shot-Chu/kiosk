@@ -20,7 +20,7 @@ const MenuDetail = () => {
     const [menu, setMenu] = useState({
         menuName : '',
         menuPrice : 0,
-        detail : {description:'', image:''}
+        detail : {description:'', image:''} 
     });
 
     const [extraMenu,setExtraMenu] = useState([  //추가메뉴(샷,휘핑)
@@ -75,7 +75,6 @@ const MenuDetail = () => {
         <>
             <h2>선택하신 상품의 옵션상품을 모두 선택해주세요</h2>
             
-            
             {menu.menuName ? (
                 <>
             <img src={menu.detail.image} style={{maxWidth:300}} alt={menu.menuName}/>
@@ -86,6 +85,9 @@ const MenuDetail = () => {
             ) : (
                 <p>메뉴를 불러오는 중 입니다..</p>
             )}
+
+            {menu.menuCode < 142 ? 
+            (<>
             {<ExtraShot extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraSugar extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraIce extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
@@ -97,6 +99,12 @@ const MenuDetail = () => {
                 <button onClick={onClickHandler2}>닫기</button>
             </Modal>
             <button onClick={onClickHandler2}>취소</button>
+            </>) : 
+            (<>
+            <h3>총 가격: {finalTotalPrice}원</h3>
+            <button onClick={onClickHandler}>주문담기</button>
+            <button onClick={onClickHandler2}>취소</button>
+            </>)}
         </>
     );
 }
