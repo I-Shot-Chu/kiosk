@@ -1,8 +1,7 @@
 import { useReducer, useState } from "react";
+import {  useNavigate } from "react-router-dom";
 
-
-const ShoppingCart = ({ state = {}, dispatch }) => {
-    
+const ShoppingCart = ({ state = {}, dispatch, setFinalTotalPrice }) => {
     const { cart = [], itemCounts = {} } = state;
 
     const handleRemove = (menuCode) => {
@@ -19,11 +18,21 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
         return acc + pricePerItem * count;
     }, 0);
 
+    const go  = useNavigate();
+
+    const submit = () => {
+        setFinalTotalPrice(prev => prev + totalPrice); // 총 가격을 UserPoint로 전달
+        console.log(totalPrice);
+        go("/userpoint");
+
+    }
+
     return (
         <>
             <h1>장바구니</h1>
             <div>
-                {cart.length > 0 ? (
+                {
+                cart.length > 0 ? (
                     cart.map(menu => (
                         <MenuItem
                             key={menu.menuCode}
@@ -37,6 +46,7 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
                 )}
             </div>
             <h2>총 가격: {totalPrice}원</h2>
+            <button onClick={submit}>가격제출</button>
         </>
     );
 };
@@ -67,14 +77,13 @@ const MenuItem = ({ menu, onRemove, onCountChange }) => {
         <div>
             <li>{menu.menuName}</li>
             <h4>추가 메뉴:</h4>
-            {menu.extraMenu && menu.extraMenu.length > 0? (
+            {menu.extraMenu && menu.extraMenu.length > 0 ? (
                 <ul>
                     {menu.extraMenu.map((extra, index) => (
                         <li key={index}>
                             {extra.option} - {extra.price}원
                         </li>
                     ))}
-
                 </ul>
             ) : (
                 <p>선택한 추가 메뉴가 없습니다.</p>

@@ -1,18 +1,16 @@
-/* Point.css */
-
 /* 전체 화면 중앙 정렬 및 키오스크 스타일 */
 .kiosk-container {
-    height: 100vh; /* 화면 높이 설정 */
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 세로 중앙 정렬 */
-    align-items: center; /* 가로 중앙 정렬 */
-    background-color: #f8f9fa; /* 배경색 */
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
 }
 
 h2 {
-    font-size: 2.5em; /* 크게 설정된 타이틀 */
+    font-size: 2.5em;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
@@ -20,8 +18,8 @@ h2 {
 
 /* 번호 입력 필드 */
 .phone-input {
-    width: 600px; /* 키오스크 화면 크기에 맞춘 넓이 */
-    height: 80px; /* 입력 필드 높이 */
+    width: 600px;
+    height: 80px;
     font-size: 2em;
     padding: 10px;
     border-radius: 8px;
@@ -34,13 +32,13 @@ h2 {
 /* 키패드 스타일 */
 .keypad {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3x3 배열 */
-    gap: 5px; /* 버튼 간격 줄이기 */
-    margin-top: 20px; /* 위쪽 여백 줄이기 */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 20px;
 }
 
 .keypad-btn {
-    width: 130px; /* 버튼 크기 조정 */
+    width: 130px;
     height: 130px;
     font-size: 2.3em;
     border-radius: 10px;
@@ -57,8 +55,8 @@ h2 {
 
 /* 삭제 버튼 */
 .delete-btn {
-    width: 130px; /* 삭제 버튼을 키패드 버튼과 같은 크기로 설정 */
-    height: 130px; /* 키패드 버튼 높이와 맞춤 */
+    width: 130px;
+    height: 130px;
     font-size: 2.3em;
     border-radius: 10px;
     background-color: #f4d35e;
@@ -75,13 +73,13 @@ h2 {
 /* 액션 버튼 스타일 */
 .action-buttons {
     display: flex;
-    justify-content: space-between; /* 버튼 간 간격을 일정하게 유지 */
-    margin-top: 20px; /* 위쪽 여백 줄이기 */
-    width: 100%; /* 부모 요소의 너비를 차지 */
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .point-btn {
-    width: 300px; /* 포인트 적립 버튼 크기 조정 */
+    width: 300px;
     padding: 20px;
     font-size: 1.8em;
     background-color: #333;
@@ -98,13 +96,13 @@ h2 {
 
 /* 적립 없이 결제하기 버튼 */
 .no-point-btn {
-    width: 300px; /* 적립없이 결제하기 버튼 크기 조정 */
+    width: 300px;
     padding: 20px;
     font-size: 1.8em;
     background-color: #d9534f;
     color: white;
     border-radius: 8px;
-    margin-left: 10px; /* 버튼 간의 간격 조정 */
+    margin-left: 10px;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 

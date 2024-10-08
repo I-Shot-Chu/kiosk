@@ -3,7 +3,7 @@ import IdlePage from "./IdlePage";
 import Redirect from "./Redirect";
 import Result from "./Result";
 import Layout from "./layout/Layout";
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { HotCoffee, IceCoffee } from "./main-menu-page/drink/Coffee";
 import { HotTea, IceTea } from "./main-menu-page/drink/Tea";
 import { HotDecaf, IceDecaf } from "./main-menu-page/drink/Decaffein";
@@ -27,6 +27,12 @@ import MdProduct from "./main-menu-page/dessert-md/Md";
 function App() {
   
   const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  const [finalTotalPrice,setFinalTotalPrice] = useState(0);
+
+  useEffect(()=>{
+    console.log(finalTotalPrice)
+  },[finalTotalPrice])
 
 
   return (
@@ -55,10 +61,10 @@ function App() {
 
           {/* 추가 메뉴 상세 옵션 */}
           <Route path=":menuCode" element={<MenuDetail dispatch={dispatch} />}/>
-          <Route path="shoppingcart" element={<ShoppingCart state={state} dispatch={dispatch} />} />
+          <Route path="shoppingcart" element={<ShoppingCart state={state} dispatch={dispatch}  setFinalTotalPrice ={setFinalTotalPrice}/>} />
         </Route>
         <Route path="/point" element={<Point />} />
-        <Route path="/userpoint" element={<UserPoint />} />
+        <Route path="/userpoint" element={<UserPoint  finalTotalPrice={finalTotalPrice} setFinalTotalPrice = {setFinalTotalPrice} />} />
         <Route path="/cupon" element={<Cupon />} />
         <Route path="/purchase" element={<Purchase />} />
         <Route path="/result" element={<Result />} />
