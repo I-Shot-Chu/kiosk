@@ -1,35 +1,429 @@
 [
-    {
-       "menuCode":14,
-       "menuName":"핫 불고기 & 바베큐 반반 브리또",
-       "menuPrice":4500,
-       "categoryName":"디저트",
-       "isOrderable":true,
-       "detail": {
-           "description": "갓 담근 열무김치를 착즙한 순도 100% 열무김치와 대관령 목장에서 방금 짜낸 싱싱한 우유의 조합",
-           "image": "/images/14.jpg"
-       }
-    },
-    {
-       "menuCode":15,
-       "menuName":"브라우니 쿠키 머핀",
-       "menuPrice":5000,
-       "categoryName":"디저트",
-       "isOrderable":true,
-       "detail": {
-           "description": "태안 바다에서 갓 잡아올린 싱싱한 우럭을 이용한 상큼한 스무디",
-           "image": "/images/15.jpg"
-       }
-    },
-    {
-       "menuCode":16,
-       "menuName":"노티드 시그니처 할메가커피크림 도넛",
-       "menuPrice":6000,
-       "categoryName":"신상품",
-       "isOrderable":true,
-       "detail": {
-           "description": "목포 밤바다를 누비는 생갈치를 이용한 고단백 쉐이크 음료",
-           "image": "/images/16.jpg"
-       }
+{
+    "menuCode":142,
+    "menuName":"핫 불고기&바베큐 반반 브리또",
+    "enName":"Hot Bulgogi & BBQ Burrito",
+    "menuPrice":3600,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "매콤한 고추장불고기와 풍미 깊은 간장 바베큐를 동시에 즐길 수 있는 여주쌀로 만든 반반 브리또",
+        "image": "/images/142.jpg"
     }
-  ]
+ },
+
+ {
+    "menuCode":143,
+    "menuName":"브라우니 쿠키 머핀",
+    "enName":"Brownie Cookie Muffin",
+    "menuPrice":2900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "세 가지가 합쳐진 디저트! 초코칩 쿠키가 큼직하게 올려진 달콤하고 부드러운 초코 브라우니 머핀",
+        "image": "/images/143.jpg"
+    }
+ },
+
+ {
+    "menuCode":144,
+    "menuName":"지구별 초코 크레페",
+    "enName":"Chocolate crepe",
+    "menuPrice":3900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "달콤쫀득한 초코젤라또와 바삭한 쿠키크럼블, 초코칩을 쫄깃한 크레이프에 감싸 만든 달달 시원한 여름시즌 한정 디저트",
+        "image": "/images/144.jpg"
+    }
+ },
+
+ {
+    "menuCode":145,
+    "menuName":"아이스 허니 와앙 슈",
+    "enName":"Ice Honey Cream Choux",
+    "menuPrice":2400,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "꿀을 섞은 크림을 바삭한 쿠키슈 안에 넣어, 건강하고 맛있게 완성한 디저트",
+        "image": "/images/145.jpg"
+    }
+ },
+
+ {
+    "menuCode":146,
+    "menuName":"버터버터 마늘 크로크무슈",
+    "enName":"Butter butter garlic Croque Monsieur",
+    "menuPrice":3900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "프랑스산 프레지덩 버터로 만든 갈릭베샤멜소스와 햄, 치즈를 샌드하고 바삭한 마늘 크런치를 토핑한 한 끼 든든 샌드위치",
+        "image": "/images/146.jpg"
+    }
+ },
+
+ {
+    "menuCode":147,
+    "menuName":"핫 치킨&딥치즈 치아바타",
+    "enName":"Hot chicken & deep cheese ciabatta",
+    "menuPrice":4400,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "쫄깃 바삭한 치아바타에 통살 치킨텐더와 감칠맛 가득 매콤한 MGC 비법소스가 어우러진 따끈한 샌드위치",
+        "image": "/images/147.jpg"
+    }
+ },
+
+ {
+    "menuCode":148,
+    "menuName":"와앙 바닐라 슈크림빵",
+    "enName":"vanilla custard cream bread",
+    "menuPrice":2700,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "바닐라빈을 넣은 진한 슈크림이 한입가득 와앙- 베어물면 촉촉 달콤한 슈크림빵",
+        "image": "/images/148.jpg"
+    }
+ },
+
+ {
+    "menuCode":149,
+    "menuName":"버터버터 소보로 스콘",
+    "enName":"Butter Butter Soboro Scone",
+    "menuPrice":2400,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "고소한 프랑스산 프레지덩 버터를 듬뿍 넣은 스콘 위에 오돌토돌 달콤한 쿠키 크럼블이 가득 올려진 MGC만의 디저트",
+        "image": "/images/149.jpg"
+    }
+ },
+
+ {
+    "menuCode":150,
+    "menuName":"버터버터 에그베이컨 샌드위치",
+    "enName":"Butter Butter Egg Bacon Sandwich",
+    "menuPrice":3800,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "부드러운 브리오슈 번에 고소한 풍미가 가득한 프랑스산 프레지덩 버터로 만든 소스와 에그베이컨을 넣은 든든한 모닝 샌드위치",
+        "image": "/images/150.jpg"
+    }
+ },
+
+ {
+    "menuCode":151,
+    "menuName":"버터버터 뜯어먹는 식빵",
+    "enName":"Butter Butter Danish Bread",
+    "menuPrice":2900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "고소한 프랑스산 프레지덩 버터를 듬뿍 넣어 만든 뜯어먹는 데니쉬 미니 식빵",
+        "image": "/images/151.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":152,
+    "menuName":"버터버터소금빵",
+    "enName":"Salty Butter Roll",
+    "menuPrice":3200,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "고소한 프랑스산 프레지덩 버터를 듬뿍넣어 더 부드럽고 짭쪼롬하게 즐길 수 있는 베이커리 메뉴",
+        "image": "/images/152.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":153,
+    "menuName":"크루아상 & 주에그잼",
+    "enName":"Croissant & ZUEGG Jaml",
+    "menuPrice":3500,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "바삭하고 부드러운 식감에 고소한 버터향을 가득 담은 베이커리 메뉴",
+        "image": "/images/153.jpg"
+    }
+ },
+
+ {
+    "menuCode":154,
+    "menuName":"초코젤라또크로플",
+    "enName":"Croffle with chocolate gelato",
+    "menuPrice":3500,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "따뜻하고 바삭한 크로플 위에 진하고 꾸덕한 초코 젤라또를 올려 만든 매력적인 베이커리 메뉴",
+        "image": "/images/154.jpg"
+    }
+ },
+
+ {
+    "menuCode":155,
+    "menuName":"아이스 딸기라떼 와앙 슈",
+    "enName":"Ice Strawberry Latte Choux",
+    "menuPrice":2400,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "바삭한 딸기 쿠키슈 안에 부드럽고 향긋한 딸기우유맛 크림이 가득 들어간 아이스 와앙 슈",
+        "image": "/images/155.jpg"
+    }
+ },
+
+ {
+    "menuCode":156,
+    "menuName":"와앙 피자 보름달빵",
+    "enName":"Pizza Bread",
+    "menuPrice":3900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "한끼로도 든든한 중독적인 추억의 와앙 큰 소시지 피자빵",
+        "image": "/images/156.jpg"
+    }
+ },
+
+ {
+    "menuCode":157,
+    "menuName":"초코스모어쿠키",
+    "enName":"Chocolate S'mores Cookie",
+    "menuPrice":2900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "초코칩이 콕콕 박힌 촉촉한 초코 쿠키에 달콤하게 구운 마시멜로우가 만나 더 진한 초코 맛 쿠키",
+        "image": "/images/157.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":158,
+    "menuName":"말차스모어쿠키",
+    "enName":"Matcha S'mores Cookie",
+    "menuPrice":2900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "화이트 초코칩이 가득 박힌 말차 쿠키에 달콤하게 구운 마시멜로우를 얹어 달콤쌉싸름한 매력을 간직한 쿠키",
+        "image": "/images/158.jpg"
+    }
+ },
+
+ {
+    "menuCode":159,
+    "menuName":"마카다미아 쿠키",
+    "enName":"Macadamia Cookie",
+    "menuPrice":2000,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "고소한 마카다미아를 넣어 만든 메가MGC커피 시그니처 쿠키",
+        "image": "/images/159.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":160,
+    "menuName":"초콜릿칩 쿠키",
+    "enName":"Chocolate Chip Cookie",
+    "menuPrice":2000,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "진한 초콜릿칩을 넣어 만든 메가MGC커피 시그니처 쿠키",
+        "image": "/images/160.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":161,
+    "menuName":"플레인크로플",
+    "enName":"Plain Croffle",
+    "menuPrice":2500,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "버터풍미가 가득한 크루와상의 바삭함과 와플의 부드러움을 합친 겉바속촉 베이커리 메뉴.",
+        "image": "/images/161.jpg"
+    }
+ },
+
+ {
+    "menuCode":162,
+    "menuName":"크로크무슈",
+    "enName":"Croque Monsieur",
+    "menuPrice":3800,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "고소한 식빵 사이에 햄과 치즈를 샌드하고, 빵 윗면에 멜팅치즈를 토핑해 든든한 한끼를 선물하는 샌드위치.",
+        "image": "/images/162.jpg"
+    }
+ },
+
+ {
+    "menuCode":163,
+    "menuName":"몽쉘케이크",
+    "enName":"Mon Cher Cream Cake",
+    "menuPrice":4900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "진하고 폭신한 초콜릿 스펀지 사이에 부드러운 생크림이 듬뿍 들어간 몽쉘 케이크.",
+        "image": "/images/163.jpg"
+    }
+ },
+
+ {
+    "menuCode":164,
+    "menuName":"햄앤치즈샌드",
+    "enName":"Ham & Cheese Sandwich",
+    "menuPrice":2000,
+    "categoryName":"디저트",
+    "detail": {
+        "description":"햄과 치즈의 조화로운 한끼를 만끽할 수 있는 샌드위치",
+        "image": "/images/164.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":165,
+    "menuName":"치즈 케익",
+    "enName":"Cheese Cake",
+    "menuPrice":3300,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "진한 치즈의 맛을 달콤하고 부드럽게 느낄 수 있는 케이크.",
+        "image": "/images/165.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":166,
+    "menuName":"초코무스 케익",
+    "enName":"Chocolate Mousse Cake",
+    "menuPrice":3300,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "달콤한 초콜릿 본연의 맛을 더 진하게 느낄 수 있는 케이크.",
+        "image": "/images/166.jpg"
+    }
+ },
+
+ {
+    "menuCode":167,
+    "menuName":"티라미수 케익",
+    "enName":"Tiramisu Cake",
+    "menuPrice":3300,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "부드러운 치즈 맛과 코코아의 조화로운 향으로 호불호 없이 즐기는 케이크",
+        "image": "/images/167.jpg"
+    }
+ },
+
+
+ {
+    "menuCode":168,
+    "menuName":"허니브레드",
+    "enName":"Honey Bread",
+    "menuPrice":4500,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "바삭하고 쫄깃하게 구워낸 빵에 달콤한 크림을 올려 즐기는 조화로운 베이커리 메뉴.",
+        "image": "/images/168.jpg"
+    }
+ },
+
+ {
+    "menuCode":169,
+    "menuName":"핫도그",
+    "enName":"Hotdog",
+    "menuPrice":2200,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "부드러운 빵 속에 쫄깃한 소시지를 넣어 알찬 한입을 완성한 베이커리 메뉴",
+        "image": "/images/169.jpg"
+    }
+ },
+
+ {
+    "menuCode":170,
+    "menuName":"감자빵",
+    "enName":"Potato Bread",
+    "menuPrice":3500,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "쫄깃한 빵 속 포슬포슬한 감자를 가득 담아낸 베이커리 메뉴.",
+        "image": "/images/170.jpg"
+    }
+ },
+
+ {
+    "menuCode":171,
+    "menuName":"딸기요거트 마카롱",
+    "enName":"Strawberry Yogurt Macaron",
+    "menuPrice":2000,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "딸기요거트 스무디를 연상하게 하는 상큼한 마카롱.",
+        "image": "/images/171.jpg"
+    }
+ },
+
+ {
+    "menuCode":172,
+    "menuName":"메가초코 마카롱",
+    "enName":"Chocolate Macaron",
+    "menuPrice":2100,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "메가MGC커피 시그니처 음료 메가초코를 모티브로 만든 초코맛 마카롱.",
+        "image": "/images/172.jpg"
+    }
+ },
+
+ {
+    "menuCode":173,
+    "menuName":"유니콘프라페 마카롱",
+    "enName":"Unicorn Frappe Macaron",
+    "menuPrice":2100,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "메가MGC커피 인기 음료인 유니콘 프라페를 모티브로 만든 매지컬 비주얼 마카롱",
+        "image": "/images/173.jpg"
+    }
+ },
+
+ {
+    "menuCode":174,
+    "menuName":"쿠키프라페 마카롱",
+    "enName":"Cookie Frappe Macaron",
+    "menuPrice":2100,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "메가MGC커피 인기메뉴인 쿠키프라페를 모티브로 만든 달콤한 마카롱.",
+        "image": "/images/174.jpg"
+    }
+ },
+
+ {
+    "menuCode":175,
+    "menuName":"노티드 시그니처 할메가커피크림 도넛",
+    "enName":"Knotted Halmega mix coffee cream donut",
+    "menuPrice":3900,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "MGC 시그니처 메뉴인 '할메가커피'를 달콤 쌉싸름한 커피크림 도넛으로 만들어 낸 콜라보레이션 디저트",
+        "image": "/images/175.jpg"
+    }
+ },
+
+ {
+    "menuCode":176,
+    "menuName":"노티드 시그니처 우유생크림 도넛",
+    "enName":"Knotted Milk Cream donut",
+    "menuPrice":3900,
+    "categoryName":"디저트",
+    "detail": {
+    "description": "부드러운 우유생크림이 가득! 노티드의 시그니처 도넛이 메가MGC커피와 만나 탄생한 콜라보레이션 디저트",
+        "image": "/images/176.jpg"
+    }
+ }
+]

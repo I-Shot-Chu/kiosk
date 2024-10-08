@@ -1,0 +1,200 @@
+[
+  {
+    "menuCode": 177,
+    "menuName": "캐치!티니핑 하츄핑 랜덤 피규어",
+    "enName": "Heartsping Movie Colletion Random Figure",
+    "menuPrice": 14900,
+    "categoryName": "MD",
+    "detail": {
+      "description": "캐치!티니핑 첫번째 극장판 '사랑의 하츄핑' 공식 피규어 만나러 메가MGC커피에 놀러와 츄 !♥",
+      "image": "/images/177.jpg"
+    }
+  },
+  {
+    "menuCode": 178,
+    "menuName": "원신 콜라보 텀블러",
+    "enName": "MEGA MGC COFFEE X Genshin Impact Tumbler",
+    "menuPrice": 29000,
+    "categoryName": "MD",
+    "detail": {
+      "description": "약한 것은 살아남지 못 해. 보온 최대 10시간, 보냉 최대 30시간! 월클급으로 튼튼한 한정판 텀블러",
+      "image": "/images/178.jpg"
+    }
+  },
+  {
+    "menuCode": 179,
+    "menuName": "원신 콜라보 머그컵",
+    "enName": "MEGA MGC COFFEE X Genshin Impact Mug",
+    "menuPrice": 19900,
+    "categoryName": "MD",
+    "detail": {
+      "description": "바람처럼 세상을 거니는 방랑자의 모자를 닮은 견고하고 튼튼한 한정판 머그컵(머들러 포함)",
+      "image": "/images/179.jpg"
+    }
+  },
+  {
+    "menuCode": 180,
+    "menuName": "원신 콜라보 스틱커피 2SET",
+    "enName": "MEGA MGC COFFEE X Genshin Impact Coffee Sticks",
+    "menuPrice": 10500,
+    "categoryName": "MD",
+    "detail": {
+      "description": "결국엔 쓴 맛이 최고였어 삶 본연의 맛을 보여주거든. 디카페인+오리지널 아메리카노 스틱커피 2종",
+      "image": "/images/180.jpg"
+    }
+  },
+  {
+    "menuCode": 181,
+    "menuName": "원신 콜라보 아크릴스탠드",
+    "enName": "MEGA MGC COFFEE X Genshin Impact Acrylic Figure",
+    "menuPrice": 16000,
+    "categoryName": "MD",
+    "detail": {
+      "description": "방랑자와 함께 날아볼까? 홀로그램으로 더욱 영롱해진 소장가치 200%의 한정판 아크릴스탠드",
+      "image": "/images/181.jpg"
+    }
+  },
+  {
+    "menuCode": 182,
+    "menuName": "원신 콜라보 아크릴키링(랜덤)",
+    "enName": "MEGA MGC COFFEE X Genshin Impact Acrylic Key Ring (Randomized)",
+    "menuPrice": 6000,
+    "categoryName": "MD",
+    "detail": {
+      "description": "방랑자, 언제 어디서나 함께 하고 싶다면? 방랑자를 위한 하이볼 에이드와 꼭 닮은 랜덤 아크릴키링 3종",
+      "image": "/images/182.jpg"
+    }
+  },
+  {
+    "menuCode": 183,
+    "menuName": "메가MGC커피 투명 장우산",
+    "enName": "Mega MGC Coffee Transparent Long Umbrella",
+    "menuPrice": 7500,
+    "categoryName": "MD",
+    "detail": {
+      "description": "메가MGC커피만의 귀여운 아트웍 포인트와 투명한 원단, 8쪽 프레임 구조로 튼튼 안전한 메가MGC커피 투명 장우산과 함께라면 갑작스러운 비 소식에도 당황할 필요 없어요.",
+      "image": "/images/183.jpg"
+    }
+  },
+  {
+    "menuCode": 184,
+    "menuName": "엠지씨 머그(옐로우)",
+    "enName": "MGC MUG (Yellow)",
+    "menuPrice": 9300,
+    "categoryName": "MD",
+    "detail": {
+      "description": "귀여운 디테일로 소장가치를 더한 대용량 머그",
+      "image": "/images/184.jpg"
+    }
+  },
+  {
+    "menuCode": 185,
+    "menuName": "MGC 텀블러(웜그레이)",
+    "enName": "MGC Tumbler (Warm Grey)",
+    "menuPrice": 19800,
+    "categoryName": "MD",
+    "detail": {
+      "description": "뛰어난 보온보냉력으로 하루종일 그대로, MGC 데일리 텀블러",
+      "image": "/images/185.jpg"
+    }
+  },
+  {
+    "menuCode": 186,
+    "menuName": "MGC 텀블러(옐로우)",
+    "enName": "MGC Tumbler (Yellow)",
+    "menuPrice": 19800,
+    "categoryName": "MD",
+    "detail": {
+      "description": "뛰어난 보온보냉력으로 하루종일 그대로, MGC 데일리 텀블러",
+      "image": "/images/186.jpg"
+    }
+  },
+  {
+    "menuCode": 187,
+    "menuName": "MGC 텀블러(스카이)",
+    "enName": "MGC Tumbler (Sky)",
+    "menuPrice": 19800,
+    "categoryName": "MD",
+    "detail": {
+      "description": "뛰어난 보온보냉력으로 하루종일 그대로, MGC 데일리 텀블러",
+      "image": "/images/187.jpg"
+    }
+  },
+  {
+    "menuCode": 188,
+    "menuName": "메가 엠지씨 스틱 오리지날 아메리카노",
+    "enName": "MEGA MGC STICK ORIGINAL AMERICANO",
+    "menuPrice": 4900,
+    "categoryName": "MD",
+    "detail": {
+      "description": "예가체프 원두의 레드와인을 연상케 하는 깊은 풍미, 화이트 초콜릿의 고급스런 단 맛에 풍부한 바디감을 더해 밸런스 잡힌 맛을 느낄 수 있는 아메리카노",
+      "image": "/images/188.jpg"
+    }
+  },
+  {
+    "menuCode": 189,
+    "menuName": "메가 엠지씨 스틱 디카페인 아메리카노",
+    "enName": "MEGA MGC STICK DECAF AMERICANO",
+    "menuPrice": 4900,
+    "categoryName": "MD",
+    "detail": {
+      "description": "물의 삼투압을 이용한 독일 워터 프로세스 방식으로 카페인을 줄이고,브라질 원두 특유의 산미와 달콤함, 바디감은 고스란히 담아 조화로운 맛을 느낄 수 있는 아메리카노",
+      "image": "/images/189.jpg"
+    }
+  },
+  {
+    "menuCode": 190,
+    "menuName": "메가 엠지씨 티플레저 블루밍 캐모마일",
+    "enName": "MEGA MGC TEAPLEASURE Blooming Chamomile",
+    "menuPrice": 9500,
+    "categoryName": "MD",
+    "detail": {
+      "description": "마음의 안정과 여유를 주는 은은하고 향긋한 캐모마일의 꽃향과 싱그러운 레몬그라스, 비타민C가 풍부한 사과를 블렌딩한 디카페인 캐모마일 블렌딩 티",
+      "image": "/images/190.jpg"
+    }
+  },
+  {
+    "menuCode": 191,
+    "menuName": "메가 엠지씨 티플레저 프루티 루이보스",
+    "enName": "MEGA MGC TEAPLEASURE Fruity Rooibos",
+    "menuPrice": 9500,
+    "categoryName": "MD",
+    "detail": {
+      "description": "무게감 있으면서도 개운하고 깔끔한 전세계 4% 클래식 등급 루이보스와 비타민C가 풍부한 제주도산 귤피, 전남 고흥산 유자를 블렌딩한 디카페인 루이보스 블렌딩 티",
+      "image": "/images/191.jpg"
+    }
+  },
+  {
+    "menuCode": 192,
+    "menuName": "메가 엠지씨 티플레저 스위트 히비스커스",
+    "enName": "MEGA MGC TEAPLEASURE Sweet HIBISCUS",
+    "menuPrice": 9500,
+    "categoryName": "MD",
+    "detail": {
+      "description": "상큼한 히비스커스에 비타민C, 비타민E가 풍부한 레몬머틀과 달콤한 패션후르츠향, 천연 감미료 스테비아를 더해 새콤달콤하게 블렌딩한 디카페인 히비스커스 블렌딩 티",
+      "image": "/images/192.jpg"
+    }
+  },
+  {
+    "menuCode": 193,
+    "menuName": "스테비아 케이스",
+    "enName": "Stevia Case",
+    "menuPrice": 5900,
+    "categoryName": "MD",
+    "detail": {
+      "description": "천연 감미료 스테비아 1gx40개입 케이스.",
+      "image": "/images/193.jpg"
+    }
+  },
+  {
+    "menuCode": 194,
+    "menuName": "콜드브루 원액",
+    "enName": "MEGA COLD BREW COFFEE",
+    "menuPrice": 20000,
+    "categoryName": "MD",
+    "detail": {
+      "description": "집에서도 간편하게 콜드브루 커피의 맛을 느낄 수 있는 상품.",
+      "image": "/images/194.jpg"
+    }
+  }
+]

@@ -1,11 +1,22 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import { getMenuDetail } from "./main-menu-page/MenuAPI";
+import { drinkgetMenuDetail,dessertgetMenuDetail,mdgetMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
 
-const MenuDetail = ({addCart}) => {
+// 리듀서 정의
+const cartReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_ITEM":
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+};
 
+
+const MenuDetail = ({dispatch}) => {
+    
 
     const navigate = useNavigate();
 
@@ -17,38 +28,47 @@ const MenuDetail = ({addCart}) => {
         detail : {description:'', image:''}
     });
 
-    const [extraMenu,setExtraMenu] = useState({  //추가메뉴(샷,휘핑)
-        option : '',
-        totalPrice : 0
-    });
+    const [extraMenu,setExtraMenu] = useState([  //추가메뉴(샷,휘핑)
+    ]);
 
 
     useEffect(() => {
-        const menuDetail = getMenuDetail(menuCode);
-        if(menuDetail){
-        setMenu(menuDetail);
-        setExtraMenu(prevState => ({
-            ...prevState,
-            totalPrice: menuDetail.menuPrice
-        }))};
+        const drinkMenuDetail = drinkgetMenuDetail(menuCode);
+        const dessertMenuDetail = dessertgetMenuDetail(menuCode);
+        const mdMenuDetail = mdgetMenuDetail(menuCode);
+
+        // 메뉴 상세 정보가 있는 것을 우선으로 설정
+        const selectedMenuDetail = drinkMenuDetail || dessertMenuDetail || mdMenuDetail;
+
+        setMenu(selectedMenuDetail || {
+            menuName: '',
+            menuPrice: 0,
+            detail: { description: '', image: '' }
+        });
     }, [menuCode]);
 
+
     const handleOptionSelect = (option, price) => {
-        setExtraMenu(prevState => ({
-            ...prevState,
-            option: option,
-            totalPrice: menu.menuPrice + price
-    }));
+        setExtraMenu((prevExtraMenu) => [
+            ...prevExtraMenu,
+           {option,price}
+        ]);             
     };
+    
+    // 총 옵션 가격 계산
+    const totalExtraPrice = extraMenu.reduce((acc, item) => acc + item.price, 0);
+    const finalTotalPrice = menu.menuPrice + totalExtraPrice;
 
 
     const onClickHandler = () => {
-        addCart({
+        dispatch({ type: "ADD_ITEM", payload: {
             ...menu,
-            extraMenu
-        });
+            extraMenu,
+            finalTotalPrice
+        }});
+        navigate("/menu/shoppingcart");
     };
-    
+
     const onClickHandler2 = () => {
         navigate(`/menu/hotcoffee`);
     }
@@ -56,10 +76,6 @@ const MenuDetail = ({addCart}) => {
     return(
         <>
             <h2>선택하신 상품의 옵션상품을 모두 선택해주세요</h2>
-            
-            
-            {menu.menuName ? (
-                <>
             
             
             {menu.menuName ? (
@@ -72,19 +88,11 @@ const MenuDetail = ({addCart}) => {
             ) : (
                 <p>메뉴를 불러오는 중 입니다..</p>
             )}
-            <h3>{menu.menuName}</h3>
-            <h3>{menu.menuPrice}원</h3>
-            <p>{menu.detail.description}</p>
-                </>
-            ) : (
-                <p>메뉴를 불러오는 중 입니다..</p>
-            )}
-            <button onClick={onClickHandler}>주문담기</button><button onClick={onClickHandler2}>취소</button>
-            {<ExtraShot extramenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
-            {<ExtraSugar extramenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
-            {<ExtraIce extramenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
-            {<ExtraTopping extramenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
-            <h3>총 가격: {extraMenu.totalPrice}원</h3>
+            {<ExtraShot extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
+            {<ExtraSugar extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
+            {<ExtraIce extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
+            {<ExtraTopping extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
+            <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
             <button onClick={onClickHandler2}>취소</button>
         </>

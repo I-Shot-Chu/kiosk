@@ -1,8 +1,10 @@
 
 
 
-export const ExtraShot = ({extramenu, handleOptionSelect})=>{
+export const ExtraShot = ({extramenu = {}, handleOptionSelect})=>{
     
+    const option = extramenu.option || '';
+
     return(
         <div>
             <h3>샷 선택</h3>
@@ -31,7 +33,8 @@ export const ExtraShot = ({extramenu, handleOptionSelect})=>{
 }
 
 
-export const ExtraSugar = ({extramenu, handleOptionSelect})=>{
+export const ExtraSugar = ({extramenu={}, handleOptionSelect})=>{
+    const option = extramenu.option || '';
     
     return(
         <div>
@@ -73,8 +76,10 @@ export const ExtraSugar = ({extramenu, handleOptionSelect})=>{
 }
 
 
-export const ExtraIce = ({extramenu, handleOptionSelect})=>{
+export const ExtraIce = ({extramenu={}, handleOptionSelect})=>{
     
+    const option = extramenu.option || '';
+
     return(
         <div>
             <h3>얼음 양(선택, 단일선택)</h3>
@@ -103,8 +108,10 @@ export const ExtraIce = ({extramenu, handleOptionSelect})=>{
 }
 
 
-export const ExtraTopping = ({extramenu, handleOptionSelect})=>{
+export const ExtraTopping = ({extramenu = {}, handleOptionSelect})=>{
     
+    const option = extramenu.option || '';
+
     return(
         <div>
             <h3>토핑 선택</h3>
@@ -131,10 +138,3 @@ export const ExtraTopping = ({extramenu, handleOptionSelect})=>{
         </div>
     );
 }
-
-
-
-
-
-
-

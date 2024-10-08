@@ -34,7 +34,7 @@ const IdlePage = () =>
 
     return (
         <div>
-            <a href = "/menu/hotcoffee">
+            <a href = "/menu/newdrinks">
                 <h1 className = "idle_image_text">{lang ? "주문을 원하시면 클릭해주세요." : "Click to start order."}</h1>
                 <img src = { img[currentIndex] } className = "idle_image" alt = "slide"/>
             </a>

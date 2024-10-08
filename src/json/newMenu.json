@@ -1,0 +1,80 @@
+[
+  {
+    "menuCode": 1,
+    "menuName": "(ICE) 밤밤 크리미 슈페너",
+    "enName": "(ICE) Creamy Chestnut Einspanner",
+    "menuPrice": 3900,
+    "categoryName": "음료",
+    "detail": {
+      "description": "공주알밤이 드러가 부드럽고 달콤한 밤크림과 쌉싸름한 커피가 조화로운 가을시즌 한정 크림 슈페너",
+      "image": "/images/1.jpg"
+    }
+  },
+  {
+    "menuCode": 2,
+    "menuName": "(ICE) 할메가미숫커피",
+    "enName": "(ICE) MEGA MGC Mix Coffee Blend With Grain Powder",
+    "menuPrice": 2700,
+    "categoryName": "음료",
+    "detail": {
+      "description": "곡물의 향이 고소한 미숫가루와 달달한 믹스커피의 황금비율 조합",
+      "image": "/images/2.jpg"
+    }
+  },
+  {
+    "menuCode": 72,
+    "menuName": "(ICE) 밤밤 찰떡 프라페",
+    "enName": "(ICE) Chestnut Mochi Frappe",
+    "menuPrice": 4900,
+    "categoryName": "음료",
+    "detail": {
+      "description": "공주알밤이 들어가 부드럽고 달콤한 밤 맛과 쫀득하게 씹히는 찰떡의 식감이 매력적인 가을시즌 한정프라페",
+      "image": "/images/72.jpg"
+    }
+  },
+  {
+    "menuCode": 38,
+    "menuName": "(ICE) 귤 톡톡 릴렉싱 티플레저",
+    "enName": "(ICE) Tangerine Relaxing Tea Pleasure",
+    "menuPrice": 3900,
+    "categoryName": "음료",
+    "detail": {
+      "description": "톡톡 터지는 귤 과육이 들어간 몽글한 젤리에 릴렉싱에 좋은 캐모마일, 율피, 귤피를 우려낸 티를 넣어 만든 상큼한 가을시즌 한정 귤 티플레저",
+      "image": "/images/38.jpg"
+    }
+  },
+  {
+    "menuCode": 73,
+    "menuName": "(ICE) 귤 톡톡 젤리 스무디",
+    "enName": "(ICE) Tangerine Jelly Smoothie",
+    "menuPrice": 3900,
+    "categoryName": "음료",
+    "detail": {
+      "description": "톡톡 터지는 상큼한 귤의 과육과 몽글한 젤리식감이 매력적인 가을시즌 한정 귤 스무디",
+      "image": "/images/73.jpg"
+    }
+  },
+  {
+    "menuCode":143,
+    "menuName":"브라우니 쿠키 머핀",
+    "enName":"Brownie Cookie Muffin",
+    "menuPrice":2900,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "세 가지가 합쳐진 디저트! 초코칩 쿠키가 큼직하게 올려진 달콤하고 부드러운 초코 브라우니 머핀",
+        "image": "/images/143.jpg"
+    }
+ },
+ {
+    "menuCode":142,
+    "menuName":"핫 불고기&바베큐 반반 브리또",
+    "enName":"Hot Bulgogi & BBQ Burrito",
+    "menuPrice":3600,
+    "categoryName":"디저트",
+    "detail": {
+        "description": "매콤한 고추장불고기와 풍미 깊은 간장 바베큐를 동시에 즐길 수 있는 여주쌀로 만든 반반 브리또",
+        "image": "/images/142.jpg"
+    }
+ }
+
+]

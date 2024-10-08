@@ -1,25 +1,37 @@
 import { useEffect, useState } from "react";
-import { tea } from "../MenuAPI";
+import { hotTea, iceTea } from "../MenuAPI";
 import { DrinkMenu } from "../MenuItem";
+import ShoppingCart from "../../ShoppingCart";
 
 
 
-const Tea = ()=>{
-
+export const HotTea = ({cart})=>{
 
     const [teaMenu, setTeaMenu] = useState([]);
 
-
     useEffect(()=>{
-        setTeaMenu(tea())
+        setTeaMenu(hotTea())
     },[]);
 
     return(
         <div>
-            {teaMenu.map(tea => <DrinkMenu key={tea.menuCode} drinkMenu={tea}/>)}
+            {teaMenu.map(hotTea => <DrinkMenu key={hotTea.menuCode} drinkMenu={hotTea}/>)}
         </div>
     )
-
 }
 
-export default Tea;
+
+export const IceTea = ({cart})=>{
+
+    const [teaMenu, setTeaMenu] = useState([]);
+
+    useEffect(()=>{
+        setTeaMenu(iceTea())
+    },[]);
+
+    return(
+        <div>
+            {teaMenu.map(iceTea => <DrinkMenu key={iceTea.menuCode} drinkMenu={iceTea}/>)}
+        </div>
+    )
+}
