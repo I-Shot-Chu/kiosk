@@ -1,22 +1,17 @@
 import {useParams} from "react-router-dom";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useReducer} from "react";
 import {useNavigate} from "react-router-dom";
 import { drinkgetMenuDetail,dessertgetMenuDetail,mdgetMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
+import Modal from 'react-modal';
+import ShoppingCart from "./ShoppingCart";
+import { initialState, cartReducer } from "./cartReducer";
 
 // 리듀서 정의
-const cartReducer = (state, action) => {
-    switch (action.type) {
-        case "ADD_ITEM":
-            return [...state, action.payload];
-        default:
-            return state;
-    }
-};
 
-
-const MenuDetail = ({dispatch}) => {
+const MenuDetail = () => {
     
+    const [state, dispatch] = useReducer(cartReducer, initialState);
 
     const navigate = useNavigate();
 
@@ -30,6 +25,8 @@ const MenuDetail = ({dispatch}) => {
 
     const [extraMenu,setExtraMenu] = useState([  //추가메뉴(샷,휘핑)
     ]);
+
+    const [modal, setModal] = useState(false);
 
 
     useEffect(() => {
@@ -66,11 +63,12 @@ const MenuDetail = ({dispatch}) => {
             extraMenu,
             finalTotalPrice
         }});
-        navigate("/menu/shoppingcart");
+        //navigate("/menu/shoppingcart");
+        setModal(true);
     };
 
     const onClickHandler2 = () => {
-        navigate(`/menu/hotcoffee`);
+        navigate(`/menu/newdrinks`);
     }
 
     return(
@@ -94,6 +92,10 @@ const MenuDetail = ({dispatch}) => {
             {<ExtraTopping extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
+            <Modal isOpen = {modal} ariaHideApp={false} onRequestClose={onClickHandler2}>
+                <ShoppingCart state={state} dispatch={dispatch}/>
+                <button onClick={onClickHandler2}>닫기</button>
+            </Modal>
             <button onClick={onClickHandler2}>취소</button>
         </>
     );

@@ -33,7 +33,7 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
                         />
                     ))
                 ) : (
-                    <span>선택한 커피가 없습니다.</span>
+                    <span>장바구니가 비어있습니다.</span>
                 )}
             </div>
             <h2>총 가격: {totalPrice}원</h2>

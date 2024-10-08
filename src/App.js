@@ -16,7 +16,7 @@ import MenuDetail from "./MenuDetail";
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
-import cartReducer, { initialState } from "./cartReducer"; 
+//import cartReducer, { initialState } from "./cartReducer"; 
 import AdeAndJuice from "./main-menu-page/drink/AdeAndJuice";
 import SmoothieAndFrappe from "./main-menu-page/drink/SmoothieAndFrappe";
 import { HotDrinks, IceDrinks } from "./main-menu-page/drink/Drinks";
@@ -24,7 +24,7 @@ import MdProduct from "./main-menu-page/dessert-md/Md";
 
 function App() {
   
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  // const [state, dispatch] = useReducer(cartReducer, initialState);
 
 
   return (
@@ -52,8 +52,10 @@ function App() {
           <Route path="point" element={<Point />} />
 
           {/* 추가 메뉴 상세 옵션 */}
-          <Route path=":menuCode" element={<MenuDetail dispatch={dispatch} />}/>
-          <Route path="shoppingcart" element={<ShoppingCart state={state} dispatch={dispatch} />} />
+          {/* <Route path=":menuCode" element={<MenuDetail dispatch={dispatch} />}/>
+          <Route path="shoppingcart" element={<ShoppingCart state={state} dispatch={dispatch} />} /> */}
+          <Route path=":menuCode" element={<MenuDetail/>}/>
+          <Route path="shoppingcart" element={<ShoppingCart/>} />
         </Route>
         <Route path="/point" element={<Point />} />
         <Route path="/userpoint" element={<UserPoint />} />
