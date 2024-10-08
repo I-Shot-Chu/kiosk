@@ -162,7 +162,7 @@ const PaymentComponent = ({ setCurrentComponent }) => {
 
       <h3>결제 금액: {totalPrice ? `${parseFloat(totalPrice).toFixed(2)} 원` : '0 원'}</h3>
       <h3>보유 포인트 : {points.toFixed(0)} 포인트</h3> {/* 보유 포인트 표시 */}
-
+      
       <div>
         <input
           type="text"

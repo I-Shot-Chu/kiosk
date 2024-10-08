@@ -17,7 +17,6 @@ const MdProduct = ({cart})=>{
     return(
         <div>
             {md.map(mdItem => <MdItem key={mdItem.menuCode} mdProduct={mdItem}/>)}
-            <ShoppingCart cart= {cart} />
         </div>
     )
 }

@@ -1,11 +1,22 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import { getMenuDetail } from "./main-menu-page/MenuAPI";
+import { drinkgetMenuDetail,dessertgetMenuDetail,mdgetMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
 
-const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
+// 리듀서 정의
+const cartReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_ITEM":
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+};
 
+
+const MenuDetail = ({dispatch}) => {
+    
 
     const navigate = useNavigate();
 
@@ -21,14 +32,20 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
     ]);
 
 
-
-
     useEffect(() => {
-        const menuDetail = getMenuDetail(menuCode);
-       
-        setMenu(menuDetail);
-    
-    },[menuCode]);
+        const drinkMenuDetail = drinkgetMenuDetail(menuCode);
+        const dessertMenuDetail = dessertgetMenuDetail(menuCode);
+        const mdMenuDetail = mdgetMenuDetail(menuCode);
+
+        // 메뉴 상세 정보가 있는 것을 우선으로 설정
+        const selectedMenuDetail = drinkMenuDetail || dessertMenuDetail || mdMenuDetail;
+
+        setMenu(selectedMenuDetail || {
+            menuName: '',
+            menuPrice: 0,
+            detail: { description: '', image: '' }
+        });
+    }, [menuCode]);
 
 
     const handleOptionSelect = (option, price) => {
@@ -44,13 +61,14 @@ const MenuDetail = ({addCart, totalPrice, setTotalPrice}) => {
 
 
     const onClickHandler = () => {
-        addCart({
+        dispatch({ type: "ADD_ITEM", payload: {
             ...menu,
             extraMenu,
             finalTotalPrice
-        });
+        }});
+        navigate("/menu/shoppingcart");
     };
-    
+
     const onClickHandler2 = () => {
         navigate(`/menu/hotcoffee`);
     }

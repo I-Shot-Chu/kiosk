@@ -16,7 +16,6 @@ export const HotDrinks = ({cart})=>{
     return(
         <div>
             {drinksMenu.map(hotDrinks => <DrinkMenu key={hotDrinks.menuCode} drinkMenu={hotDrinks}/>)}
-            <ShoppingCart cart= {cart} />
         </div>
     )
 }
@@ -33,7 +32,6 @@ export const IceDrinks = ({cart})=>{
     return(
         <div>
             {drinksMenu.map(iceDrinks => <DrinkMenu key={iceDrinks.menuCode} drinkMenu={iceDrinks}/>)}
-            <ShoppingCart cart={cart} />
         </div>
     )
 }

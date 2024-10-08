@@ -94,13 +94,26 @@ export const newDessert = ()=>{ return newMenu.filter(isNewDessert) }
 
 
 // Md
-export const mdProduct= ()=>{
-    return mdItem
+export const mdProduct= (mdItem)=>{
+    return mdItem;
 }
 
 // 음료 상세메뉴
-export function getMenuDetail(menuCode){
+export function drinkgetMenuDetail(menuCode){
     const codeAsNumber = parseInt(menuCode);
     return drinkMenus.filter(menu => menu.menuCode === codeAsNumber)[0];
+}
+
+// 디저트 상세메뉴
+export function dessertgetMenuDetail(menuCode){
+    const codeAsNumber = parseInt(menuCode);
+    return dessertMenus.filter(menu => menu.menuCode === codeAsNumber)[0];
+}
+
+// MD 상세메뉴
+
+export function mdgetMenuDetail(menuCode){
+    const codeAsNumber = parseInt(menuCode);
+    return mdItem.filter(menu => menu.menuCode === codeAsNumber)[0];
 }
 

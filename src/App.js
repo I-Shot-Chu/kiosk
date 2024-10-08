@@ -16,7 +16,7 @@ import MenuDetail from "./MenuDetail";
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
-import cartReducer, {initialState} from "./cartReducer";
+import cartReducer, { initialState } from "./cartReducer"; 
 import AdeAndJuice from "./main-menu-page/drink/AdeAndJuice";
 import SmoothieAndFrappe from "./main-menu-page/drink/SmoothieAndFrappe";
 import { HotDrinks, IceDrinks } from "./main-menu-page/drink/Drinks";

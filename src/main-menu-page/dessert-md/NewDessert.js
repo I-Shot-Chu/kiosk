@@ -16,7 +16,6 @@ const NewDessert = ({cart})=>{
     return(
         <div>
             {newDessertMenu.map(newDessert => <DessertMenu key={newDessert.menuCode} dessertMenu={newDessert}/>)}
-            <ShoppingCart cart= {cart} />
         </div>
     )
 }
