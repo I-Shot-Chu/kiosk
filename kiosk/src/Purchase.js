@@ -178,8 +178,6 @@ const PaymentComponent = ({ setCurrentComponent }) => {
         <button onClick={() => completePayment('카드')}>카드</button>
         <button onClick={() => completePayment('페이코')}>페이코</button>
       </div>
-
-      {/* <button onClick={() => alert('기프티콘/상품권 기능은 아직 구현되지 않았습니다.')}>기프티콘/상품권</button> */}
     </div>
   );
 };
