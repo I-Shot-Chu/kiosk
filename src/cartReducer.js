@@ -8,14 +8,17 @@ export const initialState = {
       case "ADD_ITEM":
         return {
           ...state,
-          cart: [...state.cart, action.payload]
+          cart: [...state.cart, action.payload],
+          itemCounts: {
+            ...state.itemCounts,
+            [action.payload.menuCode]: 1
+          }
         };
       case "REMOVE_ITEM":
-        const newCart = state.cart.filter(menu => menu.menuCode !== action.payload);
         const { [action.payload]: _, ...newItemCounts } = state.itemCounts;
         return {
           ...state,
-          cart: newCart,
+          cart: state.cart.filter(menu => menu.menuCode !== action.payload),
           itemCounts: newItemCounts
         };
       case "UPDATE_COUNT":

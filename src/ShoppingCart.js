@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 
-const ShoppingCart = ({ state = {}, dispatch }) => {
+const ShoppingCart = ({ state, dispatch }) => {
     
-    const { cart = [], itemCounts = {} } = state;
+    const { cart, itemCounts } = state;
 
     const handleRemove = (menuCode) => {
         dispatch({ type: "REMOVE_ITEM", payload: menuCode });
@@ -15,7 +15,7 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
 
     const totalPrice = cart.reduce((acc, menu) => {
         const count = itemCounts[menu.menuCode] || 0;
-        const pricePerItem = menu.finalTotalPrice || menu.menuPrice;
+        const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
         return acc + pricePerItem * count;
     }, 0);
 
@@ -30,6 +30,7 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
                             menu={menu}
                             onRemove={handleRemove}
                             onCountChange={handleCountChange}
+                            count= {itemCounts[menu.menuCode] || 0}
                         />
                     ))
                 ) : (
@@ -41,28 +42,24 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
     );
 };
 
+const MenuItem = ({ menu, onRemove, onCountChange, count}) => {
 
-const MenuItem = ({ menu, onRemove, onCountChange }) => {
-    const [count, setCount] = useState(0);
+    const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
 
     const increment = () => {
-        const newCount = count + 1;
-        setCount(newCount);
+        const newCount = (count || 0) + 1;
         onCountChange(menu.menuCode, newCount);
     };
 
     const decrement = () => {
         const newCount = count > 0 ? count - 1 : 0;
-        setCount(newCount);
         onCountChange(menu.menuCode, newCount);
     };
 
     const reset = () => {
-        setCount(0);
         onCountChange(menu.menuCode, 0);
     };
 
-    const pricePerItem = menu.finalTotalPrice || menu.menuPrice;
 
     return (
         <div>
@@ -82,11 +79,11 @@ const MenuItem = ({ menu, onRemove, onCountChange }) => {
             )}
             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                 <button onClick={increment}>+</button>
-                <h3>{count}</h3>
+                <h3>{count || 0}</h3>
                 <button onClick={decrement}>-</button>
             </div>
             <button onClick={reset}>초기화</button>
-            <h3>{pricePerItem * count}원 (단가: {pricePerItem}원)</h3>
+            <h3>{pricePerItem * count || 0}원 (단가: {pricePerItem}원)</h3>
             <button onClick={() => onRemove(menu.menuCode)}>삭제</button>
         </div>
     );

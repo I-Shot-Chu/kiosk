@@ -94,7 +94,7 @@ export const newDessert = ()=>{ return newMenu.filter(isNewDessert) }
 
 // Md
 export const mdProduct= ()=>{
-    return mdItem
+    return mdItem;
 }
 
 
