@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import ShoppingCart from "../../ShoppingCart";
 import {  MdItem } from "../MenuItem";
 import { mdProduct } from "../MenuAPI";
 
 
 
 
-const MdProduct = ({cart})=>{
+const MdProduct = ()=>{
 
     const [md, setMd] = useState([]);
 

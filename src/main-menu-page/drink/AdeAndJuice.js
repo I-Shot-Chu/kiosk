@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { adeAndJuice } from "../MenuAPI";
 import { DrinkMenu } from "../MenuItem";
-import ShoppingCart from "../../ShoppingCart";
 
 
 
-const AdeAndJuice = ({cart})=>{
+const AdeAndJuice = ()=>{
 
 
     const [adeAndJuiceMenu, setAdeAndJuiceMenu] = useState([]);

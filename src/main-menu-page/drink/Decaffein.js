@@ -5,7 +5,7 @@ import ShoppingCart from "../../ShoppingCart";
 
 
 
-export const HotDecaf = ( {cart} )=>{
+export const HotDecaf = ()=>{
 
     const [decafMenu, setDecafMenu] = useState([]);
 
@@ -21,7 +21,7 @@ export const HotDecaf = ( {cart} )=>{
 }
 
 
-export const IceDecaf = ( {cart} )=>{
+export const IceDecaf = ()=>{
 
     const [decafMenu, setDecafMenu] = useState([]);
 

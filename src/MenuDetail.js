@@ -17,7 +17,6 @@ const cartReducer = (state, action) => {
 
 const MenuDetail = ({dispatch}) => {
     
-
     const navigate = useNavigate();
 
     const {menuCode} = useParams();
@@ -25,7 +24,7 @@ const MenuDetail = ({dispatch}) => {
     const [menu, setMenu] = useState({
         menuName : '',
         menuPrice : 0,
-        detail : {description:'', image:''}
+        detail : {description:'', image:''} 
     });
 
     const [extraMenu,setExtraMenu] = useState([  //추가메뉴(샷,휘핑)
@@ -70,13 +69,12 @@ const MenuDetail = ({dispatch}) => {
     };
 
     const onClickHandler2 = () => {
-        navigate(`/menu/hotcoffee`);
+        navigate(`/menu/newdrinks`);
     }
 
     return(
         <>
             <h2>선택하신 상품의 옵션상품을 모두 선택해주세요</h2>
-            
             
             {menu.menuName ? (
                 <>
@@ -88,6 +86,9 @@ const MenuDetail = ({dispatch}) => {
             ) : (
                 <p>메뉴를 불러오는 중 입니다..</p>
             )}
+
+            {menu.menuCode < 142 ? 
+            (<>
             {<ExtraShot extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraSugar extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             {<ExtraIce extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
@@ -95,6 +96,12 @@ const MenuDetail = ({dispatch}) => {
             <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
             <button onClick={onClickHandler2}>취소</button>
+            </>) : 
+            (<>
+            <h3>총 가격: {finalTotalPrice}원</h3>
+            <button onClick={onClickHandler}>주문담기</button>
+            <button onClick={onClickHandler2}>취소</button>
+            </>)}
         </>
     );
 }

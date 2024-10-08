@@ -16,11 +16,11 @@ import MenuDetail from "./MenuDetail";
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
-import cartReducer, { initialState } from "./cartReducer"; 
 import AdeAndJuice from "./main-menu-page/drink/AdeAndJuice";
 import SmoothieAndFrappe from "./main-menu-page/drink/SmoothieAndFrappe";
 import { HotDrinks, IceDrinks } from "./main-menu-page/drink/Drinks";
 import MdProduct from "./main-menu-page/dessert-md/Md";
+import cartReducer, { initialState } from "./cartReducer";
 
 function App() {
   
@@ -33,8 +33,8 @@ function App() {
         <Route path="/" element={<Redirect />} />
         <Route path="/idle" element={<IdlePage />} />
         <Route path="/menu" element={<Layout />}>
+          
           {/* 메뉴별 라우트 설정 */}
-
           <Route path="hotcoffee" element={<HotCoffee/>} />
           <Route path="icecoffee" element={<IceCoffee/>} />
           <Route path="hottea" element={<HotTea />} />
@@ -52,7 +52,7 @@ function App() {
           <Route path="point" element={<Point />} />
 
           {/* 추가 메뉴 상세 옵션 */}
-          <Route path=":menuCode" element={<MenuDetail dispatch={dispatch} />}/>
+          <Route path=":menuCode" element={<MenuDetail dispatch={dispatch}/>}/>
           <Route path="shoppingcart" element={<ShoppingCart state={state} dispatch={dispatch} />} />
         </Route>
         <Route path="/point" element={<Point />} />

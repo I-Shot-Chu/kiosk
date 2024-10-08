@@ -79,7 +79,6 @@ export const dessert = ()=>{ return dessertMenus.filter(isDessert) }
 
 
 
-
 //신메뉴
 const isNewDrinks = (newMenu)=>{
     if(newMenu.categoryName === "음료"){return true}
@@ -94,9 +93,10 @@ export const newDessert = ()=>{ return newMenu.filter(isNewDessert) }
 
 
 // Md
-export const mdProduct= (mdItem)=>{
-    return mdItem;
+export const mdProduct= ()=>{
+    return mdItem
 }
+
 
 // 음료 상세메뉴
 export function drinkgetMenuDetail(menuCode){
@@ -110,10 +110,9 @@ export function dessertgetMenuDetail(menuCode){
     return dessertMenus.filter(menu => menu.menuCode === codeAsNumber)[0];
 }
 
-// MD 상세메뉴
 
+// MD 상세메뉴
 export function mdgetMenuDetail(menuCode){
     const codeAsNumber = parseInt(menuCode);
     return mdItem.filter(menu => menu.menuCode === codeAsNumber)[0];
 }
-

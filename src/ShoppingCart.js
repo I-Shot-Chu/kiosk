@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useState } from "react";
 
 
 const ShoppingCart = ({ state = {}, dispatch }) => {
@@ -40,6 +40,7 @@ const ShoppingCart = ({ state = {}, dispatch }) => {
         </>
     );
 };
+
 
 const MenuItem = ({ menu, onRemove, onCountChange }) => {
     const [count, setCount] = useState(0);
