@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const ShoppingCart = ( {cart = [], setCart} ) => {
+const ShoppingCart = ( {cart, setCart} ) => {
     const handleRemove = (menuCode) => {
-        setCart(cart.filter((menu)=>menu.menuCode !== menuCode));
-        };
+        setCart((prevCart) => prevCart.filter((menu) => menu.menuCode !== menuCode));
+      };
 
     return(
       <>

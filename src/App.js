@@ -18,6 +18,7 @@ import MenuDetail from "./MenuDetail";
 import ShoppingCart from "./ShoppingCart"; 
 import { UserPoint } from "./UserPoint"; 
 import { Cupon } from "./Cupon"; 
+import { Card } from "./Card";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -53,6 +54,10 @@ function App() {
         <Route path="/userpoint" element={<UserPoint />} />
         <Route path="/cupon" element={<Cupon />} />
         <Route path="/purchase" element={<Purchase />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/card" element={<Card/>} />
+
+
       </Routes>
     </BrowserRouter>
   );
