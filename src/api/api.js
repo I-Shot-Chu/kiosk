@@ -1,6 +1,6 @@
-import cupons from "../json/coupon.json";
+import coupons from "../json/coupon.json";
 
-export function detailCupon(code){
-   return  cupons.filter(item =>item.cuponCode===code)[0];
+export function detailCoupon(code){
+   return  coupons.filter(item =>item.couponCode===code)[0];
 }
 

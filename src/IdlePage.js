@@ -7,7 +7,7 @@
 
 import { useEffect, useState } from "react";
 import "./IdlePage.css";
-import { language } from "./language";
+import { language } from "./store";
 
 const img = ["bam_port.jpg", "decaff_port.jpg", "genshin_port.jpg", "knotted_port.jpg", "teapleasure_port.jpg", "tumbler_port.jpg"];
 

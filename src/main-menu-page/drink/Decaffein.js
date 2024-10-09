@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { hotDecafCoffee, iceDecafCoffee } from "../MenuAPI";
 import { DrinkMenu } from "../MenuItem";
-import ShoppingCart from "../../ShoppingCart";
 
 
 

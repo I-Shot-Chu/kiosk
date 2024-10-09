@@ -1,17 +1,17 @@
-import {useParams} from "react-router-dom";
-import {useState, useEffect, useReducer} from "react";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {useNavigate} from "react-router-dom";
 import { drinkgetMenuDetail,dessertgetMenuDetail,mdgetMenuDetail } from "./main-menu-page/MenuAPI";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./option/Option";
 import Modal from 'react-modal';
 import ShoppingCart from "./ShoppingCart";
-import { initialState, cartReducer } from "./cartReducer";
+import { useCartStore } from "./store";
 
 // 리듀서 정의
 
 const MenuDetail = () => {
     
-    const [state, dispatch] = useReducer(cartReducer, initialState);
+    const { cartItems, addToCart } = useCartStore();
 
     const navigate = useNavigate();
 
@@ -56,19 +56,21 @@ const MenuDetail = () => {
     const totalExtraPrice = extraMenu.reduce((acc, item) => acc + item.price, 0);
     const finalTotalPrice = menu.menuPrice + totalExtraPrice;
 
-
-    const onClickHandler = () => {
-        dispatch({ type: "ADD_ITEM", payload: {
-            ...menu,
-            extraMenu,
-            finalTotalPrice
-        }});
-        //navigate("/menu/shoppingcart");
+    const onClickHandler = () =>
+    {
+        // Add item to the Zustand store
+        addToCart(
+        {
+          ...menu,
+          extraMenu,
+          finalTotalPrice
+        });
+    
         setModal(true);
     };
 
     const onClickHandler2 = () => {
-        navigate(`/menu/newdrinks`);
+        navigate(-1);
     }
 
     return(
@@ -95,7 +97,7 @@ const MenuDetail = () => {
             <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
             <Modal isOpen = {modal} ariaHideApp={false} onRequestClose={onClickHandler2}>
-                <ShoppingCart state={state} dispatch={dispatch}/>
+                <ShoppingCart cartItems={cartItems} />
                 <button onClick={onClickHandler2}>닫기</button>
             </Modal>
             <button onClick={onClickHandler2}>취소</button>
@@ -103,6 +105,10 @@ const MenuDetail = () => {
             (<>
             <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
+            <Modal isOpen = {modal} ariaHideApp={false} onRequestClose={onClickHandler2}>
+                <ShoppingCart cartItems={cartItems} />
+                <button onClick={onClickHandler2}>닫기</button>
+            </Modal>
             <button onClick={onClickHandler2}>취소</button>
             </>)}
         </>
@@ -112,7 +118,7 @@ const MenuDetail = () => {
 export default MenuDetail;
 
 /*
- * ExtraShot.js
+ * MenuDetail.js
  * 상세정보 페이지
  * 각각의 음료에 대한 상세 옵션 추가(샷 추가 등)
  * 동작 완료 후 확인(담기) 버튼 클릭 시 메인 메뉴로 이동
