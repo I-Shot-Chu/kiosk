@@ -63,7 +63,7 @@ function App() {
           <Route path=":menuCode" element={<MenuDetail dispatch={dispatch} />}/>
           <Route path="shoppingcart" element={<ShoppingCart state={state} dispatch={dispatch}  setFinalTotalPrice ={setFinalTotalPrice}/>} />
         </Route>
-        <Route path="/point" element={<Point />} />
+        <Route path="/point" element={<Point  finalTotalPrice={finalTotalPrice}/>} />
         <Route path="/userpoint" element={<UserPoint  finalTotalPrice={finalTotalPrice} setFinalTotalPrice = {setFinalTotalPrice} />} />
         <Route path="/cupon" element={<Cupon />} />
         <Route path="/purchase" element={<Purchase />} />

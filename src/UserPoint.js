@@ -7,6 +7,7 @@ export const UserPoint = ({ finalTotalPrice, setFinalTotalPrice }) => {
   const [message, setMessage] = useState("");
   const [customers, setCustomers] = useState([]);
   const [price, setPrice] = useState(finalTotalPrice); // 초기 가격을 finalTotalPrice로 설정
+  const [remainingPrice, setRemainingPrice] = useState(finalTotalPrice); // 남은 가격 상태 추가
 
   const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ export const UserPoint = ({ finalTotalPrice, setFinalTotalPrice }) => {
   useEffect(() => {
     console.log("final  : " + finalTotalPrice);
     setPrice(finalTotalPrice);
+    setRemainingPrice(finalTotalPrice); // 남은 가격 초기화
   }, [finalTotalPrice]); // finalTotalPrice가 변경될 때마다 price 업데이트
 
   // 포인트 사용 처리 함수
@@ -41,8 +43,15 @@ export const UserPoint = ({ finalTotalPrice, setFinalTotalPrice }) => {
     })
       .then((response) => response.json())
       .then((updatedCustomer) => {
-        alert(`${updatedCustomer.name}님, 포인트가 사용되었습니다! 남은 포인트: ${updatedCustomer.points}`);
-        setFinalTotalPrice(newTotalPrice); // 새로운 가격으로 업데이트
+        // 포인트 사용 후 남은 가격을 계산
+        const remainingPrice = newTotalPrice > 0 ? newTotalPrice : 0;
+
+        // 사용자에게 알림
+        alert(`${updatedCustomer.name}님, 포인트가 사용되었습니다! 남은 포인트: ${updatedCustomer.points}. 결제할 금액: ${remainingPrice}원`);
+        
+        // 남은 가격으로 업데이트
+        setRemainingPrice(remainingPrice);
+        setFinalTotalPrice(remainingPrice); // 새로운 가격으로 업데이트
         navigate("/card");
       })
       .catch((error) => console.error('Error updating customer points:', error));

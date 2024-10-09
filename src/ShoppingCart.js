@@ -26,6 +26,12 @@ const ShoppingCart = ({ state = {}, dispatch, setFinalTotalPrice }) => {
         go("/userpoint");
 
     }
+    const submit2 = () => {
+        setFinalTotalPrice(prev => prev + totalPrice); // 총 가격을 UserPoint로 전달
+        console.log(totalPrice);
+        go("/point");
+
+    }
 
     return (
         <>
@@ -47,6 +53,8 @@ const ShoppingCart = ({ state = {}, dispatch, setFinalTotalPrice }) => {
             </div>
             <h2>총 가격: {totalPrice}원</h2>
             <button onClick={submit}>가격제출</button>
+            <button onClick={submit2}>포인트적립</button>
+
         </>
     );
 };

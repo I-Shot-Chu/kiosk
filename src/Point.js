@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Point.css';  // CSS 파일 임포트
 
-export const Point = () => {
-  const [isok, setIsok] = useState(false);
+export const Point = ({ finalTotalPrice }) => {
+  const [isOk, setIsOk] = useState(false);
   const [phoneInput, setPhoneInput] = useState("");
   const [message, setMessage] = useState("");
   const [customers, setCustomers] = useState([]);
@@ -18,7 +18,8 @@ export const Point = () => {
   }, []);
 
   const pointAccrual = (customer) => {
-    const updatedPoints = customer.points + 10; // 포인트 10 적립
+    const pointsToAccrue = Math.floor(finalTotalPrice * 0.1); // 포인트의 10% 계산
+    const updatedPoints = customer.points + pointsToAccrue; // 현재 포인트에 추가
 
     fetch(`http://localhost:3001/customers/${customer.phone}`, {
       method: 'PATCH',
@@ -54,37 +55,43 @@ export const Point = () => {
   };
 
   return (
-    <div className="kiosk-container">
-      {!isok ? (
-                <div>
-                <h2>포인트 적립하시겠습니까?</h2>
-                <div className="action-buttons">
-                  <button onClick={() => setIsok(true)} className="point-btn">네</button>
-                  <button onClick={() => navigate("/result")} className="no-point-btn">아니오</button>
-                </div>
-              </div>
+    <div className="user-point-container">
+      {!isOk ? (
+        <div>
+          <h2 className="user-point-title">포인트 적립하시겠습니까?</h2>
+          <div className="action-buttons">
+            <button onClick={() => setIsOk(true)} className="user-point-use-button">네</button>
+            <button onClick={() => navigate("/result")} className="user-point-no-point-button">아니오</button>
+          </div>
+        </div>
       ) : (
         <div>
-          <h2>전화번호를 입력하세요</h2>
-          <div>
-            <input className="phone-input" value={phoneInput} placeholder='번호 입력' readOnly />
-            <div className="keypad">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0,"*"].map((num) => (
-                <button key={num} className="keypad-btn" onClick={() => setPhoneInput(phoneInput + num)}>
+          <h2 className="user-point-title">전화번호를 입력하세요</h2>
+          <div className="user-point-input-section">
+            <input 
+              className="user-point-input" 
+              value={phoneInput} 
+              placeholder='번호 입력' 
+              readOnly 
+            />
+            <div className="user-point-button-grid">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "*"].map((num) => (
+                <button key={num} className="user-point-number-button" onClick={() => setPhoneInput(phoneInput + num)}>
                   {num}
                 </button>
               ))}
-              <button className="delete-btn" onClick={() => setPhoneInput(phoneInput.slice(0, -1))}style={{backgroundColor :"orange"}}>삭제</button>
+              <button className="user-point-delete-button" onClick={() => setPhoneInput(phoneInput.slice(0, -1))}>
+                삭제
+              </button>
             </div>
-            <div className="action-buttons">
-              <button className="point-btn" onClick={pointPlus}>포인트 적립</button>
-              <button className="no-point-btn" onClick={() => navigate("/result")}>적립없이 결제하기</button>
+            <div className="user-point-actions">
+              <button className="user-point-use-button" onClick={pointPlus}>포인트 적립</button>
+              <button className="user-point-no-point-button" onClick={() => navigate("/result")}>적립없이 결제하기</button>
             </div>
           </div>
-          <br />
         </div>
       )}
-      {message && <h2>{message}</h2>}
+      {message && <p className="user-point-message">{message}</p>}
     </div>
   );
 };
