@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { newDrinks } from "../getMenuDetails";
 import { DrinkMenu } from "../ShowItems";
+import ShoppingCart from "../../store/ShoppingList";
 
 
 
@@ -15,9 +16,12 @@ const NewDrinks = ()=>{
     },[]);
 
     return(
-        <div>
+        <>
+            <div>
             {newDrinksMenu.map(newDrinks => <DrinkMenu key={newDrinks.menuCode} drinkMenu={newDrinks}/>)}
-        </div>
+            </div>
+            <ShoppingCart/>
+        </>
     )
 
 }

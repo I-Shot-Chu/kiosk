@@ -28,7 +28,7 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <button onClick={clearCart}>장바구니 비우기</button>
+            <button onClick={clearCart}>전체 삭제</button>
             <h1>장바구니</h1>
             <div>
                 {cartItems.length > 0 ? (
@@ -68,7 +68,6 @@ const MenuItem = ({ menu, onRemove, onCountChange, count }) => {
     return (
         <div>
             <li>{menu.menuName}</li>
-            <h4>추가 메뉴:</h4>
             {menu.extraMenu && menu.extraMenu.length > 0 ? (
                 <ul>
                     {menu.extraMenu.map((extra, index) => (
@@ -77,9 +76,7 @@ const MenuItem = ({ menu, onRemove, onCountChange, count }) => {
                         </li>
                     ))}
                 </ul>
-            ) : (
-                <p>선택한 추가 메뉴가 없습니다.</p>
-            )}
+            ) : (<p/>)}
             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                 <button onClick={() => onRemove(menu.menuCode)}>X</button>
                 <button onClick={increment}>+</button>
@@ -87,7 +84,7 @@ const MenuItem = ({ menu, onRemove, onCountChange, count }) => {
                 <button onClick={decrement}>-</button>
             </div>
             <h3>{pricePerItem * count}원 (개당 가격: {pricePerItem}원)</h3>
-            <br></br><br></br>
+            <br></br>
         </div>
     );
 };

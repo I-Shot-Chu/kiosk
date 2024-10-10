@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { hotCoffee, iceCoffee } from "../getMenuDetails";
 import { DrinkMenu } from "../ShowItems";
+import ShoppingCart from "../../store/ShoppingList";
 
 
 
@@ -17,9 +18,13 @@ export const HotCoffee = ()=>{
     },[]);
 
     return(
-        <div>
-            {coffeeMenu.map(hotCoffee => <DrinkMenu key={hotCoffee.menuCode} drinkMenu={hotCoffee}/>)}
-       </div>
+        <>
+            <div>
+                {coffeeMenu.map(hotCoffee => <DrinkMenu key={hotCoffee.menuCode} drinkMenu={hotCoffee}/>)}
+            </div>
+            <ShoppingCart/>
+        </>
+
     )
 
 }
@@ -35,8 +40,11 @@ export const IceCoffee = () => {
     },[]);
 
     return(
-        <div>
+        <>
+            <div>
             {coffeeMenu.map(iceCoffee => <DrinkMenu key={iceCoffee.menuCode} drinkMenu={iceCoffee}/>)}
-       </div>
+            </div>
+            <ShoppingCart/>
+        </>
     )
 }

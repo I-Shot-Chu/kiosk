@@ -6,7 +6,8 @@
 .idle_image
 {
     position: absolute;
-    width: 65%;
+    width: 600px;
+    height: 800px;
     z-index: 0;
 }
   
@@ -15,7 +16,7 @@
     font-family: "Noto Sans KR";
     font-size: 28px;
     position: absolute;
-    top: 90%;
+    top: 75%;
     left: 34%;
     transform: translate( -50%, -50% );
     color: black;
@@ -28,7 +29,7 @@
 {
     position: absolute;
     top: 2.5%;
-    left: 60%;
+    left: 57.5%;
     width: 0px; 
     height: 0px;
     padding: 0px; 
