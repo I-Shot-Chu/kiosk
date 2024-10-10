@@ -1,73 +1,86 @@
 import { useCartStore } from "./store"; // Zustand store
 import { useState } from "react";
 
-const ShoppingCart = () => {
-    const { cartItems, removeFromCart, clearCart, updateItemCount } = useCartStore(); // Zustand actions
+const ShoppingCart = ({ isModalOpen }) => {
+    const { cartItems, removeFromCart, updateItemCount } = useCartStore(); // Zustand actions
+
     const [itemCounts, setItemCounts] = useState({}); // Local state to handle item counts
 
-    // Remove an item from the cart
-    const handleRemove = (menuCode) => {
-        removeFromCart(menuCode);
+    const handleRemove = (id) => 
+    {
+        removeFromCart(id); // Remove using the unique id
     };
-
-    // Update item count and sync with Zustand store
-    const handleCountChange = (menuCode, newCount) => {
-        setItemCounts((prev) => ({
+    
+    const handleCountChange = (id, newCount) => 
+    {
+        setItemCounts((prev) => (
+        {
             ...prev,
-            [menuCode]: newCount
+            [id]: newCount,
         }));
-        updateItemCount(menuCode, newCount); // Update count in Zustand store
+        updateItemCount(id, newCount); // Update count using id
     };
 
     // Calculate total price
     const totalPrice = cartItems.reduce((acc, menu) => {
-        const count = itemCounts[menu.menuCode] || 1; // Default count is 1 if not yet set
+        const count = itemCounts[menu.id] || 1; // Default count is 1 if not yet set
         const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
         return acc + pricePerItem * count;
     }, 0);
 
     return (
         <>
-            <button onClick={clearCart}>전체 삭제</button>
-            <h1>장바구니</h1>
             <div>
                 {cartItems.length > 0 ? (
                     cartItems.map((menu, index) => (
                         <MenuItem
-                            key={menu.menuCode} // <= 141 ? index : menu.menuCode}
+                            key={menu.id} // Use unique id as the key
+                            index={index + 1} // Pass index starting from 1
                             menu={menu}
                             onRemove={handleRemove}
                             onCountChange={handleCountChange}
-                            count={itemCounts[menu.menuCode] || 1} // Default count is 1
+                            count={itemCounts[menu.id] || 1} // Use id for local state handling
+                            isModalOpen={isModalOpen}
                         />
                     ))
-                ) : (
-                    <span>장바구니가 비어있습니다.</span>
-                )}
+                ) : null}
             </div>
-            <h2>총 가격: {totalPrice}원</h2>
+            <h2>합계: {totalPrice}원</h2>
         </>
     );
 };
 
-const MenuItem = ({ menu, onRemove, onCountChange, count }) => {
+const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) => {
     const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
 
     // Increment item count
     const increment = () => {
         const newCount = count + 1;
-        onCountChange(menu.menuCode, newCount);
+        onCountChange(menu.id, newCount);
     };
 
     // Decrement item count
     const decrement = () => {
         const newCount = count > 1 ? count - 1 : 1; // Minimum count is 1
-        onCountChange(menu.menuCode, newCount);
+        onCountChange(menu.id, newCount);
     };
 
     return (
         <div>
-            <li>{menu.menuName}</li>
+            <br />
+            <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                {isModalOpen ? null : <button onClick={() => onRemove(menu.id)}>X</button>}
+                &nbsp;
+                {index}
+                &nbsp;&nbsp;&nbsp;
+                {menu.menuName}
+                &nbsp;&nbsp;&nbsp;
+                {isModalOpen ? null : <button onClick={decrement}>-</button>}
+                <h3>{count} 개</h3>
+                {isModalOpen ? null : <button onClick={increment}>+</button>}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <h3>{pricePerItem * count}원</h3>
+            </div>
             {menu.extraMenu && menu.extraMenu.length > 0 ? (
                 <ul>
                     {menu.extraMenu.map((extra, index) => (
@@ -76,15 +89,7 @@ const MenuItem = ({ menu, onRemove, onCountChange, count }) => {
                         </li>
                     ))}
                 </ul>
-            ) : (<p/>)}
-            <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <button onClick={() => onRemove(menu.menuCode)}>X</button>
-                <button onClick={increment}>+</button>
-                <h3>{count}</h3>
-                <button onClick={decrement}>-</button>
-            </div>
-            <h3>{pricePerItem * count}원 (개당 가격: {pricePerItem}원)</h3>
-            <br></br>
+            ) : null}
         </div>
     );
 };

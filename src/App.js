@@ -5,7 +5,7 @@ import IdlePage from "./pages/Idle/Idle";
 import Redirect from "./pages/Redirect/redirect";
 import Result from "./pages/Result/Result";
 import Layout from "./layouts/Layout";
-import { Point } from "./pages/Point/Point";
+import { Point } from "./pages/Point/PointStorage";
 import Purchase from "./pages/Payment/Payment";
 import MenuDetail from "./pages/option/ShowExtraOptions";
 import ShoppingCart from "./store/ShoppingList";
@@ -66,7 +66,7 @@ function App()
         <Route path="/point" element={<Point/>}/>
         <Route path="/userpoint" element={<UserPoint/>}/>
         <Route path="/coupon" element={<Coupon/>}/>
-        <Route path="/purchase" element={<Purchase/>}/>
+        <Route path="/payment" element={<Purchase/>}/>
         <Route path="/result" element={<Result/>}/>
       </Routes>
     </BrowserRouter>

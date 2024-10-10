@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { DrinkMenu } from "../ShowItems";
 import { hotDrinks, iceDrinks } from "../getMenuDetails";
-import ShoppingCart from "../../store/ShoppingList";
 
 
 
@@ -18,7 +17,6 @@ export const HotDrinks = ()=>{
         <div>
             {drinksMenu.map(hotDrinks => <DrinkMenu key={hotDrinks.menuCode} drinkMenu={hotDrinks}/>)}
         </div>
-        <ShoppingCart/>        
         </>
     )
 }
@@ -37,7 +35,6 @@ export const IceDrinks = ()=>{
         <div>
             {drinksMenu.map(iceDrinks => <DrinkMenu key={iceDrinks.menuCode} drinkMenu={iceDrinks}/>)}
         </div>
-        <ShoppingCart/>        
         </>
     )
 }
