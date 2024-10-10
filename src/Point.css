@@ -60,15 +60,20 @@
     justify-content: center;
     margin-bottom: 20px;
   }
+
+ /* user-point-use-button
+user-point-no-point-button */
   
   .user-point-use-button {
     padding: 10px 20px;
     font-size: 16px;
+    margin-top: 20px;
     background-color: #3b3b3b; /* 포인트 사용 버튼을 검정색으로 */
     color: #fff; /* 텍스트는 흰색으로 */
     border: 2px solid #fdd835;
     border-radius: 5px;
     cursor: pointer;
+    width: 200px;
   }
   
   .user-point-use-button:hover {
@@ -84,6 +89,7 @@
     border: 2px solid #3b3b3b;
     border-radius: 5px;
     cursor: pointer;
+    width: 200px;
   }
   
   .user-point-no-point-button:hover {

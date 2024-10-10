@@ -1,0 +1,82 @@
+.cupon-container {
+    background-color: #f7f3e9; /* 메가커피 배경 색상에 맞는 밝은 톤 */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: #4a2e19; /* 어두운 갈색 텍스트 */
+    font-family: 'Noto Sans', sans-serif;
+    max-width: 500px; /* 화면 중앙에 적당한 크기로 */
+    margin: 0 auto; /* 화면 가운데 배치 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 효과 */
+  }
+  
+  .cupon-title {
+    font-size: 26px; /* 제목 크기 약간 키움 */
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .cupon-input {
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #fdd835;
+    border-radius: 5px;
+    width: 80%; /* 입력 필드 넓이 증가 */
+    margin-bottom: 20px; /* 아래 여백 추가 */
+    outline: none;
+  }
+  
+  .cupon-info {
+    background-color: #fffbe7; /* 밝은 배경으로 정보 구역 구분 */
+    border: 2px solid #fdd835;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 정보 박스에 입체감 */
+    text-align: left; /* 왼쪽 정렬로 변경 */
+  }
+  
+  .cupon-info h3 {
+    font-size: 20px;
+    margin: 12px 0;
+    color: #4a2e19; /* 갈색 텍스트 */
+  }
+  
+  .invalid-cupon {
+    color: #b71c1c; /* 빨간색으로 유효하지 않은 쿠폰 알림 */
+    font-weight: bold; /* 강한 알림 느낌 */
+    margin-top: 20px;
+  }
+  
+  .cupon-buttons {
+    margin-top: 30px; /* 버튼 간격 확대 */
+    text-align: center; /* 버튼은 가운데 정렬 */
+  }
+  
+  .cupon-use-button, .cupon-back-button {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #4a2e19;
+    transition: background-color 0.3s ease; /* 호버 시 배경색 부드럽게 변경 */
+  }
+  
+  .cupon-use-button {
+    background-color: #fdd835; /* 메가커피의 노란색 버튼 */
+    color: #4a2e19;
+  }
+  
+  .cupon-back-button {
+    background-color: #4a2e19; /* 어두운 갈색 버튼 */
+    color: #fff;
+  }
+  
+  .cupon-use-button:hover {
+    background-color: #ffd700; /* 호버 시 더 밝은 노란색 */
+  }
+  
+  .cupon-back-button:hover {
+    background-color: #3b2a1a; /* 호버 시 더 어두운 갈색 */
+  }
