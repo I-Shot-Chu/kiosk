@@ -22,7 +22,8 @@ const ShoppingCart = ({ isModalOpen }) => {
     };
 
     // Calculate total price
-    const totalPrice = cartItems.reduce((acc, menu) => {
+    const totalPrice = cartItems.reduce((acc, menu) =>
+    {
         const count = itemCounts[menu.id] || 1; // Default count is 1 if not yet set
         const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
         return acc + pricePerItem * count;
