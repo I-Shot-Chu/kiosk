@@ -81,12 +81,15 @@ const Result = () =>
             </div>
             <div className="receipt">
                 <Modal isOpen = {secondModal} ariaHideApp={false}>
-                    <h3>{lang ? "주문번호" : "Ordered No."}</h3>
-                    <h1>{orderNumber}</h1>
+                    <h1>주문완료</h1>
+                    <h4>결제가 정상적으로 처리되었습니다.</h4>
                     <h3>
-                        {lang ? "상품 제조가 완료되어 대기번호가 호출되면 픽업대로 오시기 바랍니다. 감사합니다." 
-                        : "Please wait for a moment until we call your number. Thank you."}
+                        {lang ? "출력되는 영수증에서 주문번호를 확인해주세요." 
+                        : "Please check your order nunber at printed receipt."}
                     </h3>
+                    <h2>{lang ? "주문번호" : "Order No."}</h2>
+                    <h1>{lang ? null : "No. "}{orderNumber}{lang ? "번" : null}</h1>
+                    <h5>주문하신 메뉴를 <br/> 정성껏 준비중입니다.</h5>
                 </Modal>
             </div>
         </>
