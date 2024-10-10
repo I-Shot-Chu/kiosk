@@ -15,8 +15,6 @@ const Result = () =>
 
     const [firstModal, setFirstModal] = useState(true);
 
-    const [secondModal, setSecondModal] = useState(false);
-
     const [timeLeft, setTimeLeft] = useState(9);
 
     const [orderNumber, setOrderNumber] = useState(null);
@@ -40,12 +38,10 @@ const Result = () =>
         if(timeLeft === 0)
         {
             setFirstModal(false);
-            setSecondModal(true);
         }
 
         if(timeLeft === -5)
         {
-            setSecondModal(false);
             navigate("/idle");
         }
         return () => clearInterval(timer);
@@ -55,15 +51,12 @@ const Result = () =>
     {
         setTimeLeft(0);
         setFirstModal(false);
-        setSecondModal(true);
-        //setReceipt(true);
     };
 
     const onClickHandlerNo = () =>
     {
         setTimeLeft(0);
         setFirstModal(false);
-        setSecondModal(true);
     };
 
     return (
@@ -80,17 +73,15 @@ const Result = () =>
                 </Modal>
             </div>
             <div className="receipt">
-                <Modal isOpen = {secondModal} ariaHideApp={false}>
-                    <h1>주문완료</h1>
-                    <h4>결제가 정상적으로 처리되었습니다.</h4>
-                    <h3>
-                        {lang ? "출력되는 영수증에서 주문번호를 확인해주세요." 
-                        : "Please check your order nunber at printed receipt."}
-                    </h3>
-                    <h2>{lang ? "주문번호" : "Order No."}</h2>
-                    <h1>{lang ? null : "No. "}{orderNumber}{lang ? "번" : null}</h1>
-                    <h5>주문하신 메뉴를 <br/> 정성껏 준비중입니다.</h5>
-                </Modal>
+                <h1>주문완료</h1>
+                <h4>결제가 정상적으로 처리되었습니다.</h4>
+                <h3>
+                    {lang ? "출력되는 영수증에서 주문번호를 확인해주세요." 
+                    : "Please check your order nunber at printed receipt."}
+                </h3>
+                <h2>{lang ? "주문번호" : "Order No."}</h2>
+                <h1>{lang ? null : "No. "}{orderNumber}{lang ? "번" : null}</h1>
+                <h5>주문하신 메뉴를 <br/> 정성껏 준비중입니다.</h5>
             </div>
         </>
     )
