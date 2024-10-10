@@ -12,7 +12,7 @@ export const language = create(persist((set) => (
     }
 ));
 
-export const useCartStore = create(persist((set) => (
+export const useCartStore = create(persist((set, get) => (
 {
     cartItems: [],
     
@@ -36,6 +36,17 @@ export const useCartStore = create(persist((set) => (
     {
         cartItems: state.cartItems.map((item) => item.id === id ? { ...item, count: newCount } : item),
     })),
+
+    totalPrice: () =>
+    {
+        const { cartItems } = get();
+        return cartItems.reduce((acc, menu) =>
+        {
+            const count = menu.count || 1; // Default count is 1 if not yet set
+            const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
+            return acc + pricePerItem * count;
+        }, 0);
+    },
 }),
 {
     name: 'cart-storage', 

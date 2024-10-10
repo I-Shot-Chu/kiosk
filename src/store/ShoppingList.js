@@ -2,7 +2,7 @@ import { useCartStore } from "./store"; // Zustand store
 import { useState } from "react";
 
 const ShoppingCart = ({ isModalOpen }) => {
-    const { cartItems, removeFromCart, updateItemCount } = useCartStore(); // Zustand actions
+    const { cartItems, removeFromCart, updateItemCount, totalPrice } = useCartStore(); // Zustand actions
 
     const [itemCounts, setItemCounts] = useState({}); // Local state to handle item counts
 
@@ -21,14 +21,6 @@ const ShoppingCart = ({ isModalOpen }) => {
         updateItemCount(id, newCount); // Update count using id
     };
 
-    // Calculate total price
-    const totalPrice = cartItems.reduce((acc, menu) =>
-    {
-        const count = itemCounts[menu.id] || 1; // Default count is 1 if not yet set
-        const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
-        return acc + pricePerItem * count;
-    }, 0);
-
     return (
         <>
             <div>
@@ -46,7 +38,6 @@ const ShoppingCart = ({ isModalOpen }) => {
                     ))
                 ) : null}
             </div>
-            <h2>합계: {totalPrice}원</h2>
         </>
     );
 };

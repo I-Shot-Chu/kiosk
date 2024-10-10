@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import { useState } from "react";
 import MenuDetail from "../pages/option/ShowExtraOptions";
@@ -29,8 +28,8 @@ export const DrinkMenu = ({ drinkMenu }) => {
                 </div>
             </button>
             <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
-            <MenuDetail menuCode = {drinkMenu.menuCode} onClickHandler2 = {onClickHandler2}/>
-            <button onClick = {onClickHandler2}>취소</button>
+                <MenuDetail menuCode = {drinkMenu.menuCode} onClickHandler2 = {onClickHandler2}/>
+                <button onClick = {onClickHandler2}>취소</button>
             </Modal>
         </>
     );
@@ -63,8 +62,8 @@ export const DessertMenu = ({ dessertMenu }) => {
             </div>
             </button>
             <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
-            <MenuDetail menuCode = {dessertMenu.menuCode} onClickHandler2 = {onClickHandler2}/>
-            <button onClick = {onClickHandler2}>취소</button>
+                <MenuDetail menuCode = {dessertMenu.menuCode} onClickHandler2 = {onClickHandler2}/>
+                <button onClick = {onClickHandler2}>취소</button>
             </Modal>
         </>  
     );
@@ -96,8 +95,8 @@ export const MdItem = ({ mdProduct }) => {
             </div>
             </button>
             <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
-            <MenuDetail menuCode = {mdProduct.menuCode} onClickHandler2 = {onClickHandler2}/>
-            <button onClick = {onClickHandler2}>취소</button>
+                <MenuDetail menuCode = {mdProduct.menuCode} onClickHandler2 = {onClickHandler2}/>
+                <button onClick = {onClickHandler2}>취소</button>
             </Modal>
         </>  
     );

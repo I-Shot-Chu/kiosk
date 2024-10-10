@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 import Nav from "../components/Navigation/Navigation";
 import Header from "./Header";
 import Footer from "./Footer";
-import Timer from "./Timer";
 
 const Layout = ()=>{
 
@@ -11,7 +10,6 @@ const Layout = ()=>{
             <Header/>
             <Nav/>
             <Outlet/>
-            {/* <Timer/> */}
             <Footer/>
         </>
     )

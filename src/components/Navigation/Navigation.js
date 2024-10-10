@@ -5,26 +5,26 @@ const Nav = ()=>{
     return(
         <div>
             <ul>
-                <NavLink to={"/menu/newdrinks"}>[New Drinks] </NavLink>
-                <NavLink to={"/menu/newdessert"}>[New Dessert] </NavLink>
+                <NavLink to={"/menu/newdrinks"}>추천 음료/ </NavLink>
+                <NavLink to={"/menu/newdessert"}>추천 디저트/ </NavLink>
 
-                <NavLink to={"/menu/hotcoffee"}>[Hot Coffee] </NavLink>
-                <NavLink to={"/menu/icecoffee"}>[Ice Coffee] </NavLink>
+                <NavLink to={"/menu/hotcoffee"}>커피(HOT)/ </NavLink>
+                <NavLink to={"/menu/icecoffee"}>커피(ICE)/ </NavLink>
 
-                <NavLink to={"/menu/hottea"}>[Hot Tea] </NavLink>
-                <NavLink to={"/menu/icetea"}>[Ice Tea] </NavLink>
+                <NavLink to={"/menu/hottea"}>티(HOT)/ </NavLink>
+                <NavLink to={"/menu/icetea"}>티(ICE)/ </NavLink>
 
-                <NavLink to={"/menu/ade&juice"}>[Ade & Juice] </NavLink>
-                <NavLink to={"/menu/smoothie&frappe"}>[Smoothie & Frappe] </NavLink>
+                <NavLink to={"/menu/ade&juice"}>에이드&주스/ </NavLink>
+                <NavLink to={"/menu/smoothie&frappe"}>스무디&프라페/ </NavLink>
                 <br></br>
-                <NavLink to={"/menu/hotdecaf"}>[Hot Decaffein Coffee] </NavLink>
-                <NavLink to={"/menu/icedecaf"}>[Ice Decaffein Coffee] </NavLink>
+                <NavLink to={"/menu/hotdecaf"}>디카페인(HOT)/ </NavLink>
+                <NavLink to={"/menu/icedecaf"}>디카페인(ICE)/ </NavLink>
 
-                <NavLink to={"/menu/hotdrinks"}>[Hot Drinks] </NavLink>
-                <NavLink to={"/menu/icedrinks"}>[Ice Drinks] </NavLink>
+                <NavLink to={"/menu/hotdrinks"}>음료(HOT)/ </NavLink>
+                <NavLink to={"/menu/icedrinks"}>음료(ICE)/ </NavLink>
 
-                <NavLink to={"/menu/dessert"}>[Dessert] </NavLink>
-                <NavLink to={"/menu/md"}>[Md Product] </NavLink>
+                <NavLink to={"/menu/dessert"}>디저트/ </NavLink>
+                <NavLink to={"/menu/md"}>상품/ </NavLink>
             </ul>
         </div>
     )
