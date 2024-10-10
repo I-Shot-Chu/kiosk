@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
+import './Nav.css';
 
 const Nav = ()=>{
 
     return(
-        <div>
+        <div className="navbar">
+            <div className="navbar-header">
+                <span className="navbar-title">I-Shot-Chu☞☜</span>
+
+            </div>
             <ul>
                 <NavLink to={"/menu/newdrinks"}>New Drinks </NavLink>
                 <NavLink to={"/menu/newdessert"}>New Dessert </NavLink>

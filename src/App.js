@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Pages
 import IdlePage from "./IdlePage";
-import Redirect from "./redirect";
+import Redirect from "./Redirect";
 import Result from "./Result";
 import Layout from "./layout/Layout";
 import { Point } from "./Point";
