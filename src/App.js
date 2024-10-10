@@ -5,12 +5,11 @@ import IdlePage from "./pages/Idle/Idle";
 import Redirect from "./pages/Redirect/redirect";
 import Result from "./pages/Result/Result";
 import Layout from "./layouts/Layout";
-import { Point } from "./pages/Point/Point";
+import { Point } from "./pages/Point/PointStorage";
 import Purchase from "./pages/Payment/Payment";
 import MenuDetail from "./pages/option/ShowExtraOptions";
 import ShoppingCart from "./store/ShoppingList";
 import { UserPoint } from "./pages/Point/UserPoint";
-import { Cupon } from './pages/Coupon/Coupon';
 
 // Drink Pages
 import { HotCoffee, IceCoffee } from "./features/Drinks/Coffee";
@@ -26,17 +25,13 @@ import Dessert from "./features/Desserts/Dessert";
 import NewDessert from "./features/Desserts/NewDessert";
 import MdProduct from "./features/Merchandise/Merchandise";
 import { Card } from "./pages/Card/Card";
-import { useEffect, useState } from "react";
+import { Cupon } from "./pages/Coupon/Coupon";
+
 
 function App()
 {
 
-  const [finalTotalPrice,setFinalTotalPrice] =useState(0);
-
-  useEffect(()=>{
-    console.log(finalTotalPrice)
-  },[finalTotalPrice])
-
+ 
 
   return (
     <BrowserRouter>
@@ -60,7 +55,7 @@ function App()
           <Route path="icedecaf" element={<IceDecaf/>}/>
           <Route path="hotdrinks" element={<HotDrinks/>}/>
           <Route path="icedrinks" element={<IceDrinks/>}/>
-          <Route path="newdrinks" element={<NewDrinks  setFinalTotalPrice={setFinalTotalPrice}/>}/>
+          <Route path="newdrinks" element={<NewDrinks />}/>
 
           {/* Dessert and MD Routes */}
           <Route path="dessert" element={<Dessert/>}/>
@@ -69,14 +64,15 @@ function App()
 
           {/* Menu Detail and Shopping Cart */}
           <Route path=":menuCode" element={<MenuDetail/>}/>
-          <Route path="shoppingcart" element={<ShoppingCart  setFinalTotalPrice={setFinalTotalPrice}/>}/>
+          <Route path="shoppingcart" element={<ShoppingCart />}/>
         </Route>
 
         {/* Additional Pages */}
-        <Route path="/point" element={<Point finalTotalPrice={finalTotalPrice} setFinalTotalPrice = {setFinalTotalPrice} />}/>
-        <Route path="/userpoint" element={<UserPoint finalTotalPrice={finalTotalPrice} setFinalTotalPrice ={setFinalTotalPrice}/>}/>
-        <Route path="/coupon" element={<Cupon finalTotalPrice={finalTotalPrice} setFinalTotalPrice = {setFinalTotalPrice} />}/>
-        <Route path="/purchase" element={<Purchase/>}/>
+
+        <Route path="/menu/point" element={<Point />}/>
+        <Route path="/menu/userpoint" element={<UserPoint/>}/>
+        <Route path="/coupon" element={<Cupon/>}/>
+        <Route path="/payment" element={<Purchase/>}/>
         <Route path="/result" element={<Result/>}/>
         <Route path="/card" element={<Card/>}/>
 

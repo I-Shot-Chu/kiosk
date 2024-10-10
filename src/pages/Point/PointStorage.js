@@ -1,13 +1,16 @@
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Point.css';
+import { usePriceStore } from '../../store/store';
 
-export const Point = ({ finalTotalPrice ,setFinalTotalPrice}) => {
+export const Point = () => {
   const [isOk, setIsOk] = useState(false);
   const [phoneInput, setPhoneInput] = useState("");
   const [message, setMessage] = useState("");
   const [customers, setCustomers] = useState([]);
+
+  // Zustand로부터 totalPrice를 불러옴
+  const finalTotalPrice = usePriceStore((state) => state.totalPrice);
 
   const navigate = useNavigate();
 

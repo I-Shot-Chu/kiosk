@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { detailCoupon } from "../../server/api";
+import { detailCoupon } from "../../Api/api";
 import { useNavigate } from "react-router-dom";
+import { usePriceStore } from "../../store/store"; // Zustand 스토어 임포트
 import "./Cupon.css"; // 스타일을 외부 파일로 분리
 
-export const Cupon = ({ finalTotalPrice ,setFinalTotalPrice}) => {
+export const Cupon = () => {
   const [cupon, setCupon] = useState(null); // 쿠폰 정보를 저장
   const [cuponCode, setCuponCode] = useState(""); // 입력된 쿠폰 코드 저장
-  const [remainingAmount, setRemainingAmount] = useState(finalTotalPrice); // 남은 결제 금액 저장
+  const { totalPrice, setTotalPrice } = usePriceStore(); // Zustand 스토어에서 totalPrice와 setTotalPrice 가져오기
+  const [remainingAmount, setRemainingAmount] = useState(totalPrice); // 남은 결제 금액 저장
 
   useEffect(() => {
     if (cuponCode) {
@@ -15,11 +17,11 @@ export const Cupon = ({ finalTotalPrice ,setFinalTotalPrice}) => {
 
       if (fetchedCupon) {
         // 쿠폰 금액을 차감한 나머지 결제 금액 계산
-        const remaining = finalTotalPrice - fetchedCupon.price;
+        const remaining = totalPrice - fetchedCupon.price;
         setRemainingAmount(remaining > 0 ? remaining : 0);
       }
     }
-  }, [cuponCode, finalTotalPrice]);
+  }, [cuponCode, totalPrice]);
 
   const navigate = useNavigate();
 
@@ -28,6 +30,13 @@ export const Cupon = ({ finalTotalPrice ,setFinalTotalPrice}) => {
   };
 
   const useCupon = () => {
+    if (cupon) {
+      // 쿠폰을 사용하고 totalPrice 업데이트
+      setTotalPrice(remainingAmount);
+      alert(`쿠폰이 적용되었습니다! 남은 결제 금액: ${remainingAmount}`);
+    } else {
+      alert("유효한 쿠폰을 입력해주세요.");
+    }
     navigate("/result");
   };
 
@@ -48,12 +57,12 @@ export const Cupon = ({ finalTotalPrice ,setFinalTotalPrice}) => {
       {cupon ? (
         <div className="cupon-info">
           <h3 className="cupon-name">쿠폰 명칭: {cupon.name}</h3>
-          <h3 className="price">쿠폰 가격: \{cupon.price}</h3>
+          <h3 className="price">쿠폰 가격: {cupon.price}</h3>
           <h3 className="total">
-            결제할 금액: \{remainingAmount}
+            결제할 금액: {remainingAmount}
           </h3>
           <h3 className="remaining">
-            잔여 쿠폰 금액: \{cupon.price > finalTotalPrice ? cupon.price - finalTotalPrice : 0}
+            잔여 쿠폰 금액: {cupon.price > totalPrice ? cupon.price - totalPrice : 0}
           </h3>
         </div>
       ) : (

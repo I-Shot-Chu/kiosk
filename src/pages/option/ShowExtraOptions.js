@@ -1,21 +1,11 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {useNavigate} from "react-router-dom";
-import { drinkgetMenuDetail,dessertgetMenuDetail,mdgetMenuDetail } from "../../features/getMenuDetails";
+import { drinkgetMenuDetail, dessertgetMenuDetail, mdgetMenuDetail } from "../../features/getMenuDetails";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./Option";
-import Modal from 'react-modal';
-import ShoppingCart from "../../store/ShoppingList";
 import { useCartStore } from "../../store/store";
 
-// 리듀서 정의
-
-const MenuDetail = () => {
+const MenuDetail = ( {menuCode, onClickHandler2} ) => {
     
-    const { cartItems, addToCart } = useCartStore();
-
-    const navigate = useNavigate();
-
-    const {menuCode} = useParams();
+    const { addToCart } = useCartStore();
 
     const [menu, setMenu] = useState({
         menuName : '',
@@ -23,13 +13,11 @@ const MenuDetail = () => {
         detail : {description:'', image:''} 
     });
 
-    const [extraMenu,setExtraMenu] = useState([  //추가메뉴(샷,휘핑)
-    ]);
+    //추가메뉴(샷,휘핑)
+    const [extraMenu,setExtraMenu] = useState([]);
 
-    const [modal, setModal] = useState(false);
-
-
-    useEffect(() => {
+    useEffect(() =>
+    {
         const drinkMenuDetail = drinkgetMenuDetail(menuCode);
         const dessertMenuDetail = dessertgetMenuDetail(menuCode);
         const mdMenuDetail = mdgetMenuDetail(menuCode);
@@ -65,13 +53,10 @@ const MenuDetail = () => {
           extraMenu,
           finalTotalPrice
         });
-    
-        setModal(true);
+        onClickHandler2();
     };
 
-    const onClickHandler2 = () => {
-        navigate(-1);
-    }
+    const imageUrl = require(`../../assets/images/images_menus/${menuCode}.jpg`);
 
     return(
         <>
@@ -79,7 +64,7 @@ const MenuDetail = () => {
             
             {menu.menuName ? (
                 <>
-            <img src={menu.detail.image} style={{maxWidth:300}} alt={menu.menuName}/>
+            <img src={imageUrl} style={{maxWidth:100}} alt={menu.menuName}/>
             <h3>{menu.menuName}</h3>
             <h3>{menu.menuPrice}원</h3>
             <p>{menu.detail.description}</p>
@@ -96,20 +81,10 @@ const MenuDetail = () => {
             {<ExtraTopping extraMenu = {extraMenu} handleOptionSelect= {handleOptionSelect}/>}
             <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
-            <Modal isOpen = {modal} ariaHideApp={false} onRequestClose={onClickHandler2}>
-                <ShoppingCart cartItems={cartItems} />
-                <button onClick={onClickHandler2}>닫기</button>
-            </Modal>
-            <button onClick={onClickHandler2}>취소</button>
             </>) : 
             (<>
             <h3>총 가격: {finalTotalPrice}원</h3>
             <button onClick={onClickHandler}>주문담기</button>
-            <Modal isOpen = {modal} ariaHideApp={false} onRequestClose={onClickHandler2}>
-                <ShoppingCart cartItems={cartItems} />
-                <button onClick={onClickHandler2}>닫기</button>
-            </Modal>
-            <button onClick={onClickHandler2}>취소</button>
             </>)}
         </>
     );
