@@ -30,7 +30,7 @@ export const Point = ({ finalTotalPrice }) => {
     })
       .then((response) => response.json())
       .then((updatedCustomer) => {
-        alert(`${updatedCustomer.name}님, 포인트가 적립되었습니다! 현재 포인트: ${updatedCustomer.points}`);
+        alert(`${updatedCustomer.name}님, ${pointsToAccrue}포인트가 적립되었습니다! 현재 포인트: ${updatedCustomer.points}`);
         setCustomers((prevCustomers) =>
           prevCustomers.map((cust) =>
             cust.phone === updatedCustomer.phone ? updatedCustomer : cust

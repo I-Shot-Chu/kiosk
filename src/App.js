@@ -57,7 +57,7 @@ function App() {
           <Route path="dessert" element={<Dessert />} />
           <Route path="newdessert" element={<NewDessert />} />
           <Route path="md" element={<MdProduct />} />
-          <Route path="point" element={<Point />} />
+          <Route path="point" element={<Point  finalTotalPrice={finalTotalPrice}/>} />
 
           {/* 추가 메뉴 상세 옵션 */}
           <Route path=":menuCode" element={<MenuDetail dispatch={dispatch} />}/>
