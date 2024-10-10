@@ -1,7 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { useCartStore } from "./store"; // Zustand store
 import { useState } from "react";
 
-const ShoppingCart = () => {
+const ShoppingCart = ({setFinalTotalPrice}) => {
     const { cartItems, removeFromCart, clearCart, updateItemCount } = useCartStore(); // Zustand actions
     const [itemCounts, setItemCounts] = useState({}); // Local state to handle item counts
 
@@ -26,6 +27,15 @@ const ShoppingCart = () => {
         return acc + pricePerItem * count;
     }, 0);
 
+    const go  = useNavigate();
+
+    const submit=()=>{
+        console.log(typeof setFinalTotalPrice); 
+       setFinalTotalPrice(prev => prev + totalPrice);
+         //   go("point");
+      
+    }
+
     return (
         <>
             <button onClick={clearCart}>전체 삭제</button>
@@ -46,6 +56,7 @@ const ShoppingCart = () => {
                 )}
             </div>
             <h2>총 가격: {totalPrice}원</h2>
+            <button onClick={submit}>담기</button>
         </>
     );
 };

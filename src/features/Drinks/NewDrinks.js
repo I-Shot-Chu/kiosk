@@ -5,7 +5,7 @@ import ShoppingCart from "../../store/ShoppingList";
 
 
 
-const NewDrinks = ()=>{
+const NewDrinks = ({setFinalTotalPrice})=>{
 
 
     const [newDrinksMenu, setNewDrinksMenu] = useState([]);
@@ -20,7 +20,7 @@ const NewDrinks = ()=>{
             <div>
             {newDrinksMenu.map(newDrinks => <DrinkMenu key={newDrinks.menuCode} drinkMenu={newDrinks}/>)}
             </div>
-            <ShoppingCart/>
+            <ShoppingCart setFinalTotalPrice={setFinalTotalPrice}/>
         </>
     )
 

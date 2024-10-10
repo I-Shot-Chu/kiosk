@@ -1,55 +1,69 @@
 import { useEffect, useState } from "react";
 import { detailCoupon } from "../../server/api";
 import { useNavigate } from "react-router-dom";
+import "./Cupon.css"; // 스타일을 외부 파일로 분리
 
-
-export const Coupon = () => {
-  const [coupon, setCoupon] = useState(""); // 초기값을 null로 설정
-  const [couponCode, setCouponCode] = useState("");
+export const Cupon = ({ finalTotalPrice ,setFinalTotalPrice}) => {
+  const [cupon, setCupon] = useState(null); // 쿠폰 정보를 저장
+  const [cuponCode, setCuponCode] = useState(""); // 입력된 쿠폰 코드 저장
+  const [remainingAmount, setRemainingAmount] = useState(finalTotalPrice); // 남은 결제 금액 저장
 
   useEffect(() => {
-    if (couponCode) { // 쿠폰 코드가 입력되었을 때만 API 호출
-      const fetchedCoupon = detailCoupon(couponCode); // detailCoupon에서 반환된 값을 받아옴
-      setCoupon(fetchedCoupon);
+    if (cuponCode) {
+      const fetchedCupon = detailCoupon(cuponCode); 
+      setCupon(fetchedCupon);
+
+      if (fetchedCupon) {
+        // 쿠폰 금액을 차감한 나머지 결제 금액 계산
+        const remaining = finalTotalPrice - fetchedCupon.price;
+        setRemainingAmount(remaining > 0 ? remaining : 0);
+      }
     }
-  }, [couponCode]);
+  }, [cuponCode, finalTotalPrice]);
 
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
 
-  const handler = (e) => {
-    setCouponCode(e.target.value);
+  const handleInputChange = (e) => {
+    setCuponCode(e.target.value);
   };
 
-  const useCoupon = ()=>{
-    nevigate("/result");
-  }
-   
-  
-  const back = ()=>{
-    nevigate("/purchase");
-   }
+  const useCupon = () => {
+    navigate("/result");
+  };
+
+  const back = () => {
+    navigate("/purchase");
+  };
 
   return (
-    <>
-      <h2>쿠폰 번호: <input placeholder="번호 입력" value={couponCode} onChange={handler} /></h2>
+    <div className="cupon-container">
+      <h2 className="cupon-title">쿠폰 번호:</h2>
+      <input 
+        className="cupon-input" 
+        placeholder="번호 입력" 
+        value={cuponCode} 
+        onChange={handleInputChange} 
+      />
       
-      {coupon ? (
-        <>
-          <h3>쿠폰 명칭: {coupon.couponCode}</h3>
-          <h3>쿠폰 명칭: {coupon.name}</h3>
-          <h3>가격: \2000</h3>
-          <h3>잔여 쿠폰금액: \{(coupon.price-2000)>0?coupon.price-2000:0}</h3>
-          <h3>결제 금액: \{(2000-coupon.price)>0?2000-coupon.price:0}</h3>
-
-
-        </>
+      {cupon ? (
+        <div className="cupon-info">
+          <h3 className="cupon-name">쿠폰 명칭: {cupon.name}</h3>
+          <h3 className="price">쿠폰 가격: \{cupon.price}</h3>
+          <h3 className="total">
+            결제할 금액: \{remainingAmount}
+          </h3>
+          <h3 className="remaining">
+            잔여 쿠폰 금액: \{cupon.price > finalTotalPrice ? cupon.price - finalTotalPrice : 0}
+          </h3>
+        </div>
       ) : (
-        <h2>유효한 쿠폰 번호를 입력해주세요.</h2>
+        <h2 className="invalid-cupon">유효한 쿠폰 번호를 입력해주세요.</h2>
       )}
-      <br/>
-       <button onClick={useCoupon}>사용</button>
-      <button onClick={back}>돌아가기</button> 
-
-    </>
+      
+      <div className="cupon-buttons">
+        <button className="cupon-use-button" onClick={useCupon}>사용</button>
+        <button className="cupon-back-button" onClick={back}>돌아가기</button>
+      </div>
+    </div>
   );
 };
