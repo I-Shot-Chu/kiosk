@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { dessert } from "../getMenuDetails";
 import { DessertMenu } from "../ShowItems";
+import ShoppingCart from "../../store/ShoppingList";
 
 
 
@@ -13,9 +14,12 @@ const Dessert = ()=>{
     },[]);
 
     return(
+        <>
         <div>
             {dessertMenu.map(dessert => <DessertMenu key={dessert.menuCode} dessertMenu={dessert}/>)}
         </div>
+        <ShoppingCart/>
+        </>
     )
 }
 

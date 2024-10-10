@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {  MdItem } from "../ShowItems";
 import { mdProduct } from "../getMenuDetails";
+import ShoppingCart from "../../store/ShoppingList";
 
 
 
@@ -14,9 +15,12 @@ const MdProduct = ()=>{
     },[]);
 
     return(
+        <>
         <div>
             {md.map(mdItem => <MdItem key={mdItem.menuCode} mdProduct={mdItem}/>)}
         </div>
+        <ShoppingCart/>        
+        </>
     )
 }
 
