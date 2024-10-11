@@ -1,8 +1,14 @@
-import { useCartStore } from "./store"; // Zustand store
+import { useNavigate } from "react-router-dom";
+import { useCartStore ,usePriceStore} from "./store"; // Zustand store
 import { useState } from "react";
+
 
 const ShoppingCart = ({ isModalOpen }) => {
     const { cartItems, removeFromCart, updateItemCount, totalPrice } = useCartStore(); // Zustand actions
+
+    const { addToTotalPrice} = usePriceStore();
+
+
 
     const [itemCounts, setItemCounts] = useState({}); // Local state to handle item counts
 
@@ -21,6 +27,21 @@ const ShoppingCart = ({ isModalOpen }) => {
         updateItemCount(id, newCount); // Update count using id
     };
 
+    // Calculate total price
+    const ftotalPrice = cartItems.reduce((acc, menu) => {
+        const count = itemCounts[menu.id] || 1; // Default count is 1 if not yet set
+        const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
+        return acc + pricePerItem * count;
+    }, 0);
+
+     const go  = useNavigate();
+
+    const submit=()=>{
+        addToTotalPrice(ftotalPrice)
+        go("userpoint");
+      
+     }
+
     return (
         <>
             <div>
@@ -38,6 +59,9 @@ const ShoppingCart = ({ isModalOpen }) => {
                     ))
                 ) : null}
             </div>
+            <button onClick={submit}>go</button>
+
+
         </>
     );
 };
