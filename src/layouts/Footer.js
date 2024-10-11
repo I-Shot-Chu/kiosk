@@ -57,7 +57,7 @@ const Footer = () =>
             {/* Timer component, passing the timeLeft and reset function */}
             <Timer timeLeft={timeLeft} resetTime={setTimeLeft} />
             <button onClick={handleClear}>{lang ? "전체 삭제" : "Clear all"}</button>
-            <h3>{lang ? "선택한 상품: " : "Selected product: "}{cartItems.length} {lang ? "개" : "type(s)"}</h3>
+            <h3>{lang ? "선택한 상품: " : null}{cartItems.length} {lang ? "개" : "kind(s) of product"}</h3>
             <ShoppingCart isModalOpen={isModalOpen} />
             <br></br>
             <button onClick={openModal}>{totalPrice()}{lang ? "원" : " Won"} <br></br>{lang ? "결제하기" : "Payment"}</button>
