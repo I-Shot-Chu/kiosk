@@ -1,55 +1,93 @@
 import { useEffect, useState } from "react";
-import { detailCoupon } from "../../server/api";
+import { detailCoupon } from "../../server/api"; // 쿠폰 정보를 가져오는 API
 import { useNavigate } from "react-router-dom";
+import { usePriceStore } from "../../store/store"; // Zustand 스토어 임포트
+import "./Cupon.css"; // 스타일을 외부 파일로 분리
 
+export const Cupon = () => {
+  const [cupon, setCupon] = useState(null); // 쿠폰 정보를 저장
+  const [cuponCode, setCuponCode] = useState(""); // 입력된 쿠폰 코드 저장
+  const { totalPrice, setTotalPrice } = usePriceStore(); // Zustand 스토어에서 totalPrice와 setTotalPrice 가져오기
+  const [remainingAmount, setRemainingAmount] = useState(totalPrice); // 남은 결제 금액 저장
 
-export const Coupon = () => {
-  const [coupon, setCoupon] = useState(""); // 초기값을 null로 설정
-  const [couponCode, setCouponCode] = useState("");
+  const navigate = useNavigate();
 
+  // 쿠폰 코드가 변경될 때마다 해당 쿠폰을 가져오는 로직
   useEffect(() => {
-    if (couponCode) { // 쿠폰 코드가 입력되었을 때만 API 호출
-      const fetchedCoupon = detailCoupon(couponCode); // detailCoupon에서 반환된 값을 받아옴
-      setCoupon(fetchedCoupon);
-    }
-  }, [couponCode]);
+    const fetchCupon = async () => {
+      if (cuponCode.trim()) { // 입력값이 비어있지 않은지 확인
+        try {
+          const fetchedCupon = await detailCoupon(cuponCode.trim()); // 쿠폰 정보 비동기 처리
+          setCupon(fetchedCupon);
 
-  const nevigate = useNavigate();
+          if (fetchedCupon) {
+            // 쿠폰 금액을 차감한 나머지 결제 금액 계산
+            const remaining = totalPrice - fetchedCupon.price;
+            setRemainingAmount(remaining > 0 ? remaining : 0);
+          } else {
+            setRemainingAmount(totalPrice); // 쿠폰이 없으면 totalPrice 그대로
+          }
+        } catch (error) {
+          console.error('Error fetching coupon:', error);
+          alert("쿠폰을 가져오는 중 오류가 발생했습니다."); // 오류 메시지 추가
+        }
+      } else {
+        setCupon(null); // 입력이 비어있을 경우 쿠폰 정보 초기화
+        setRemainingAmount(totalPrice); // 남은 금액 초기화
+      }
+    };
 
-  const handler = (e) => {
-    setCouponCode(e.target.value);
+    fetchCupon();
+  }, [cuponCode, totalPrice]);
+
+  const handleInputChange = (e) => {
+    setCuponCode(e.target.value);
   };
 
-  const useCoupon = ()=>{
-    nevigate("/result");
-  }
-   
-  
-  const back = ()=>{
-    nevigate("/purchase");
-   }
+  const useCupon = () => {
+    if (cupon) {
+      // 쿠폰을 사용하고 totalPrice 업데이트
+      setTotalPrice(remainingAmount);
+      alert(`쿠폰이 적용되었습니다! 남은 결제 금액: ${remainingAmount}`);
+      navigate("/result"); // 사용 후 결과 페이지로 이동
+    } else {
+      alert("유효한 쿠폰을 입력해주세요."); // 유효하지 않은 쿠폰 메시지
+    }
+  };
+
+  const back = () => {
+    navigate("/purchase"); // 이전 페이지로 이동
+  };
 
   return (
-    <>
-      <h2>쿠폰 번호: <input placeholder="번호 입력" value={couponCode} onChange={handler} /></h2>
+    <div className="cupon-container">
+      <h2 className="cupon-title">쿠폰 번호:</h2>
+      <input 
+        className="cupon-input" 
+        placeholder="번호 입력" 
+        value={cuponCode} 
+        onChange={handleInputChange} 
+      />
       
-      {coupon ? (
-        <>
-          <h3>쿠폰 명칭: {coupon.couponCode}</h3>
-          <h3>쿠폰 명칭: {coupon.name}</h3>
-          <h3>가격: \2000</h3>
-          <h3>잔여 쿠폰금액: \{(coupon.price-2000)>0?coupon.price-2000:0}</h3>
-          <h3>결제 금액: \{(2000-coupon.price)>0?2000-coupon.price:0}</h3>
-
-
-        </>
+      {cupon ? (
+        <div className="cupon-info">
+          <h3 className="cupon-name">쿠폰 명칭: {cupon.name}</h3>
+          <h3 className="price">쿠폰 가격: {cupon.price}</h3>
+          <h3 className="total">
+            결제할 금액: {remainingAmount}
+          </h3>
+          <h3 className="remaining">
+            잔여 쿠폰 금액: {cupon.price > totalPrice ? cupon.price - totalPrice : 0}
+          </h3>
+        </div>
       ) : (
-        <h2>유효한 쿠폰 번호를 입력해주세요.</h2>
+        <h2 className="invalid-cupon">유효한 쿠폰 번호를 입력해주세요.</h2>
       )}
-      <br/>
-       <button onClick={useCoupon}>사용</button>
-      <button onClick={back}>돌아가기</button> 
-
-    </>
+      
+      <div className="cupon-buttons">
+        <button className="cupon-use-button" onClick={useCupon}>사용</button>
+        <button className="cupon-back-button" onClick={back}>돌아가기</button>
+      </div>
+    </div>
   );
 };

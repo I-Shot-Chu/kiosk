@@ -10,7 +10,6 @@ import Purchase from "./pages/Payment/Payment";
 import MenuDetail from "./pages/option/ShowExtraOptions";
 import ShoppingCart from "./store/ShoppingList";
 import { UserPoint } from "./pages/Point/UserPoint";
-import { Coupon } from "./pages/Coupon/Coupon";
 
 // Drink Pages
 import { HotCoffee, IceCoffee } from "./features/Drinks/Coffee";
@@ -25,9 +24,15 @@ import { HotDrinks, IceDrinks } from "./features/Drinks/Drinks";
 import Dessert from "./features/Desserts/Dessert";
 import NewDessert from "./features/Desserts/NewDessert";
 import MdProduct from "./features/Merchandise/Merchandise";
+import { Card } from "./pages/Card/Card";
+import { Cupon } from "./pages/Coupon/Coupon";
+
 
 function App()
 {
+
+ 
+
   return (
     <BrowserRouter>
       <Routes>
@@ -50,7 +55,7 @@ function App()
           <Route path="icedecaf" element={<IceDecaf/>}/>
           <Route path="hotdrinks" element={<HotDrinks/>}/>
           <Route path="icedrinks" element={<IceDrinks/>}/>
-          <Route path="newdrinks" element={<NewDrinks/>}/>
+          <Route path="newdrinks" element={<NewDrinks />}/>
 
           {/* Dessert and MD Routes */}
           <Route path="dessert" element={<Dessert/>}/>
@@ -59,15 +64,18 @@ function App()
 
           {/* Menu Detail and Shopping Cart */}
           <Route path=":menuCode" element={<MenuDetail/>}/>
-          <Route path="shoppingcart" element={<ShoppingCart/>}/>
+          <Route path="shoppingcart" element={<ShoppingCart />}/>
         </Route>
 
         {/* Additional Pages */}
-        <Route path="/point" element={<Point/>}/>
-        <Route path="/userpoint" element={<UserPoint/>}/>
-        <Route path="/coupon" element={<Coupon/>}/>
+
+        <Route path="/menu/point" element={<Point />}/>
+        <Route path="/menu/userpoint" element={<UserPoint/>}/>
+        <Route path="/coupon" element={<Cupon/>}/>
         <Route path="/payment" element={<Purchase/>}/>
         <Route path="/result" element={<Result/>}/>
+        <Route path="/card" element={<Card/>}/>
+
       </Routes>
     </BrowserRouter>
   );
