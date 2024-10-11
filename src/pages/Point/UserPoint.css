@@ -5,20 +5,20 @@
     justify-content: center;
     padding: 20px;
     font-family: 'Arial', sans-serif;
-    background-color: #fffceb; /* 배경 색상을 연한 크림색으로 설정 */
+    background-color: #e0f7f2; /* 배경 색상을 민트색으로 설정 */
 }
 
 .user-point-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #3b3b3b; /* 제목 색상은 진한 검정색 */
+    color: #00796b; /* 제목 색상은 어두운 민트색 */
 }
 
 .user-point-price {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #3b3b3b;
+    color: #00796b; /* 가격 색상도 어두운 민트색 */
 }
 
 .user-point-input-section {
@@ -33,7 +33,7 @@
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
-    border: 2px solid #fdd835; /* 입력창 테두리 색상을 노란색으로 */
+    border: 2px solid #26a69a; /* 입력창 테두리 색상을 어두운 민트색으로 */
     border-radius: 5px;
 }
 
@@ -48,9 +48,9 @@
 .user-point-delete-button {
     padding: 15px;
     font-size: 18px;
-    background-color: #fdd835; /* 버튼 색상을 Megacoffee의 노란색으로 설정 */
-    color: #3b3b3b; /* 텍스트는 진한 검정색으로 */
-    border: 2px solid #3b3b3b; /* 테두리 색상도 검정 */
+    background-color: #4db6ac; /* 버튼 색상을 민트색으로 설정 */
+    color: #fff; /* 텍스트는 흰색으로 */
+    border: 2px solid #00796b; /* 테두리 색상도 어두운 민트색 */
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -58,7 +58,7 @@
 
 .user-point-number-button:hover,
 .user-point-delete-button:hover {
-    background-color: #ffd54f; /* 버튼을 호버하면 더 밝은 노란색 */
+    background-color: #009688; /* 버튼을 호버하면 좀 더 어두운 민트색 */
 }
 
 .user-point-actions {
@@ -70,15 +70,15 @@
 .user-point-use-button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #3b3b3b; /* 포인트 사용 버튼을 검정색으로 */
+    background-color: #00796b; /* 포인트 사용 버튼을 어두운 민트색으로 */
     color: #fff; /* 텍스트는 흰색으로 */
-    border: 2px solid #fdd835;
+    border: 2px solid #26a69a; /* 테두리 색상은 밝은 민트색 */
     border-radius: 5px;
     cursor: pointer;
 }
 
 .user-point-use-button:hover {
-    background-color: #4f4f4f; /* 호버 시 더 밝은 검정색 */
+    background-color: #004d40; /* 호버 시 더 어두운 민트색 */
 }
 
 .user-point-no-point-button {
@@ -86,18 +86,18 @@
     font-size: 16px;
     margin-top: 20px;
     background-color: #fff; /* 포인트 없이 결제 버튼은 흰색 */
-    color: #3b3b3b;
-    border: 2px solid #3b3b3b;
+    color: #00796b; /* 텍스트 색상은 어두운 민트색 */
+    border: 2px solid #00796b; /* 테두리 색상은 어두운 민트색 */
     border-radius: 5px;
     cursor: pointer;
 }
 
 .user-point-no-point-button:hover {
-    background-color: #f5f5f5; /* 호버 시 약간의 밝은 회색 */
+    background-color: #f0f0f0; /* 호버 시 약간의 밝은 회색 */
 }
 
 .user-point-message {
-    color: red;
+    color: #d32f2f; /* 메시지 색상은 붉은색 */
     font-size: 14px;
     margin-top: 10px;
 }

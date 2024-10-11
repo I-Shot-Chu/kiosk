@@ -1,104 +1,105 @@
 .user-point-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #fffceb; /* 배경 색상을 연한 크림색으로 설정 */
-  }
-  
-  .user-point-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #3b3b3b; /* 제목 색상은 진한 검정색 */
-  }
-  
-  .user-point-input-section {
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .user-point-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 20px;
-    border: 2px solid #fdd835; /* 입력창 테두리 색상을 노란색으로 */
-    border-radius: 5px;
-  }
-  
-  .user-point-button-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .user-point-number-button,
-  .user-point-delete-button {
-    padding: 15px;
-    font-size: 18px;
-    background-color: #fdd835; /* 버튼 색상을 Megacoffee의 노란색으로 설정 */
-    color: #3b3b3b; /* 텍스트는 진한 검정색으로 */
-    border: 2px solid #3b3b3b; /* 테두리 색상도 검정 */
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .user-point-number-button:hover,
-  .user-point-delete-button:hover {
-    background-color: #ffd54f; /* 버튼을 호버하면 더 밝은 노란색 */
-  }
-  
-  .user-point-actions {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px; /* 고정 너비 600px */
+  height: 800px; /* 고정 높이 800px */
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fffceb; /* 배경 색상을 연한 크림색으로 설정 */
+}
 
- /* user-point-use-button
-user-point-no-point-button */
-  
+.user-point-title {
+  font-size: 24px; /* 제목 크기 */
+  font-weight: bold; /* 제목 두께 */
+  margin-bottom: 20px; /* 제목 아래 여백 */
+  color: #3b3b3b; /* 제목 색상은 진한 검정색 */
+}
 
-  .user-point-use-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 20px;
-    background-color: #3b3b3b; /* 포인트 사용 버튼을 검정색으로 */
-    color: #fff; /* 텍스트는 흰색으로 */
-    border: 2px solid #fdd835;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 200px;
-  }
-  
-  .user-point-use-button:hover {
-    background-color: #4f4f4f; /* 호버 시 더 밝은 검정색 */
-  }
-  
-  .user-point-no-point-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 20px;
-    background-color: #fff; /* 포인트 없이 결제 버튼은 흰색 */
-    color: #3b3b3b;
-    border: 2px solid #3b3b3b;
-    border-radius: 5px;
-    cursor: pointer;
-    
-  }
-  
-  .user-point-no-point-button:hover {
-    background-color: #f5f5f5; /* 호버 시 약간의 밝은 회색 */
-  }
-  
-  .user-point-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-  }
+.user-point-price {
+  font-size: 20px; /* 가격 크기 */
+  margin-bottom: 10px; /* 아래 여백 */
+  color: #3b3b3b;
+}
+
+.user-point-input-section {
+  width: 100%; /* 전체 폭 사용 */
+  max-width: 400px; /* 최대 폭 400px */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.user-point-input {
+  width: 100%; /* 입력 필드 넓이 */
+  padding: 10px; /* 패딩 */
+  font-size: 16px; /* 글자 크기 */
+  text-align: center; /* 가운데 정렬 */
+  margin-bottom: 20px; /* 아래 여백 */
+  border: 2px solid #fdd835; /* 입력창 테두리 색상을 노란색으로 */
+  border-radius: 5px; /* 테두리 둥글게 */
+}
+
+.user-point-button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px; /* 버튼 간격 */
+  margin-bottom: 20px; /* 아래 여백 */
+}
+
+.user-point-number-button,
+.user-point-delete-button {
+  padding: 15px; /* 버튼 안쪽 여백 */
+  font-size: 18px; /* 글자 크기 */
+  background-color: #fdd835; /* 버튼 색상을 Megacoffee의 노란색으로 설정 */
+  color: #3b3b3b; /* 텍스트 색상은 진한 검정색으로 */
+  border: 2px solid #3b3b3b; /* 테두리 색상도 검정 */
+  border-radius: 5px; /* 테두리 둥글게 */
+  cursor: pointer; /* 커서 포인터 */
+  font-weight: bold; /* 글자 두께 */
+}
+
+.user-point-number-button:hover,
+.user-point-delete-button:hover {
+  background-color: #ffd54f; /* 버튼을 호버하면 더 밝은 노란색 */
+}
+
+.user-point-actions {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  margin-bottom: 20px; /* 아래 여백 */
+}
+
+.user-point-use-button {
+  padding: 10px 20px; /* 위아래 10px, 좌우 20px 여백 */
+  font-size: 16px; /* 글자 크기 */
+  background-color: #3b3b3b; /* 포인트 사용 버튼을 검정색으로 */
+  color: #fff; /* 텍스트는 흰색으로 */
+  border: 2px solid #fdd835; /* 테두리 색상은 노란색 */
+  border-radius: 5px; /* 테두리 둥글게 */
+  cursor: pointer; /* 커서 포인터 */
+}
+
+.user-point-use-button:hover {
+  background-color: #4f4f4f; /* 호버 시 더 밝은 검정색 */
+}
+
+.user-point-no-point-button {
+  padding: 10px 20px; /* 위아래 10px, 좌우 20px 여백 */
+  font-size: 16px; /* 글자 크기 */
+  margin-top: 20px; /* 위 여백 */
+  background-color: #fff; /* 포인트 없이 결제 버튼은 흰색 */
+  color: #3b3b3b; /* 텍스트 색상 */
+  border: 2px solid #3b3b3b; /* 테두리 색상은 진한 검정색 */
+  border-radius: 5px; /* 테두리 둥글게 */
+  cursor: pointer; /* 커서 포인터 */
+}
+
+.user-point-no-point-button:hover {
+  background-color: #f5f5f5; /* 호버 시 약간의 밝은 회색 */
+}
+
+.user-point-message {
+  color: red; /* 메시지 색상 */
+  font-size: 14px; /* 글자 크기 */
+  margin-top: 10px; /* 위 여백 */
+}
