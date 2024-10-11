@@ -35,12 +35,13 @@ export const Card = () => {
         브라우저가 동영상을 지원하지 않습니다.
       </video>
       <div className="card-buttons">
+      <button className="approve-button" onClick={ok}>
+          승인 요청
+        </button>
         <button className="cancel-button" onClick={back}>
           취소
         </button>
-        <button className="approve-button" onClick={ok}>
-          승인 요청
-        </button>
+      
       </div>
     </div>
   );

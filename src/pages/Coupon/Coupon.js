@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { detailCoupon } from "../../Api/api";
+import { detailCoupon } from "../../server/api"; // 쿠폰 정보를 가져오는 API
 import { useNavigate } from "react-router-dom";
 import { usePriceStore } from "../../store/store"; // Zustand 스토어 임포트
 import "./Cupon.css"; // 스타일을 외부 파일로 분리
@@ -15,9 +15,9 @@ export const Cupon = () => {
   // 쿠폰 코드가 변경될 때마다 해당 쿠폰을 가져오는 로직
   useEffect(() => {
     const fetchCupon = async () => {
-      if (cuponCode) {
+      if (cuponCode.trim()) { // 입력값이 비어있지 않은지 확인
         try {
-          const fetchedCupon = await detailCoupon(cuponCode); // 쿠폰 정보 비동기 처리
+          const fetchedCupon = await detailCoupon(cuponCode.trim()); // 쿠폰 정보 비동기 처리
           setCupon(fetchedCupon);
 
           if (fetchedCupon) {
@@ -29,10 +29,14 @@ export const Cupon = () => {
           }
         } catch (error) {
           console.error('Error fetching coupon:', error);
+          alert("쿠폰을 가져오는 중 오류가 발생했습니다."); // 오류 메시지 추가
         }
+      } else {
+        setCupon(null); // 입력이 비어있을 경우 쿠폰 정보 초기화
+        setRemainingAmount(totalPrice); // 남은 금액 초기화
       }
     };
-    
+
     fetchCupon();
   }, [cuponCode, totalPrice]);
 
@@ -45,14 +49,14 @@ export const Cupon = () => {
       // 쿠폰을 사용하고 totalPrice 업데이트
       setTotalPrice(remainingAmount);
       alert(`쿠폰이 적용되었습니다! 남은 결제 금액: ${remainingAmount}`);
+      navigate("/result"); // 사용 후 결과 페이지로 이동
     } else {
-      alert("유효한 쿠폰을 입력해주세요.");
+      alert("유효한 쿠폰을 입력해주세요."); // 유효하지 않은 쿠폰 메시지
     }
-    navigate("/result");
   };
 
   const back = () => {
-    navigate("/purchase");
+    navigate("/purchase"); // 이전 페이지로 이동
   };
 
   return (

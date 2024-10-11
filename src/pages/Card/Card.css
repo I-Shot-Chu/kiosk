@@ -1,66 +1,79 @@
+/* 전체 화면 크기와 중앙 정렬 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
 .card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 중앙 정렬 */
-    justify-content: center;
-    background-color: #f9f9f9; /* 밝은 배경 색상 */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
-    max-width: 400px; /* 최대 너비 설정 */
-    margin: auto; /* 중앙 정렬을 위한 여백 */
-  }
-  
-  .card-title {
-    font-size: 24px;
-    color: #333; /* 제목 색상 */
-    margin-bottom: 10px;
-  }
-  
-  .card-instructions {
-    font-size: 16px;
-    color: #555; /* 설명 색상 */
-    text-align: center; /* 중앙 정렬 */
-    margin-bottom: 20px;
-  }
-  
-  .card-video {
-    border-radius: 8px; /* 비디오의 모서리를 둥글게 */
-    margin-bottom: 20px; /* 비디오와 버튼 사이의 간격 */
-  }
-  
-  .card-buttons {
-    display: flex;
-    flex-direction: column; /* 버튼 세로 배치 */
-    gap: 10px; /* 버튼 간 간격 */
-  }
-  
-  .cancel-button {
-    color: white;
-    background-color: #8b0000; /* 어두운 빨간색 */
-    width: 150px;
-    height: 50px;
-    border: none; /* 테두리 없애기 */
-    border-radius: 5px; /* 둥근 모서리 */
-    cursor: pointer; /* 커서 변경 */
-    transition: background-color 0.3s; /* 배경색 전환 효과 */
-  }
-  
-  .cancel-button:hover {
-    background-color: #a52a2a; /* 마우스 오버 시 색상 변화 */
-  }
-  
-  .approve-button {
-    color: white;
-    background-color: #c21807; /* 또 다른 색상 */
-    width: 300px;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .approve-button:hover {
-    background-color: #d32f2f; /* 마우스 오버 시 색상 변화 */
-  }
+  width: 600px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* 요소들이 위아래로 적절히 배치 */
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+.card-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-instructions {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-video {
+  width: 100%;
+  max-height: 300px; /* 비디오의 최대 높이를 설정하여 화면을 넘지 않도록 */
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 버튼 사이의 간격을 줄임 */
+  width: 100%; /* 버튼들을 컨테이너 너비에 맞춤 */
+}
+
+.cancel-button, .approve-button {
+  color: white;
+  width: 100%;
+  height: 50px; /* 버튼 높이를 줄임 */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancel-button {
+  background-color: #8b0000;
+}
+
+.cancel-button:hover {
+  background-color: #a52a2a;
+}
+
+.approve-button {
+  background-color: #c21807;
+}
+
+.approve-button:hover {
+  background-color: #d32f2f;
+}
