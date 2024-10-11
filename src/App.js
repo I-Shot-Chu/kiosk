@@ -1,33 +1,38 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Pages
-import IdlePage from "./IdlePage";
-import Redirect from "./Redirect";
-import Result from "./Result";
-import Layout from "./layout/Layout";
-import { Point } from "./Point";
-import Purchase from "./Purchase";
-import MenuDetail from "./MenuDetail";
-import ShoppingCart from "./ShoppingCart";
-import { UserPoint } from "./UserPoint";
-import { Coupon } from "./Coupon";
+import IdlePage from "./pages/Idle/Idle";
+import Redirect from "./components/Redirect/redirect";
+import Result from "./pages/Result/Result";
+import Layout from "./layouts/Layout";
+import { Point } from "./pages/Point/PointStorage";
+import Purchase from "./pages/Payment/Payment";
+import MenuDetail from "./pages/option/ShowExtraOptions";
+import ShoppingCart from "./store/ShoppingList";
+import { UserPoint } from "./pages/Point/UserPoint";
 
 // Drink Pages
-import { HotCoffee, IceCoffee } from "./main-menu-page/drink/Coffee";
-import { HotTea, IceTea } from "./main-menu-page/drink/Tea";
-import { HotDecaf, IceDecaf } from "./main-menu-page/drink/Decaffein";
-import NewDrinks from "./main-menu-page/drink/NewDrinks";
-import AdeAndJuice from "./main-menu-page/drink/AdeAndJuice";
-import SmoothieAndFrappe from "./main-menu-page/drink/SmoothieAndFrappe";
-import { HotDrinks, IceDrinks } from "./main-menu-page/drink/Drinks";
+import { HotCoffee, IceCoffee } from "./features/Drinks/Coffee";
+import { HotTea, IceTea } from "./features/Drinks/Tea";
+import { HotDecaf, IceDecaf } from "./features/Drinks/Decaffein";
+import NewDrinks from "./features/Drinks/NewDrinks";
+import AdeAndJuice from "./features/Drinks/AdeAndJuice";
+import SmoothieAndFrappe from "./features/Drinks/SmoothieAndFrappe";
+import { HotDrinks, IceDrinks } from "./features/Drinks/Drinks";
 
 // Dessert and MD Pages
-import Dessert from "./main-menu-page/dessert-md/Dessert";
-import NewDessert from "./main-menu-page/dessert-md/NewDessert";
-import MdProduct from "./main-menu-page/dessert-md/Md";
+import Dessert from "./features/Desserts/Dessert";
+import NewDessert from "./features/Desserts/NewDessert";
+import MdProduct from "./features/Merchandise/Merchandise";
+import { Card } from "./pages/Card/Card";
+import { Coupon } from "./pages/Coupon/Coupon";
+
 
 function App()
 {
+
+ 
+
   return (
     <BrowserRouter>
       <Routes>
@@ -50,7 +55,7 @@ function App()
           <Route path="icedecaf" element={<IceDecaf/>}/>
           <Route path="hotdrinks" element={<HotDrinks/>}/>
           <Route path="icedrinks" element={<IceDrinks/>}/>
-          <Route path="newdrinks" element={<NewDrinks/>}/>
+          <Route path="newdrinks" element={<NewDrinks />}/>
 
           {/* Dessert and MD Routes */}
           <Route path="dessert" element={<Dessert/>}/>
@@ -59,15 +64,18 @@ function App()
 
           {/* Menu Detail and Shopping Cart */}
           <Route path=":menuCode" element={<MenuDetail/>}/>
-          <Route path="shoppingcart" element={<ShoppingCart/>}/>
+          <Route path="shoppingcart" element={<ShoppingCart />}/>
         </Route>
 
         {/* Additional Pages */}
-        <Route path="/point" element={<Point/>}/>
-        <Route path="/userpoint" element={<UserPoint/>}/>
+
+        <Route path="/menu/point" element={<Point />}/>
+        <Route path="/menu/userpoint" element={<UserPoint/>}/>
         <Route path="/coupon" element={<Coupon/>}/>
-        <Route path="/purchase" element={<Purchase/>}/>
+        <Route path="/payment" element={<Purchase/>}/>
         <Route path="/result" element={<Result/>}/>
+        <Route path="/card" element={<Card/>}/>
+
       </Routes>
     </BrowserRouter>
   );

@@ -7,7 +7,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "매콤한 고추장불고기와 풍미 깊은 간장 바베큐를 동시에 즐길 수 있는 여주쌀로 만든 반반 브리또",
-        "image": "/images/142.jpg"
+        "image": "/assets/images/images_menus/142.jpg"
     }
  },
 
@@ -19,7 +19,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "세 가지가 합쳐진 디저트! 초코칩 쿠키가 큼직하게 올려진 달콤하고 부드러운 초코 브라우니 머핀",
-        "image": "/images/143.jpg"
+        "image": "/assets/images/images_menus/143.jpg"
     }
  },
 
@@ -31,7 +31,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "달콤쫀득한 초코젤라또와 바삭한 쿠키크럼블, 초코칩을 쫄깃한 크레이프에 감싸 만든 달달 시원한 여름시즌 한정 디저트",
-        "image": "/images/144.jpg"
+        "image": "/assets/images/images_menus/144.jpg"
     }
  },
 
@@ -43,7 +43,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "꿀을 섞은 크림을 바삭한 쿠키슈 안에 넣어, 건강하고 맛있게 완성한 디저트",
-        "image": "/images/145.jpg"
+        "image": "/assets/images/images_menus/145.jpg"
     }
  },
 
@@ -55,7 +55,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "프랑스산 프레지덩 버터로 만든 갈릭베샤멜소스와 햄, 치즈를 샌드하고 바삭한 마늘 크런치를 토핑한 한 끼 든든 샌드위치",
-        "image": "/images/146.jpg"
+        "image": "/assets/images/images_menus/146.jpg"
     }
  },
 
@@ -67,7 +67,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "쫄깃 바삭한 치아바타에 통살 치킨텐더와 감칠맛 가득 매콤한 MGC 비법소스가 어우러진 따끈한 샌드위치",
-        "image": "/images/147.jpg"
+        "image": "/assets/images/images_menus/147.jpg"
     }
  },
 
@@ -79,7 +79,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "바닐라빈을 넣은 진한 슈크림이 한입가득 와앙- 베어물면 촉촉 달콤한 슈크림빵",
-        "image": "/images/148.jpg"
+        "image": "/assets/images/images_menus/148.jpg"
     }
  },
 
@@ -91,7 +91,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "고소한 프랑스산 프레지덩 버터를 듬뿍 넣은 스콘 위에 오돌토돌 달콤한 쿠키 크럼블이 가득 올려진 MGC만의 디저트",
-        "image": "/images/149.jpg"
+        "image": "/assets/images/images_menus/149.jpg"
     }
  },
 
@@ -103,7 +103,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "부드러운 브리오슈 번에 고소한 풍미가 가득한 프랑스산 프레지덩 버터로 만든 소스와 에그베이컨을 넣은 든든한 모닝 샌드위치",
-        "image": "/images/150.jpg"
+        "image": "/assets/images/images_menus/150.jpg"
     }
  },
 
@@ -115,7 +115,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "고소한 프랑스산 프레지덩 버터를 듬뿍 넣어 만든 뜯어먹는 데니쉬 미니 식빵",
-        "image": "/images/151.jpg"
+        "image": "/assets/images/images_menus/151.jpg"
     }
  },
 
@@ -128,7 +128,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "고소한 프랑스산 프레지덩 버터를 듬뿍넣어 더 부드럽고 짭쪼롬하게 즐길 수 있는 베이커리 메뉴",
-        "image": "/images/152.jpg"
+        "image": "/assets/images/images_menus/152.jpg"
     }
  },
 
@@ -141,7 +141,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "바삭하고 부드러운 식감에 고소한 버터향을 가득 담은 베이커리 메뉴",
-        "image": "/images/153.jpg"
+        "image": "/assets/images/images_menus/153.jpg"
     }
  },
 
@@ -153,7 +153,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "따뜻하고 바삭한 크로플 위에 진하고 꾸덕한 초코 젤라또를 올려 만든 매력적인 베이커리 메뉴",
-        "image": "/images/154.jpg"
+        "image": "/assets/images/images_menus/154.jpg"
     }
  },
 
@@ -165,7 +165,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "바삭한 딸기 쿠키슈 안에 부드럽고 향긋한 딸기우유맛 크림이 가득 들어간 아이스 와앙 슈",
-        "image": "/images/155.jpg"
+        "image": "/assets/images/images_menus/155.jpg"
     }
  },
 
@@ -177,7 +177,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "한끼로도 든든한 중독적인 추억의 와앙 큰 소시지 피자빵",
-        "image": "/images/156.jpg"
+        "image": "/assets/images/images_menus/156.jpg"
     }
  },
 
@@ -189,7 +189,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "초코칩이 콕콕 박힌 촉촉한 초코 쿠키에 달콤하게 구운 마시멜로우가 만나 더 진한 초코 맛 쿠키",
-        "image": "/images/157.jpg"
+        "image": "/assets/images/images_menus/157.jpg"
     }
  },
 
@@ -202,7 +202,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "화이트 초코칩이 가득 박힌 말차 쿠키에 달콤하게 구운 마시멜로우를 얹어 달콤쌉싸름한 매력을 간직한 쿠키",
-        "image": "/images/158.jpg"
+        "image": "/assets/images/images_menus/158.jpg"
     }
  },
 
@@ -214,7 +214,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "고소한 마카다미아를 넣어 만든 메가MGC커피 시그니처 쿠키",
-        "image": "/images/159.jpg"
+        "image": "/assets/images/images_menus/159.jpg"
     }
  },
 
@@ -227,7 +227,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "진한 초콜릿칩을 넣어 만든 메가MGC커피 시그니처 쿠키",
-        "image": "/images/160.jpg"
+        "image": "/assets/images/images_menus/160.jpg"
     }
  },
 
@@ -240,7 +240,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "버터풍미가 가득한 크루와상의 바삭함과 와플의 부드러움을 합친 겉바속촉 베이커리 메뉴.",
-        "image": "/images/161.jpg"
+        "image": "/assets/images/images_menus/161.jpg"
     }
  },
 
@@ -252,7 +252,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "고소한 식빵 사이에 햄과 치즈를 샌드하고, 빵 윗면에 멜팅치즈를 토핑해 든든한 한끼를 선물하는 샌드위치.",
-        "image": "/images/162.jpg"
+        "image": "/assets/images/images_menus/162.jpg"
     }
  },
 
@@ -264,7 +264,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "진하고 폭신한 초콜릿 스펀지 사이에 부드러운 생크림이 듬뿍 들어간 몽쉘 케이크.",
-        "image": "/images/163.jpg"
+        "image": "/assets/images/images_menus/163.jpg"
     }
  },
 
@@ -276,7 +276,7 @@
     "categoryName":"디저트",
     "detail": {
         "description":"햄과 치즈의 조화로운 한끼를 만끽할 수 있는 샌드위치",
-        "image": "/images/164.jpg"
+        "image": "/assets/images/images_menus/164.jpg"
     }
  },
 
@@ -289,7 +289,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "진한 치즈의 맛을 달콤하고 부드럽게 느낄 수 있는 케이크.",
-        "image": "/images/165.jpg"
+        "image": "/assets/images/images_menus/165.jpg"
     }
  },
 
@@ -302,7 +302,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "달콤한 초콜릿 본연의 맛을 더 진하게 느낄 수 있는 케이크.",
-        "image": "/images/166.jpg"
+        "image": "/assets/images/images_menus/166.jpg"
     }
  },
 
@@ -314,7 +314,7 @@
     "categoryName":"디저트",
     "detail": {
         "description": "부드러운 치즈 맛과 코코아의 조화로운 향으로 호불호 없이 즐기는 케이크",
-        "image": "/images/167.jpg"
+        "image": "/assets/images/images_menus/167.jpg"
     }
  },
 
@@ -327,7 +327,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "바삭하고 쫄깃하게 구워낸 빵에 달콤한 크림을 올려 즐기는 조화로운 베이커리 메뉴.",
-        "image": "/images/168.jpg"
+        "image": "/assets/images/images_menus/168.jpg"
     }
  },
 
@@ -339,7 +339,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "부드러운 빵 속에 쫄깃한 소시지를 넣어 알찬 한입을 완성한 베이커리 메뉴",
-        "image": "/images/169.jpg"
+        "image": "/assets/images/images_menus/169.jpg"
     }
  },
 
@@ -351,7 +351,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "쫄깃한 빵 속 포슬포슬한 감자를 가득 담아낸 베이커리 메뉴.",
-        "image": "/images/170.jpg"
+        "image": "/assets/images/images_menus/170.jpg"
     }
  },
 
@@ -363,7 +363,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "딸기요거트 스무디를 연상하게 하는 상큼한 마카롱.",
-        "image": "/images/171.jpg"
+        "image": "/assets/images/images_menus/171.jpg"
     }
  },
 
@@ -375,7 +375,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "메가MGC커피 시그니처 음료 메가초코를 모티브로 만든 초코맛 마카롱.",
-        "image": "/images/172.jpg"
+        "image": "/assets/images/images_menus/172.jpg"
     }
  },
 
@@ -387,7 +387,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "메가MGC커피 인기 음료인 유니콘 프라페를 모티브로 만든 매지컬 비주얼 마카롱",
-        "image": "/images/173.jpg"
+        "image": "/assets/images/images_menus/173.jpg"
     }
  },
 
@@ -399,7 +399,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "메가MGC커피 인기메뉴인 쿠키프라페를 모티브로 만든 달콤한 마카롱.",
-        "image": "/images/174.jpg"
+        "image": "/assets/images/images_menus/174.jpg"
     }
  },
 
@@ -411,7 +411,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "MGC 시그니처 메뉴인 '할메가커피'를 달콤 쌉싸름한 커피크림 도넛으로 만들어 낸 콜라보레이션 디저트",
-        "image": "/images/175.jpg"
+        "image": "/assets/images/images_menus/175.jpg"
     }
  },
 
@@ -423,7 +423,7 @@
     "categoryName":"디저트",
     "detail": {
     "description": "부드러운 우유생크림이 가득! 노티드의 시그니처 도넛이 메가MGC커피와 만나 탄생한 콜라보레이션 디저트",
-        "image": "/images/176.jpg"
+        "image": "/assets/images/images_menus/176.jpg"
     }
  }
 ]
