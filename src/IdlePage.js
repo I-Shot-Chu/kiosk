@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import "./IdlePage.css";
 import { language } from "./store";
 
-const img = ["bam_port.jpg", "decaff_port.jpg", "genshin_port.jpg", "knotted_port.jpg", "teapleasure_port.jpg", "tumbler_port.jpg"];
+const img = ["mainpage_first.png", "mainpage_second.png"];
 
 const IdlePage = () =>
 {
