@@ -64,6 +64,7 @@
  /* user-point-use-button
 user-point-no-point-button */
   
+
   .user-point-use-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -89,7 +90,7 @@ user-point-no-point-button */
     border: 2px solid #3b3b3b;
     border-radius: 5px;
     cursor: pointer;
-    width: 200px;
+    
   }
   
   .user-point-no-point-button:hover {
