@@ -2,7 +2,7 @@ import { useCartStore } from "./store"; // Zustand store
 import { useState } from "react";
 
 const ShoppingCart = ({ isModalOpen }) => {
-    const { cartItems, removeFromCart, updateItemCount, totalPrice } = useCartStore(); // Zustand actions
+    const { cartItems, removeFromCart, updateItemCount } = useCartStore(); // Zustand actions
 
     const [itemCounts, setItemCounts] = useState({}); // Local state to handle item counts
 

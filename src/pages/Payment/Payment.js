@@ -55,13 +55,9 @@ const PaymentComponent = ({ setCurrentComponent }) => {
     setPointFormVisible(false);
   };
 
-  const completePayment = (method) => {
-    alert(`${method}로 결제가 완료되었습니다. 확인을 누르시면 2초 뒤 첫화면으로 돌아갑니다.`);
-    setTimeout(() => {
-      setPoints(0);
-      setIsEarning(null);
-      setCurrentComponent('Main');
-    },2000); // 2초 뒤 메인 화면으로 돌아가기 
+  const completePayment = (method) =>
+  {
+    alert(`${method}: 현재 기능 점검중입니다.`);
   }
 
   return (
@@ -87,8 +83,8 @@ const PaymentComponent = ({ setCurrentComponent }) => {
       </div>
       
       <div>
-        <button onClick={() => completePayment('카카오페이')}>쿠폰사용</button>
-        <button onClick={() => completePayment('페이코')}>메가선불페이</button>
+        <button onClick={() => completePayment('쿠폰')}>쿠폰사용</button>
+        <button onClick={() => completePayment('메가선불페이')}>메가선불페이</button>
       </div>
 
       <h3>주문금액: {totalPrice()}원 - 할인금액: 0원 결제금액: {totalPrice()}원</h3>
