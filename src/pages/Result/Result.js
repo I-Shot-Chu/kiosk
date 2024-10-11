@@ -73,11 +73,11 @@ const Result = () =>
                 </Modal>
             </div>
             <div className="receipt">
-                <h1>주문완료</h1>
-                <h4>결제가 정상적으로 처리되었습니다.</h4>
+                <h1>{lang ? "주문완료" : "Your order has been placed."}</h1>
+                <h4>{lang ? "결제가 정상적으로 처리되었습니다." : "Your payment was successful."}</h4>
                 <h3>
                     {lang ? "출력되는 영수증에서 주문번호를 확인해주세요." 
-                    : "Please check your order nunber at printed receipt."}
+                    : "Please check your order number on the printed receipt."}
                 </h3>
                 <h2>{lang ? "주문번호" : "Order No."}</h2>
                 <h1>{lang ? null : "No. "}{orderNumber}{lang ? "번" : null}</h1>

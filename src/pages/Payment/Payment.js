@@ -10,7 +10,8 @@ import { useState } from 'react';
 import { useCartStore } from '../../store/store';
 import './Payment.css';
 
-const PaymentComponent = ({ setCurrentComponent }) => {
+const PaymentComponent = () =>
+{
   const [pointFormVisible, setPointFormVisible] = useState(false); // 포인트 적립/사용 폼 표시 상태
   const [points, setPoints] = useState(0); // 보유 포인트 상태 (숫자로 초기화)
   const [isEarning, setIsEarning] = useState(null); // 포인트 적립/사용 상태
