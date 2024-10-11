@@ -3,7 +3,7 @@
     "userCode": 1,
     "name": "이진우",
     "phone": "01031246892",
-    "points": 200
+    "points": 0
   },
   {
     "userCode": 2,
@@ -15,6 +15,6 @@
     "userCode": 3,
     "name": "윤석중",
     "phone": "01011112222",
-    "points": 30000
+    "points": 540
   }
 ]

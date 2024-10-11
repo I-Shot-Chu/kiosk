@@ -38,7 +38,7 @@ const ShoppingCart = ({ isModalOpen }) => {
 
     const submit=()=>{
         addToTotalPrice(totalPrice)
-        go("userpoint");
+        go("point");
       
      }
 

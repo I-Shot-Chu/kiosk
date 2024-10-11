@@ -62,11 +62,20 @@ export const UserPoint = () => {
       .then((updatedCustomer) => {
         const updatedRemainingPrice = newTotalPrice > 0 ? newTotalPrice : 0;
 
+        // 상태 업데이트
         subtractFromTotalPrice(pointsToUse);
+        setRemainingPrice(updatedRemainingPrice); // 남은 가격 업데이트
+
+        // 고객 리스트에서 업데이트된 고객 정보 업데이트
+        setCustomers((prevCustomers) => 
+          prevCustomers.map((cust) => 
+            cust.phone === customer.phone ? updatedCustomer : cust
+          )
+        );
 
         alert(`${updatedCustomer.name}님, 포인트가 사용되었습니다! 남은 포인트: ${updatedCustomer.points}. 결제할 금액: ${updatedRemainingPrice}원`);
 
-        setRemainingPrice(updatedRemainingPrice);
+        // 페이지 전환
         navigate("/card");
       })
       .catch((error) => console.error('Error updating customer points:', error));

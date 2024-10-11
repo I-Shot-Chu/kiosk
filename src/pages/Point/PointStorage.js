@@ -8,9 +8,10 @@ export const Point = () => {
   const [phoneInput, setPhoneInput] = useState("");
   const [message, setMessage] = useState("");
   const [customers, setCustomers] = useState([]);
+  const [currentCustomer, setCurrentCustomer] = useState(null); // 현재 고객 상태 추가
 
   // Zustand로부터 totalPrice를 불러옴
-  const finalTotalPrice = usePriceStore((state) => state.totalPrice);
+  const finalTotalPrice = usePriceStore((state) => state.finaltotalPrice);
 
   const navigate = useNavigate();
 
@@ -40,6 +41,7 @@ export const Point = () => {
             cust.phone === updatedCustomer.phone ? updatedCustomer : cust
           )
         );
+        setCurrentCustomer(updatedCustomer);  // 현재 고객 상태 업데이트
         navigate("/purchase");
       })
       .catch((error) => console.error('Error updating customer points:', error));
@@ -93,6 +95,13 @@ export const Point = () => {
               <button className="user-point-no-point-button" onClick={() => navigate("/result")}>적립없이 결제하기</button>
             </div>
           </div>
+
+          {/* 현재 고객의 포인트 표시 */}
+          {currentCustomer && (
+            <div className="user-point-summary">
+              <h3>{currentCustomer.name}님의 남은 포인트: {currentCustomer.points}</h3>
+            </div>
+          )}
         </div>
       )}
       {message && <p className="user-point-message">{message}</p>}

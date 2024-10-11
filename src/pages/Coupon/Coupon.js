@@ -10,20 +10,31 @@ export const Cupon = () => {
   const { totalPrice, setTotalPrice } = usePriceStore(); // Zustand 스토어에서 totalPrice와 setTotalPrice 가져오기
   const [remainingAmount, setRemainingAmount] = useState(totalPrice); // 남은 결제 금액 저장
 
-  useEffect(() => {
-    if (cuponCode) {
-      const fetchedCupon = detailCoupon(cuponCode); 
-      setCupon(fetchedCupon);
-
-      if (fetchedCupon) {
-        // 쿠폰 금액을 차감한 나머지 결제 금액 계산
-        const remaining = totalPrice - fetchedCupon.price;
-        setRemainingAmount(remaining > 0 ? remaining : 0);
-      }
-    }
-  }, [cuponCode, totalPrice]);
-
   const navigate = useNavigate();
+
+  // 쿠폰 코드가 변경될 때마다 해당 쿠폰을 가져오는 로직
+  useEffect(() => {
+    const fetchCupon = async () => {
+      if (cuponCode) {
+        try {
+          const fetchedCupon = await detailCoupon(cuponCode); // 쿠폰 정보 비동기 처리
+          setCupon(fetchedCupon);
+
+          if (fetchedCupon) {
+            // 쿠폰 금액을 차감한 나머지 결제 금액 계산
+            const remaining = totalPrice - fetchedCupon.price;
+            setRemainingAmount(remaining > 0 ? remaining : 0);
+          } else {
+            setRemainingAmount(totalPrice); // 쿠폰이 없으면 totalPrice 그대로
+          }
+        } catch (error) {
+          console.error('Error fetching coupon:', error);
+        }
+      }
+    };
+    
+    fetchCupon();
+  }, [cuponCode, totalPrice]);
 
   const handleInputChange = (e) => {
     setCuponCode(e.target.value);
