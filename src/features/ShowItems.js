@@ -27,7 +27,7 @@ export const DrinkMenu = ({ drinkMenu }) => {
                 <div className="DrinkMenuItem">
                     <img src={imageUrl} alt={`${drinkMenu.menuName}`} width="100px" />
                     <h4>{lang ? `${drinkMenu.menuName}` : `${drinkMenu.enName}`}</h4>
-                    <ul>{drinkMenu.menuPrice}원</ul>
+                    <ul>{drinkMenu.menuPrice}{lang ? "원" : " Won"}</ul>
                 </div>
             </button>
             <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
@@ -63,7 +63,7 @@ export const DessertMenu = ({ dessertMenu }) => {
             <div className="DessertMenuItem">
                 <img src={imageUrl} alt={`${dessertMenu.menuName}`} width="100px" />
                 <h4>{lang ? `${dessertMenu.menuName}` : `${dessertMenu.enName}`}</h4>
-                <ul>{dessertMenu.menuPrice}원</ul>
+                <ul>{dessertMenu.menuPrice}{lang ? "원" : " Won"}</ul>
             </div>
             </button>
             <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
@@ -98,7 +98,7 @@ export const MdItem = ({ mdProduct }) => {
             <div className="DessertMenuItem">
                 <img src={imageUrl} alt={`${mdProduct.menuName}`} width="100px" />
                 <h4>{lang ? `${mdProduct.menuName}` : `${mdProduct.enName}`}</h4>
-                <ul>{mdProduct.menuPrice}원</ul>
+                <ul>{mdProduct.menuPrice}{lang ? "원" : " Won"}</ul>
             </div>
             </button>
             <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>

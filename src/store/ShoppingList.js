@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useCartStore ,usePriceStore} from "./store"; // Zustand store
+import { language, useCartStore ,usePriceStore} from "./store"; // Zustand store
 import { useState } from "react";
 
 
@@ -7,8 +7,6 @@ const ShoppingCart = ({ isModalOpen }) => {
     const { cartItems, removeFromCart, updateItemCount } = useCartStore(); // Zustand actions
 
     const { addToTotalPrice} = usePriceStore();
-
-
 
     const [itemCounts, setItemCounts] = useState({}); // Local state to handle item counts
 
@@ -66,8 +64,11 @@ const ShoppingCart = ({ isModalOpen }) => {
     );
 };
 
-const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) => {
+const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) => 
+{
     const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
+
+    const { lang } = language();
 
     // Increment item count
     const increment = () => {
@@ -89,13 +90,13 @@ const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) 
                 &nbsp;
                 {index}
                 &nbsp;&nbsp;&nbsp;
-                {menu.menuName}
+                {lang ? `${menu.menuName}` : `${menu.enName}`}
                 &nbsp;&nbsp;&nbsp;
                 {isModalOpen ? null : <button onClick={decrement}>-</button>}
-                <h3>{count} 개</h3>
+                <h3>{count} {lang ? "개" : "ea"}</h3>
                 {isModalOpen ? null : <button onClick={increment}>+</button>}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h3>{pricePerItem * count}원</h3>
+                <h3>{pricePerItem * count}{lang ? "원" : " Won"}</h3>
             </div>
             {menu.extraMenu && menu.extraMenu.length > 0 ? (
                 <ul>

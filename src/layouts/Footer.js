@@ -1,8 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import ShoppingCart from "../store/ShoppingList";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
-import { useCartStore } from "../store/store";
+import { language, useCartStore } from "../store/store";
 import Timer from "./Timer";
 import PaymentComponent from "../pages/Payment/Payment";
 
@@ -18,7 +17,7 @@ const Footer = () =>
 
     const [secondModal, setSecondModal] = useState(false);
 
-    const navigate = useNavigate();
+    const { lang } = language();
 
     // Reset timer when cart contents change
     useEffect(() =>
@@ -57,11 +56,11 @@ const Footer = () =>
         <>
             {/* Timer component, passing the timeLeft and reset function */}
             {/* <Timer timeLeft={timeLeft} resetTime={setTimeLeft} /> */}
-            <button onClick={handleClear}>전체 삭제</button>
-            <h3>선택한 상품: {cartItems.length} 개</h3>
+            <button onClick={handleClear}>{lang ? "전체 삭제" : "Clear all"}</button>
+            <h3>{lang ? "선택한 상품: " : "Selected product: "}{cartItems.length} {lang ? "개" : "ea"}</h3>
             <ShoppingCart isModalOpen={isModalOpen} />
             <br></br>
-            <button onClick={openModal}>{totalPrice()}원 <br></br>결제하기</button>
+            <button onClick={openModal}>{totalPrice()}{lang ? "원" : " Won"} <br></br>결제하기</button>
 
             {/* Modal configuration */}
             <Modal isOpen={modal} ariaHideApp={false} onRequestClose={closeModal}>

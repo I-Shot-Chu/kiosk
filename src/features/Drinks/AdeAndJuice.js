@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { adeAndJuice } from "../getMenuDetails";
 import { DrinkMenu } from "../ShowItems";
-import { useCartStore } from "../../store/store";
 
 const AdeAndJuice = ()=>{
 
