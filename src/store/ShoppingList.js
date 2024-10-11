@@ -93,7 +93,7 @@ const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) 
                 {lang ? `${menu.menuName}` : `${menu.enName}`}
                 &nbsp;&nbsp;&nbsp;
                 {isModalOpen ? null : <button onClick={decrement}>-</button>}
-                <h3>{count} {lang ? "개" : "ea"}</h3>
+                <h3>{count} {lang ? "개" : "pcs"}</h3>
                 {isModalOpen ? null : <button onClick={increment}>+</button>}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <h3>{pricePerItem * count}{lang ? "원" : " Won"}</h3>

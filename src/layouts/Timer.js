@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { language } from "../store/store";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -19,8 +20,11 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-const Timer = ({ timeLeft, resetTime }) => {
+const Timer = ({ timeLeft, resetTime }) =>
+{
   const navigate = useNavigate();
+
+  const { lang } = language();
 
   useInterval(() => {
     if (timeLeft > 0) {
@@ -33,8 +37,8 @@ const Timer = ({ timeLeft, resetTime }) => {
 
   return (
     <>
-      <h3>남은 시간</h3>
-      <h2>{timeLeft} 초</h2>
+      <h3>{lang ? "남은 시간" : null}</h3>
+      <h2>{timeLeft} {lang ? "초" : "second(s) left."}</h2>
       <br></br>
     </>
   );

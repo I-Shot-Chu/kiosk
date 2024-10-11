@@ -25,7 +25,7 @@ import Dessert from "./features/Desserts/Dessert";
 import NewDessert from "./features/Desserts/NewDessert";
 import MdProduct from "./features/Merchandise/Merchandise";
 import { Card } from "./pages/Card/Card";
-import { Cupon } from "./pages/Coupon/Coupon";
+import { Coupon } from "./pages/Coupon/Coupon";
 
 
 function App()
@@ -71,7 +71,7 @@ function App()
 
         <Route path="/menu/point" element={<Point />}/>
         <Route path="/menu/userpoint" element={<UserPoint/>}/>
-        <Route path="/coupon" element={<Cupon/>}/>
+        <Route path="/coupon" element={<Coupon/>}/>
         <Route path="/payment" element={<Purchase/>}/>
         <Route path="/result" element={<Result/>}/>
         <Route path="/card" element={<Card/>}/>
