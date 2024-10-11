@@ -34,7 +34,9 @@ function App()
  
 
   return (
+
     <BrowserRouter>
+   
       <Routes>
         {/* Root Redirect */}
         <Route path="/" element={<Redirect/>}/>
@@ -69,7 +71,7 @@ function App()
 
         {/* Additional Pages */}
 
-        <Route path="/menu/point" element={<Point />}/>
+        <Route path="/menu/point" element={<Point/>}/>
         <Route path="/menu/userpoint" element={<UserPoint/>}/>
         <Route path="/menu/coupon" element={<Coupon/>}/>
         <Route path="/payment" element={<Purchase/>}/>
@@ -77,7 +79,10 @@ function App()
         <Route path="/card" element={<Card/>}/>
 
       </Routes>
+     
     </BrowserRouter>
+   
+
   );
 }
 

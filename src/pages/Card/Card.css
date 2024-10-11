@@ -1,5 +1,7 @@
-/* 전체 화면 크기와 중앙 정렬
-html, body {
+
+/* 전체 화면 크기와 중앙 정렬 */
+/* html, body {
+>>>>>>> 41b37b3efdcdbf62478f162f85c937e453d255ba
   margin: 0;
   padding: 0;
   width: 100vw;

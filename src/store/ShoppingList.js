@@ -35,6 +35,7 @@ const ShoppingCart = ({ isModalOpen }) => {
      const go  = useNavigate();
 
     const submit=()=>{
+
         addToTotalPrice(ftotalPrice)
         go("userpoint");
       
