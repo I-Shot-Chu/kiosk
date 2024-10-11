@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { useCartStore } from "../store/store";
 import Timer from "./Timer";
+import PaymentComponent from "../pages/Payment/Payment";
 
 const Footer = () =>
 {
@@ -14,6 +15,8 @@ const Footer = () =>
     const [modal, setModal] = useState(false);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [secondModal, setSecondModal] = useState(false);
 
     const navigate = useNavigate();
 
@@ -47,13 +50,13 @@ const Footer = () =>
 
     const handlePayment = () => 
     {
-        navigate("/payment");
+        setSecondModal(true);
     };
 
     return (
         <>
             {/* Timer component, passing the timeLeft and reset function */}
-            <Timer timeLeft={timeLeft} resetTime={setTimeLeft} />
+            {/* <Timer timeLeft={timeLeft} resetTime={setTimeLeft} /> */}
             <button onClick={handleClear}>전체 삭제</button>
             <h3>선택한 상품: {cartItems.length} 개</h3>
             <ShoppingCart isModalOpen={isModalOpen} />
@@ -64,6 +67,7 @@ const Footer = () =>
             <Modal isOpen={modal} ariaHideApp={false} onRequestClose={closeModal}>
                 {/* Triggering closeModal function on request close */}
                 <h1>주문 내역을 다시 한 번 확인해주세요.</h1>
+                <button onClick={closeModal}>X</button>
                 <ShoppingCart isModalOpen={isModalOpen} />
                 <h2>※매장 이용 시 일회용 컵 사용 불가※</h2>
                 <h3>
@@ -76,6 +80,9 @@ const Footer = () =>
                 <button onClick={closeModal}>←<br/>돌아가기</button>
                 <button onClick={handlePayment}>먹고가기<br/>다회용 컵</button>
                 <button onClick={handlePayment}>포장하기<br/>일회용 컵</button>
+                <Modal isOpen = {secondModal} ariaHideApp = {false}>
+                    <PaymentComponent/>
+                </Modal>
             </Modal>
         </>
     );

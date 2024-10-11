@@ -62,7 +62,7 @@ export const Point = () => {
     <div>
       {!isok ? (
         <div>
-          <h2>포인트 적립하시겠습니까?</h2>
+          <h2>포인트를 적립하시겠습니까?</h2>
           
           <button onClick={() => setIsok(true)}>네</button>
           <button onClick={() => navigate("/result")}>아니오</button>
