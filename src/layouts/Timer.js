@@ -26,11 +26,24 @@ const Timer = ({ timeLeft, resetTime }) =>
 
   const { lang } = language();
 
+  const message = () =>
+  {
+    if(lang)
+    {
+      alert("제한 시간이 지나 초기 화면으로 돌아갑니다.");
+    }
+
+    if(!lang)
+    {
+      alert("Request timeout.");
+    }
+  } 
+
   useInterval(() => {
     if (timeLeft > 0) {
       resetTime(timeLeft - 1);
     } else {
-      alert("제한 시간이 지나 초기 화면으로 돌아갑니다.");
+      message();
       navigate("/idle");
     }
   }, 1000);
