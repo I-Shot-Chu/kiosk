@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Pages
 import IdlePage from "./pages/Idle/Idle";
-import Redirect from "./pages/Redirect/redirect";
+import Redirect from "./components/Redirect/redirect";
 import Result from "./pages/Result/Result";
 import Layout from "./layouts/Layout";
 import { Point } from "./pages/Point/PointStorage";
@@ -34,7 +34,9 @@ function App()
  
 
   return (
+
     <BrowserRouter>
+   
       <Routes>
         {/* Root Redirect */}
         <Route path="/" element={<Redirect/>}/>
@@ -69,7 +71,7 @@ function App()
 
         {/* Additional Pages */}
 
-        <Route path="/menu/point" element={<Point />}/>
+        <Route path="/menu/point" element={<Point/>}/>
         <Route path="/menu/userpoint" element={<UserPoint/>}/>
         <Route path="/coupon" element={<Cupon/>}/>
         <Route path="/payment" element={<Purchase/>}/>
@@ -77,7 +79,10 @@ function App()
         <Route path="/card" element={<Card/>}/>
 
       </Routes>
+     
     </BrowserRouter>
+   
+
   );
 }
 

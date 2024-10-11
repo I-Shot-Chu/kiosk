@@ -64,6 +64,7 @@ export const Point = () => {
     <div className="user-point-container">
       {!isOk ? (
         <div>
+
           <h2 className="user-point-title">포인트 적립하시겠습니까?</h2>
           <div className="action-buttons">
             <button onClick={() => setIsOk(true)} className="user-point-use-button">네</button>

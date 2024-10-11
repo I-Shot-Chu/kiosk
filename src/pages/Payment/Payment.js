@@ -7,43 +7,13 @@
 
 
 import { useState } from 'react';
-
-const Purchase = () => {
-  const [currentComponent, setCurrentComponent] = useState('Main');
-
-  const renderComponent = () => {
-    switch (currentComponent) {
-      case 'Main':
-        return <MainComponent setCurrentComponent={setCurrentComponent} />;
-      case 'Payment':
-        return <PaymentComponent setCurrentComponent={setCurrentComponent} />;
-      default:
-        return <MainComponent setCurrentComponent={setCurrentComponent} />;
-    }
-  };
-
-  return <div>{renderComponent()}</div>;
-};
-
-const MainComponent = ({ setCurrentComponent }) => {
-  return (
-    <div>
-      <button onClick={() => setCurrentComponent('Payment')}>매장</button>
-      <button onClick={() => setCurrentComponent('Payment')}>포장</button>
-    </div>
-  );
-};
+import { useCartStore } from '../../store/store';
 
 const PaymentComponent = ({ setCurrentComponent }) => {
-  const [totalPrice, setTotalPrice] = useState(''); // 결제 금액 상태
   const [pointFormVisible, setPointFormVisible] = useState(false); // 포인트 적립/사용 폼 표시 상태
   const [points, setPoints] = useState(0); // 보유 포인트 상태 (숫자로 초기화)
   const [isEarning, setIsEarning] = useState(null); // 포인트 적립/사용 상태
-  const [giftCardCode, setGiftCardCode] = useState('');
-
-  const handlePriceChange = (e) => {
-    setTotalPrice(e.target.value);
-  };
+  const { totalPrice } = useCartStore();
 
   const applyDiscount = () => {
     const price = parseFloat(totalPrice);
@@ -53,7 +23,6 @@ const PaymentComponent = ({ setCurrentComponent }) => {
     }
     const discount = price * 0.05;
     const newPrice = price - discount;
-    setTotalPrice(newPrice.toFixed(2));
     alert(`5% 할인 적용! 새로운 결제 금액: ${newPrice.toFixed(2)} 원`);
   };
 
@@ -86,42 +55,39 @@ const PaymentComponent = ({ setCurrentComponent }) => {
     setPointFormVisible(false);
   };
 
-  const applyGiftCard = () => {
-    if (giftCardCode === "suasua"){ // 임의로 넣은 기프티콘(상픔권) 코드
-      const discountAmount = 10000; // 기프티콘 잔액 : 10,000원
-      const newTotalPrice = Math.max(0, parseFloat(totalPrice - discountAmount));
-      setTotalPrice(newTotalPrice.toFixed(0));
-      alert(`기프티콘 사용이 완료되었습니다. 결제 금액이 ${discountAmount} 원 차감되었습니다.`)
-    } else {
-      alert('유효하지 않은 기프티콘/상품권 코드입니다.'); // suasua 가 아닌 다른 값을 입력할 때 나오는 메세지
-    }
-    setGiftCardCode('');
-  }
-
-  const completePayment = (method) => {
-    alert(`${method}로 결제가 완료되었습니다. 확인을 누르시면 2초 뒤 첫화면으로 돌아갑니다.`);
-    setTimeout(() => {
-      setTotalPrice('');
-      setPoints(0);
-      setIsEarning(null);
-      setCurrentComponent('Main');
-    },2000); // 2초 뒤 메인 화면으로 돌아가기 
+  const completePayment = (method) =>
+  {
+    alert(`${method}: 현재 기능 점검중입니다.`);
   }
 
   return (
     <div>
-      <button onClick={() => setCurrentComponent('Main')}>뒤로 가기</button>
-      <h2>결제 페이지</h2>
+      <h2>결제수단 선택 ({totalPrice()}원)</h2>
 
-      <input
-        type="number"
-        value={totalPrice}
-        onChange={handlePriceChange}
-        placeholder="결제 금액 입력"
-      />
+      <h3>STEP1 제휴할인을 선택해주세요.</h3>
+      <button onClick={applyDiscount}>KT VIP초이스(통합 월 1회)</button>
+      <button onClick={applyDiscount}>SKT우주패스</button>
       
-      <button onClick={() => setPointFormVisible(true)}>포인트 적립/사용</button>
-      <button onClick={applyDiscount}>할인</button>
+      <h3>STEP2 결제수단을 선택해주세요.</h3>
+      <button onClick={() => setPointFormVisible(true)}>카드결제 삼성페이</button>
+      <button onClick={applyDiscount}>앱카드 QR/바코드</button>
+
+      <div>
+        <button onClick={() => completePayment('카카오페이')}>카카오페이</button>
+        <button onClick={() => completePayment('페이코')}>페이코</button>
+        <button onClick={() => completePayment('네이버페이')}>네이버페이</button>
+        <button onClick={() => completePayment('제로페이')}>제로페이</button>
+        <button onClick={() => completePayment('BC페이북')}>BC페이북</button>
+        <button onClick={() => completePayment('하나 Pay')}>하나 Pay</button>
+        <button onClick={() => completePayment('KB Pay')}>KB Pay</button>
+      </div>
+      
+      <div>
+        <button onClick={() => completePayment('쿠폰')}>쿠폰사용</button>
+        <button onClick={() => completePayment('메가선불페이')}>메가선불페이</button>
+      </div>
+
+      <h3>주문금액: {totalPrice()}원 - 할인금액: 0원 결제금액: {totalPrice()}원</h3>
 
       {pointFormVisible && (
         <div>
@@ -160,26 +126,8 @@ const PaymentComponent = ({ setCurrentComponent }) => {
         </div>
       )}
 
-      <h3>결제 금액: {totalPrice ? `${parseFloat(totalPrice).toFixed(2)} 원` : '0 원'}</h3>
-      <h3>보유 포인트 : {points.toFixed(0)} 포인트</h3> {/* 보유 포인트 표시 */}
-      
-      <div>
-        <input
-          type="text"
-          value={giftCardCode}
-          onChange={(e) => setGiftCardCode(e.target.value)}
-          placeholder="기프티콘/상품권 코드 입력"
-        />
-        <button onClick={applyGiftCard}>적용</button>
-      </div>
-      <div>
-        <button onClick={() => completePayment('네이버페이')}>네이버페이</button>
-        <button onClick={() => completePayment('카카오페이')}>카카오페이</button>
-        <button onClick={() => completePayment('카드')}>카드</button>
-        <button onClick={() => completePayment('페이코')}>페이코</button>
-      </div>
     </div>
   );
 };
 
-export default Purchase;
+export default PaymentComponent;

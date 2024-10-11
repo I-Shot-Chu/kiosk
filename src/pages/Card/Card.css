@@ -1,5 +1,5 @@
 /* 전체 화면 크기와 중앙 정렬 */
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -8,7 +8,7 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: #f4f4f4;
-}
+} */
 
 .card-container {
   width: 600px;

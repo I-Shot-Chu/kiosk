@@ -28,7 +28,7 @@ const ShoppingCart = ({ isModalOpen }) => {
     };
 
     // Calculate total price
-    const totalPrice = cartItems.reduce((acc, menu) => {
+    const ftotalPrice = cartItems.reduce((acc, menu) => {
         const count = itemCounts[menu.id] || 1; // Default count is 1 if not yet set
         const pricePerItem = menu.finalTotalPrice || menu.menuPrice || 0;
         return acc + pricePerItem * count;
@@ -37,7 +37,8 @@ const ShoppingCart = ({ isModalOpen }) => {
      const go  = useNavigate();
 
     const submit=()=>{
-        addToTotalPrice(totalPrice)
+
+        addToTotalPrice(ftotalPrice)
         go("userpoint");
       
      }
@@ -59,8 +60,8 @@ const ShoppingCart = ({ isModalOpen }) => {
                     ))
                 ) : null}
             </div>
-            <h2>합계: {totalPrice}원</h2>
             <button onClick={submit}>go</button>
+
 
         </>
     );
