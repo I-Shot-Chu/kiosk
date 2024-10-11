@@ -64,38 +64,53 @@
 .user-point-actions {
     display: flex;
     justify-content: center;
+    gap: 10px; /* 버튼 간격 추가 */
     margin-bottom: 20px;
 }
 
-.user-point-use-button {
+.user-point-use-button
+/* .user-point-no-point-button  */
+{
+    width: 150px; /* 동일한 고정 너비 */
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #00796b; /* 포인트 사용 버튼을 어두운 민트색으로 */
-    color: #fff; /* 텍스트는 흰색으로 */
-    border: 2px solid #26a69a; /* 테두리 색상은 밝은 민트색 */
     border-radius: 5px;
     cursor: pointer;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.user-point-use-button {
+    background-color: #00796b; /* 포인트 사용 버튼을 어두운 민트색으로 */
+    color: #fff;
+    border: 2px solid #26a69a; /* 테두리 색상은 밝은 민트색 */
 }
 
 .user-point-use-button:hover {
     background-color: #004d40; /* 호버 시 더 어두운 민트색 */
 }
 
-.user-point-no-point-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 20px;
-    background-color: #fff; /* 포인트 없이 결제 버튼은 흰색 */
-    color: #00796b; /* 텍스트 색상은 어두운 민트색 */
-    border: 2px solid #00796b; /* 테두리 색상은 어두운 민트색 */
+/* .user-point-no-point-button {
+    background-color: #fff;
+    color: #00796b;
+    border: 2px solid #00796b;
+    width: 350px;
+    height: 10px;
+    padding: 0;
+} */
+
+.user-point-no-point_button {
+    background-color: #fff;
+    color: #00796b;
+    border: 2px solid #00796b;
+    width: 400px;
+    height: 40px;
     border-radius: 5px;
-    cursor: pointer;
+    /* 웬만하면 중복으로 하지 말긔 ~ */
 }
 
 .user-point-no-point-button:hover {
-    background-color: #f0f0f0; /* 호버 시 약간의 밝은 회색 */
+    background-color: #f0f0f0;
 }
-
 .user-point-message {
     color: #d32f2f; /* 메시지 색상은 붉은색 */
     font-size: 14px;

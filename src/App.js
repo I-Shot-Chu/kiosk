@@ -71,7 +71,7 @@ function App()
 
         <Route path="/menu/point" element={<Point />}/>
         <Route path="/menu/userpoint" element={<UserPoint/>}/>
-        <Route path="/coupon" element={<Coupon/>}/>
+        <Route path="/menu/coupon" element={<Coupon/>}/>
         <Route path="/payment" element={<Purchase/>}/>
         <Route path="/result" element={<Result/>}/>
         <Route path="/card" element={<Card/>}/>

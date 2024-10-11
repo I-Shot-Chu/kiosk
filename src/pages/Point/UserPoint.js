@@ -94,7 +94,7 @@ export const UserPoint = () => {
           onChange={(e) => setPhoneInput(e.target.value)}
         />
         <div className="user-point-button-grid">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "*"].map((num) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, "010", 0].map((num) => (
             <button key={num} className="user-point-number-button" onClick={() => setPhoneInput(phoneInput + num)}>
               {num}
             </button>
@@ -108,7 +108,7 @@ export const UserPoint = () => {
         </div>
       </div>
       <br />
-      <button className="user-point-no-point-button" onClick={() => navigate("/result")}>포인트 없이 결제하기</button>
+      <button className="user-point-no-point_button" onClick={() => navigate("/card")}>포인트 없이 결제하기</button>
       {message && <p className="user-point-message">{message}</p>}
     </div>
   );

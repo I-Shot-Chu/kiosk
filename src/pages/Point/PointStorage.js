@@ -42,7 +42,7 @@ export const Point = () => {
           )
         );
         setCurrentCustomer(updatedCustomer);  // 현재 고객 상태 업데이트
-        navigate("/purchase");
+        navigate("/card");
       })
       .catch((error) => console.error('Error updating customer points:', error));
   };
@@ -92,8 +92,8 @@ export const Point = () => {
               </button>
             </div>
             <div className="user-point-actions">
-              <button className="user-point-use-button" onClick={pointPlus}>포인트 적립</button>
-              <button className="user-point-no-point-button" onClick={() => navigate("/result")}>넘어가기</button>
+              <button className="user-point-use-button" onClick={pointPlus}>적립하기</button>
+              <button className="user-point-no-point-button" onClick={() => navigate("/card")}>넘어가기</button>
             </div>
           </div>
 
