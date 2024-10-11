@@ -8,6 +8,7 @@
 
 import { useState } from 'react';
 import { useCartStore } from '../../store/store';
+import './Payment.css';
 
 const PaymentComponent = ({ setCurrentComponent }) => {
   const [pointFormVisible, setPointFormVisible] = useState(false); // 포인트 적립/사용 폼 표시 상태
@@ -61,33 +62,35 @@ const PaymentComponent = ({ setCurrentComponent }) => {
   }
 
   return (
-    <div>
-      <h2>결제수단 선택 ({totalPrice()}원)</h2>
+    <div className='payment-container'>
+      <h2 className='payment-header'>결제수단 선택 ({totalPrice()}원)</h2>
 
-      <h3>STEP1 제휴할인을 선택해주세요.</h3>
-      <button onClick={applyDiscount}>KT VIP초이스(통합 월 1회)</button>
-      <button onClick={applyDiscount}>SKT우주패스</button>
+      <h3 className='step-1'>STEP1</h3><br/><br/>
+      <h3 className='step-title-1'>제휴할인을 선택해주세요.</h3>
+      <button className='option-box-1' onClick={applyDiscount}>KT VIP초이스(통합 월 1회)</button>
+      <button className='option-box-2' onClick={applyDiscount}>SKT우주패스</button>
       
-      <h3>STEP2 결제수단을 선택해주세요.</h3>
-      <button onClick={() => setPointFormVisible(true)}>카드결제 삼성페이</button>
-      <button onClick={applyDiscount}>앱카드 QR/바코드</button>
+      <h3 className='step-2'>STEP2</h3>
+      <h3 className='step-title-2'>결제수단을 선택해주세요.</h3>
+      <button className='payment-card-samsungpay' onClick={() => setPointFormVisible(true)}>카드결제 삼성페이</button>
+      <button className='payment-Appcard-QRbarcode' onClick={applyDiscount}>앱카드 QR/바코드</button>
 
       <div>
-        <button onClick={() => completePayment('카카오페이')}>카카오페이</button>
-        <button onClick={() => completePayment('페이코')}>페이코</button>
-        <button onClick={() => completePayment('네이버페이')}>네이버페이</button>
-        <button onClick={() => completePayment('제로페이')}>제로페이</button>
-        <button onClick={() => completePayment('BC페이북')}>BC페이북</button>
-        <button onClick={() => completePayment('하나 Pay')}>하나 Pay</button>
-        <button onClick={() => completePayment('KB Pay')}>KB Pay</button>
+        <button className='payment-box-kakaopay' onClick={() => completePayment('카카오페이')}>카카오페이</button>
+        <button className='payment-box-payco' onClick={() => completePayment('페이코')}>페이코</button>
+        <button className='payment-box-naverpay' onClick={() => completePayment('네이버페이')}>네이버페이</button>
+        <button className='payment-box-zeropay' onClick={() => completePayment('제로페이')}>제로페이</button>
+        <button className='payment-box-BCpaybook' onClick={() => completePayment('BC페이북')}>BC페이북</button>
+        <button className='payment-box-HANApay' onClick={() => completePayment('하나 Pay')}>하나 Pay</button>
+        <button className='payment-box-KBpay' onClick={() => completePayment('KB Pay')}>KB Pay</button>
       </div>
       
       <div>
-        <button onClick={() => completePayment('쿠폰')}>쿠폰사용</button>
-        <button onClick={() => completePayment('메가선불페이')}>메가선불페이</button>
+        <button className='payment-box-coupon' onClick={() => completePayment('쿠폰')}>쿠폰사용</button>
+        <button className='payment-box-MEGApay' onClick={() => completePayment('메가선불페이')}>메가선불페이</button>
       </div>
 
-      <h3>주문금액: {totalPrice()}원 - 할인금액: 0원 결제금액: {totalPrice()}원</h3>
+      <h3 className='totalmoney'>주문금액: {totalPrice()}원 - 할인금액: 0원 결제금액: {totalPrice()}원</h3>
 
       {pointFormVisible && (
         <div>
