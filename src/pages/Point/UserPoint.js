@@ -83,33 +83,33 @@ export const UserPoint = () => {
   };
 
   return (
-    <div className="user-point-container">
-      <h2 className="user-point-title">포인트를 사용하시겠습니까?</h2>
-      <h3 className="user-point-price">현재 가격: {remainingPrice}원</h3> 
-      <div className="user-point-input-section">
-        <input
-          value={phoneInput}
-          placeholder='전화번호 입력'
-          className="user-point-input"
-          onChange={(e) => setPhoneInput(e.target.value)}
-        />
-        <div className="user-point-button-grid">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "*"].map((num) => (
-            <button key={num} className="user-point-number-button" onClick={() => setPhoneInput(phoneInput + num)}>
-              {num}
-            </button>
-          ))}
-          <button className="user-point-delete-button" onClick={() => setPhoneInput(phoneInput.slice(0, -1))}>
-            삭제
+    <div className="user-point-container1">
+    <h2 className="user-point-title1">포인트를 사용하시겠습니까?</h2>
+    <h3 className="user-point-price1">현재 가격: {remainingPrice}원</h3> 
+    <div className="user-point-input-section1">
+      <input
+        value={phoneInput}
+        placeholder='전화번호 입력'
+        className="user-point-input1"
+        onChange={(e) => setPhoneInput(e.target.value)}
+      />
+      <div className="user-point-button-grid1">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, "010", 0].map((num) => (
+          <button key={num} className="user-point-number-button1" onClick={() => setPhoneInput(phoneInput + num)}>
+            {num}
           </button>
-        </div>
-        <div className="user-point-actions">
-          <button className="user-point-use-button" onClick={pointUse}>포인트 사용</button>
-        </div>
+        ))}
+        <button className="user-point-delete-button1" onClick={() => setPhoneInput(phoneInput.slice(0, -1))}>
+          삭제
+        </button>
       </div>
-      <br />
-      <button className="user-point-no-point-button" onClick={() => navigate("/result")}>포인트 없이 결제하기</button>
-      {message && <p className="user-point-message">{message}</p>}
+      <div className="user-point-actions1">
+        <button className="user-point-use-button1" onClick={pointUse}>포인트 사용</button>
+      </div>
     </div>
+    <br />
+    <button className="user-point-no-point-button1" onClick={() => navigate("/card")}>포인트 없이 결제하기</button>
+    {message && <p className="user-point-message1">{message}</p>}
+  </div>
   );
 };

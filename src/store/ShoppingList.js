@@ -6,7 +6,7 @@ import { useState } from "react";
 const ShoppingCart = ({ isModalOpen }) => {
     const { cartItems, removeFromCart, updateItemCount } = useCartStore(); // Zustand actions
 
-    const { addToTotalPrice} = usePriceStore();
+    const { setTotalPrice} = usePriceStore();
 
     const [itemCounts, setItemCounts] = useState({}); // Local state to handle item counts
 
@@ -35,7 +35,8 @@ const ShoppingCart = ({ isModalOpen }) => {
      const go  = useNavigate();
 
     const submit=()=>{
-        addToTotalPrice(ftotalPrice)
+
+        setTotalPrice(ftotalPrice)
         go("userpoint");
       
      }
@@ -57,7 +58,7 @@ const ShoppingCart = ({ isModalOpen }) => {
                     ))
                 ) : null}
             </div>
-            {/* <button onClick={submit}>go</button> */}
+             <button onClick={submit}>go</button> 
 
 
         </>

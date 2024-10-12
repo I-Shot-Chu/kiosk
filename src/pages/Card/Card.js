@@ -7,7 +7,7 @@ export const Card = () => {
   const navigate = useNavigate();
 
   const back = () => {
-    navigate("/menu");
+    navigate("/payment");
   };
 
   const ok = () => {

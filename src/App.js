@@ -26,6 +26,7 @@ import NewDessert from "./features/Desserts/NewDessert";
 import MdProduct from "./features/Merchandise/Merchandise";
 import { Card } from "./pages/Card/Card";
 import { Coupon } from "./pages/Coupon/Coupon";
+import Kiosk from "./kiosk/kiosk";
 
 
 function App()
@@ -34,7 +35,9 @@ function App()
  
 
   return (
+
     <BrowserRouter>
+   <Kiosk>
       <Routes>
         {/* Root Redirect */}
         <Route path="/" element={<Redirect/>}/>
@@ -69,15 +72,18 @@ function App()
 
         {/* Additional Pages */}
 
-        <Route path="/menu/point" element={<Point />}/>
+        <Route path="/menu/point" element={<Point/>}/>
         <Route path="/menu/userpoint" element={<UserPoint/>}/>
-        <Route path="/coupon" element={<Coupon/>}/>
+        <Route path="/menu/coupon" element={<Coupon/>}/>
         <Route path="/payment" element={<Purchase/>}/>
         <Route path="/result" element={<Result/>}/>
         <Route path="/card" element={<Card/>}/>
 
       </Routes>
+      </Kiosk>
     </BrowserRouter>
+   
+
   );
 }
 
