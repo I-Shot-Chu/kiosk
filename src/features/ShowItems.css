@@ -1,0 +1,34 @@
+.menu_detail_modal{
+    position: fixed;  /* 화면에 고정 */
+    top: 50%;         /* 화면의 수직 중앙 */
+    left: 50%;        /* 화면의 수평 중앙 */
+    transform: translate(-50%, -50%); /* 요소를 자신의 너비와 높이의 절반만큼 이동시켜서 정확히 가운데에 배치 */
+    background-color: #fff; 
+    width: 600px; /* 고정 너비 */
+    max-width: 90%; /* 화면 크기에 따라 최대 너비는 100% */
+    height: 800px; /* 고정 높이 */
+    max-height: 90%; /* 최대 높이를 화면의 90%로 제한 */
+    padding: 20px; /* 내부 여백 */
+    z-index: 1010; /* 오버레이보다 위에 표시되게 */
+    overflow: auto; /* 내용이 너무 많으면 스크롤바가 생기게 */
+}
+
+.cancel_button{
+    display: inline-block;
+    width: 168px;
+    height: 48px;
+    background-color: #FF3939;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white; 
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center; /* 텍스트를 가운데 정렬 */    
+    transition: 0.3s ease; /* 호버 시 배경색 전환 효과 */
+}
+  
+.cancel_button:hover {
+    width: 180px;
+    height: 60px;
+}

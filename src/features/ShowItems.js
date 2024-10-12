@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import MenuDetail from "../pages/option/ShowExtraOptions";
 import { language } from "../store/store";
+import './ShowItems.css'
 
 // 음료
 export const DrinkMenu = ({ drinkMenu }) => {
@@ -30,9 +31,8 @@ export const DrinkMenu = ({ drinkMenu }) => {
                     <ul>{drinkMenu.menuPrice}{lang ? "원" : " Won"}</ul>
                 </div>
             </button>
-            <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
+            <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false} className={'menu_detail_modal'}>
                 <MenuDetail menuCode = {drinkMenu.menuCode} onClickHandler2 = {onClickHandler2}/>
-                <button onClick = {onClickHandler2}>취소</button>
             </Modal>
         </>
     );
@@ -66,9 +66,8 @@ export const DessertMenu = ({ dessertMenu }) => {
                 <ul>{dessertMenu.menuPrice}{lang ? "원" : " Won"}</ul>
             </div>
             </button>
-            <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
+            <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false} className={'menu_detail_modal'}>
                 <MenuDetail menuCode = {dessertMenu.menuCode} onClickHandler2 = {onClickHandler2}/>
-                <button onClick = {onClickHandler2}>취소</button>
             </Modal>
         </>  
     );
@@ -101,9 +100,8 @@ export const MdItem = ({ mdProduct }) => {
                 <ul>{mdProduct.menuPrice}{lang ? "원" : " Won"}</ul>
             </div>
             </button>
-            <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false}>
+            <Modal isOpen = {modal} ariaHideApp={false} shouldCloseOnOverlayClick = {false} className={'menu_detail_modal'}>
                 <MenuDetail menuCode = {mdProduct.menuCode} onClickHandler2 = {onClickHandler2}/>
-                <button onClick = {onClickHandler2}>취소</button>
             </Modal>
         </>  
     );

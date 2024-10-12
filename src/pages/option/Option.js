@@ -171,6 +171,7 @@ export const ExtraTopping = ({ extramenu = {}, handleOptionSelect }) => {
                     <p className='option_price'>+700원</p>
                 </div>
             </div>
+            <img src={require('../../assets/images/images_option/optionLine.png')} alt='line'/>
         </div>
     );
 };
