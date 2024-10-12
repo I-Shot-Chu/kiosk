@@ -68,27 +68,27 @@ const PaymentComponent = () =>
 
       <h3 className='step-1'>STEP1</h3><br/><br/>
       <h3 className='step-title-1'>제휴할인을 선택해주세요.</h3>
-      <button className='option-box-1' onClick={applyDiscount}>KT VIP초이스(통합 월 1회)</button>
-      <button className='option-box-2' onClick={applyDiscount}>SKT우주패스</button>
+      <button className='option-box-1' onClick={applyDiscount}></button>
+      <button className='option-box-2' onClick={applyDiscount}>   </button>
       
       <h3 className='step-2'>STEP2</h3>
       <h3 className='step-title-2'>결제수단을 선택해주세요.</h3>
-      <button className='payment-card-samsungpay' onClick={() => setPointFormVisible(true)}>카드결제 삼성페이</button>
-      <button className='payment-Appcard-QRbarcode' onClick={applyDiscount}>앱카드 QR/바코드</button>
+      <button className='payment-card-samsungpay' onClick={() => setPointFormVisible(true)}>   </button>
+      <button className='payment-Appcard-QRbarcode' onClick={applyDiscount}>   </button>
 
       <div>
-        <button className='payment-box-kakaopay' onClick={() => completePayment('카카오페이')}>카카오페이</button>
-        <button className='payment-box-payco' onClick={() => completePayment('페이코')}>페이코</button>
-        <button className='payment-box-naverpay' onClick={() => completePayment('네이버페이')}>네이버페이</button>
-        <button className='payment-box-zeropay' onClick={() => completePayment('제로페이')}>제로페이</button>
-        <button className='payment-box-BCpaybook' onClick={() => completePayment('BC페이북')}>BC페이북</button>
-        <button className='payment-box-HANApay' onClick={() => completePayment('하나 Pay')}>하나 Pay</button>
-        <button className='payment-box-KBpay' onClick={() => completePayment('KB Pay')}>KB Pay</button>
+        <button className='payment-box-kakaopay' onClick={() => completePayment('카카오페이')}>   </button>
+        <button className='payment-box-payco' onClick={() => completePayment('페이코')}>   </button>
+        <button className='payment-box-naverpay' onClick={() => completePayment('네이버페이')}>   </button>
+        <button className='payment-box-zeropay' onClick={() => completePayment('제로페이')}>   </button>
+        <button className='payment-box-BCpaybook' onClick={() => completePayment('BC페이북')}>   </button>
+        <button className='payment-box-HANApay' onClick={() => completePayment('하나 Pay')}>   </button>
+        <button className='payment-box-KBpay' onClick={() => completePayment('KB Pay')}>   </button>
       </div>
       
       <div>
-        <button className='payment-box-coupon' onClick={() => completePayment('쿠폰')}>쿠폰사용</button>
-        <button className='payment-box-MEGApay' onClick={() => completePayment('메가선불페이')}>메가선불페이</button>
+        <button className='payment-box-coupon' onClick={() => completePayment('쿠폰')}>   </button>
+        <button className='payment-box-MEGApay' onClick={() => completePayment('메가선불페이')}>  </button>
       </div>
 
       <h3 className='totalmoney'>주문금액: {totalPrice()}원 - 할인금액: 0원 결제금액: {totalPrice()}원</h3>
@@ -110,7 +110,7 @@ const PaymentComponent = () =>
             }}
             checked={isEarning === true}
           /> 적립
-          <input
+          {/* <input
             type="radio"
             name="point-action"
             onChange={() => {
@@ -126,7 +126,7 @@ const PaymentComponent = () =>
             placeholder="포인트 입력"
             disabled={isEarning === true} // 적립 선택 시 입력 비활성화
           />
-          <button onClick={submitPoints}>확인</button>
+          <button onClick={submitPoints}>확인</button> */}
         </div>
       )}
 
