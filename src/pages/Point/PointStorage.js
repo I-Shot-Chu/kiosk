@@ -64,25 +64,22 @@ export const Point = () => {
     <div className="user-point-container">
       {!isOk ? (
         <div>
-
           <h2 className="user-point-title">포인트 적립하시겠습니까?</h2>
-          <div className="action-buttons">
-            <button onClick={() => setIsOk(true)} className="user-point-use-button">네</button>
-            <button onClick={() => navigate("/result")} className="user-point-no-point-button">아니오</button>
-          </div>
+          <button onClick={() => setIsOk(true)} className="point-use-button">네</button>
+          <button onClick={() => navigate("/result")} className="point-no-button">아니오</button>
         </div>
       ) : (
         <div>
           <h2 className="user-point-title">전화번호를 입력하세요!</h2>
           <div className="user-point-input-section">
-            <input 
-              className="user-point-input" 
-              value={phoneInput} 
-              placeholder='번호 입력' 
-              readOnly 
+            <input
+              className="user-point-input"
+              value={phoneInput}
+              placeholder='번호 입력'
+              readOnly
             />
             <div className="user-point-button-grid">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "*"].map((num) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, "010", 0].map((num) => (
                 <button key={num} className="user-point-number-button" onClick={() => setPhoneInput(phoneInput + num)}>
                   {num}
                 </button>
@@ -96,8 +93,6 @@ export const Point = () => {
               <button className="user-point-no-point-button" onClick={() => navigate("/card")}>넘어가기</button>
             </div>
           </div>
-
-          {/* 현재 고객의 포인트 표시 */}
           {currentCustomer && (
             <div className="user-point-summary">
               <h3>{currentCustomer.name}님의 남은 포인트: {currentCustomer.points}</h3>

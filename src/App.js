@@ -26,6 +26,7 @@ import NewDessert from "./features/Desserts/NewDessert";
 import MdProduct from "./features/Merchandise/Merchandise";
 import { Card } from "./pages/Card/Card";
 import { Coupon } from "./pages/Coupon/Coupon";
+import Kiosk from "./kiosk/kiosk";
 
 
 function App()
@@ -36,7 +37,7 @@ function App()
   return (
 
     <BrowserRouter>
-   
+   <Kiosk>
       <Routes>
         {/* Root Redirect */}
         <Route path="/" element={<Redirect/>}/>
@@ -79,7 +80,7 @@ function App()
         <Route path="/card" element={<Card/>}/>
 
       </Routes>
-     
+      </Kiosk>
     </BrowserRouter>
    
 

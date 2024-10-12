@@ -1,124 +1,143 @@
-body {
-  display: flex; /* Flexbox 사용 */
-  align-items: center; /* 수직 중앙 정렬 */
-  justify-content: center; /* 수평 중앙 정렬 */
-  height: 100vh; /* 뷰포트 높이 100% */
-  margin: 0; /* 기본 여백 제거 */
-  background-color: "white"; /* 배경 색상 */
-}
+
 
 .user-point-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 600px; /* 고정 너비 600px */
-  height: 800px; /* 고정 높이 800px */
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-  background-color: #E4F1F3; /* 약간 더 밝은 파란색 배경 */
-  border-radius: 10px; /* 모서리 둥글게 */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* 배경색을 흰색으로 변경 */ 
+    width: 600px;
+    height: 800px;
+    margin: auto;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
 }
 
 .user-point-title {
-  font-size: 24px; /* 제목 크기 */
-  font-weight: bold; /* 제목 두께 */
-  margin-bottom: 20px; /* 제목 아래 여백 */
-  color: #3b3b3b; /* 텍스트 색상은 어두운 회색 */
+  font-size: 26px; /* Slightly larger title for better visibility */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00796b; /* Dark green for titles */
 }
 
 .user-point-price {
-  font-size: 20px; /* 가격 크기 */
-  margin-bottom: 10px; /* 아래 여백 */
-  color: #3b3b3b; /* 가격 색상은 어두운 회색 */
+  font-size: 22px; /* Slightly larger price text */
+  margin-bottom: 15px; /* Increased margin for better spacing */
+  color: #00796b; /* Dark green for price */
 }
 
 .user-point-input-section {
-  width: 100%; /* 전체 폭 사용 */
-  max-width: 400px; /* 최대 폭 400px */
-  text-align: center; /* 텍스트 가운데 정렬 */
+  width: 100%;
+  max-width: 500px; /* Reduced max-width to fit screen better */
+  text-align: center;
 }
-/* user-point-use-button */
+
 .user-point-input {
-  
-  width: 100%; /* 입력 필드 넓이 */
-  padding: 10px; /* 패딩 */
-  font-size: 16px; /* 글자 크기 */
-  text-align: center; /* 가운데 정렬 */
-  margin-bottom: 20px; /* 아래 여백 */
-  border: 2px solid #fdd835; /* 입력창 테두리 색상 노란색 */
-  border-radius: 5px; /* 테두리 둥글게 */
+  width: 100%;
+  padding: 14px; /* Slightly larger padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #26a69a; /* Teal border */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 .user-point-button-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 10px; /* 버튼 간격 */
-  margin-bottom: 20px; /* 아래 여백 */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .user-point-number-button,
 .user-point-delete-button {
-  padding: 15px; /* 버튼 안쪽 여백 */
-  font-size: 18px; /* 글자 크기 */
-  background-color: #B8D3ED; /* 버튼 색상은 연한 파란색 */
-  color: #B8D3ED; /* 텍스트 색상은 어두운 회색 */
-  border: 2px solid #3b3b3b; /* 테두리 색상도 검정 */
-  border-radius: 5px; /* 테두리 둥글게 */
-  cursor: pointer; /* 커서 포인터 */
-  font-weight: bold; /* 글자 두께 */
+  padding: 15px;
+  font-size: 20px; /* Increased font size for buttons */
+  background-color: #4db6ac; /* Light teal color */
+  color: #fff; /* White text */
+  border: 2px solid #00796b; /* Dark green border */
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
-
 
 .user-point-number-button:hover,
 .user-point-delete-button:hover {
-  background-color: #E0F7FA; /* 버튼을 호버하면 더 밝은 파란색 */
+  background-color: #009688; /* Darker teal on hover */
 }
 
 .user-point-actions {
   display: flex;
-  justify-content: space-between; /* 버튼을 일정 간격으로 배치 */
-  gap: 10px; /* 버튼 간격 추가 */
-  width: 100%; /* 컨테이너 너비를 전체로 설정 */
-  max-width: 400px; /* 버튼 컨테이너의 최대 너비 설정 */
-  margin-bottom: 20px; /* 아래 여백 */
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
-
-.user-point-use-button,
-.user-point-no-point-button {
-  flex-grow: 1; /* 버튼이 동일한 크기로 확장 */
-  padding: 10px 0; /* 위아래 10px 여백, 좌우는 0으로 고정 */
-  font-size: 16px; /* 글자 크기 */
-  border-radius: 5px; /* 테두리 둥글게 */
-  cursor: pointer; /* 커서 포인터 */
-  text-align: center; /* 텍스트 중앙 정렬 */
-  height: 50px;
-}
-
+/* point-use-button" */
 .user-point-use-button {
-  background-color: #3b3b3b; /* 포인트 사용 버튼을 검정색으로 */
-  color: #fff; /* 텍스트는 흰색으로 */
-  border: 2px solid #fdd835; /* 테두리 색상은 노란색 */
+  width: 160px; /* Adjusted width for consistency */
+  padding: 12px 0; /* Increased padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #00796b; /* Dark green */
+  color: #fff; /* White text */
+  border: 2px solid #26a69a; /* Teal border */
+}
+
+.point-use-button {
+  width: 160px; /* Adjusted width for consistency */
+  padding: 12px 0; /* Increased padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #00796b; /* Dark green */
+  color: #fff; /* White text */
+  border: 2px solid #26a69a; /* Teal border */
 }
 
 .user-point-use-button:hover {
-  background-color: #4f4f4f; /* 호버 시 더 밝은 검정색 */
+  background-color: #004d40; /* Darker green on hover */
 }
 
 .user-point-no-point-button {
-  background-color: #fff; /* 포인트 없이 결제 버튼은 흰색 */
-  color: #3b3b3b; /* 텍스트 색상은 어두운 회색 */
-  border: 2px solid #3b3b3b; /* 테두리 색상은 진한 회색 */
-  /* user-point-no-point-button */
+  background-color: #fff; /* White background */
+  color: #00796b; /* Dark green text */
+  border: 2px solid #00796b; /* Dark green border */
+  width: 500px; /* Adjusted width for consistency */
+  height: 50px; /* Increased height for better touch area */
+  border-radius: 5px;
+}
+
+.point-no-button {
+  width: 160px; /* Adjusted width for consistency */
+  padding: 12px 0; /* Increased padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #fcfcfc; /* Dark green */
+  color: #26a69a; /* White text */
+  border: 2px solid #26a69a; /* Teal border */
 }
 
 .user-point-no-point-button:hover {
-  background-color: #f5f5f5; /* 호버 시 약간의 밝은 회색 */
+  background-color: #f0f0f0; /* Light grey on hover */
 }
 
 .user-point-message {
-  color: red; /* 메시지 색상 */
-  font-size: 14px; /* 글자 크기 */
-  margin-top: 10px; /* 위 여백 */
+  color: #d32f2f; /* Red for error messages */
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Summary Styles */
+.user-point-summary {
+  margin-top: 20px;
+  font-size: 20px; /* Increased font size for summary */
+  color: #3b3b3b; /* Dark grey */
 }
