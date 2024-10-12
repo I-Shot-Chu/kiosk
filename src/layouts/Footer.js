@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { language, useCartStore } from "../store/store";
 import Timer from "./Timer";
 import PaymentComponent from "../pages/Payment/Payment";
+import './Footer.css'
 
 const Footer = () =>
 {
@@ -63,22 +64,25 @@ const Footer = () =>
             <button onClick={openModal}>{totalPrice()}{lang ? "원" : " Won"} <br></br>{lang ? "결제하기" : "Payment"}</button>
 
             {/* Modal configuration */}
-            <Modal isOpen={modal} ariaHideApp={false} onRequestClose={closeModal}>
+            <Modal isOpen={modal} ariaHideApp={false} onRequestClose={closeModal} className={'orderList_modal'}>
                 {/* Triggering closeModal function on request close */}
                 <h1>{lang ? "주문 내역을 다시 한 번 확인해주세요." : "Check out your order list."}</h1>
-                <button onClick={closeModal}>X</button>
-                <ShoppingCart isModalOpen={isModalOpen} />
-                <h2>{lang ? "※매장 이용 시 일회용 컵 사용 불가※" : "※You CANNOT use disposable cup in our cafe.※"}</h2>
-                <h3>
-                    {lang ? "총 수량:" : "Q'ty:"} {cartItems.length} {lang ? "개" : "pcs"}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    {lang ? "총 결제금액:" : "Total:"} {totalPrice()} {lang ? "원" : " Won"}
-                </h3>
-                <button onClick={closeModal}>←<br/>{lang ? "뒤로가기" : "Back"}</button>
-                <button onClick={handlePayment}>{lang ? "먹고가기" : "For here"}<br/>{lang ? "다회용 컵" : "Reuseable cup"}</button>
-                <button onClick={handlePayment}>{lang ? "포장하기" : "To go"}<br/>{lang ? "일회용 컵" : "Disposable cup"}</button>
+                <div className="order_list_container">
+                    <ShoppingCart isModalOpen={isModalOpen} />
+                    <h2>{lang ? "※매장 이용 시 일회용 컵 사용 불가※" : "※You CANNOT use disposable cup in our cafe.※"}</h2>
+                    <h3 className="total_price_count">
+                        {lang ? "총 수량:" : "Q'ty:"} {cartItems.length} {lang ? "개" : "pcs"}
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {lang ? "총 결제금액:" : "Total:"} {totalPrice()} {lang ? "원" : " Won"}
+                    </h3>
+                </div>
+                <div className="button_container">
+                    <button onClick={closeModal} className='back_button'> </button>
+                    <button onClick={handlePayment} className="forHere_button">{lang ? "먹고가기" : "For here"}<br/>{lang ? "다회용 컵" : "Reuseable cup"}</button>
+                    <button onClick={handlePayment} className="toGo_button">{lang ? "포장하기" : "To go"}<br/>{lang ? "일회용 컵" : "Disposable cup"}</button>
+                </div>
                 <Modal isOpen = {secondModal} ariaHideApp = {false}>
                     <PaymentComponent/>
                 </Modal>
