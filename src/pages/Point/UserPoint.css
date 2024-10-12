@@ -1,0 +1,108 @@
+.user-point-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* 배경색을 흰색으로 변경 */
+    width: 600px;
+    height: 800px;
+    margin: auto;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+.user-point-title1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00796b;
+}
+
+.user-point-price1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #00796b;
+}
+
+.user-point-input-section1 {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.user-point-input1 {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #26a69a;
+    border-radius: 5px;
+}
+
+.user-point-button-grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.user-point-number-button1,
+.user-point-delete-button1 {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #4db6ac;
+    color: #fff;
+    border: 2px solid #00796b;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.user-point-number-button1:hover,
+.user-point-delete-button1:hover {
+    background-color: #009688;
+}
+
+.user-point-actions1 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.user-point-use-button1 {
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #00796b;
+    color: #fff;
+    border: 2px solid #26a69a;
+}
+
+.user-point-use-button1:hover {
+    background-color: #004d40;
+}
+
+.user-point-no-point-button1 {
+    background-color: #fff;
+    color: #00796b;
+    border: 2px solid #00796b;
+    width: 400px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.user-point-no-point-button1:hover {
+    background-color: #f0f0f0;
+}
+
+.user-point-message1 {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: 10px;
+}
