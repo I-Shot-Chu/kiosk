@@ -11,7 +11,7 @@ body {
     border-radius: 20px; /* 모서리를 둥글게 */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* 그림자 효과를 부드럽게 */
     position: relative;
-    overflow: hidden;
+    overflow: auto;
     margin: 0 auto; /* 화면 중앙 정렬 */
     display: flex;
     flex-direction: column; /* 내부 요소를 수직 정렬 */
@@ -37,7 +37,7 @@ body {
 
 .kiosk-screen {
     flex: 1; /* 화면 영역을 자동으로 조정 */
-    background-color: #fafafa; /* 사용자 설정 배경색 */
+    background-color: #B8D3ED; /* 사용자 설정 배경색 */
     border-radius: 15px; /* 모서리를 둥글게 */
     padding: 10px;
     box-sizing: border-box;
