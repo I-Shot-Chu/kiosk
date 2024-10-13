@@ -80,7 +80,7 @@ const Result = () =>
                 </h3>
                 <h2>{lang ? "주문번호" : "Order No."}</h2>
                 <h1 className="order_number">{lang ? null : "No. "}{orderNumber}{lang ? "번" : null}</h1>
-                <h5>주문하신 메뉴를 <br/> 정성껏 준비중입니다.</h5>
+                <h5>{lang ? "주문하신 메뉴를 정성껏 준비중입니다." : "We are carefully preparing the menu you ordered."}</h5>
             </div>
         </>
     )
