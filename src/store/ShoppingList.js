@@ -58,9 +58,6 @@ const ShoppingCart = ({ isModalOpen }) => {
                     ))
                 ) : null}
             </div>
-             <button onClick={submit}>go</button> 
-
-
         </>
     );
 };
@@ -85,9 +82,8 @@ const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) 
 
     return (
         <div>
-            <br />
             <div className="order_list">
-                {isModalOpen ? null : <button onClick={() => onRemove(menu.id)}>X</button>}
+                {isModalOpen ? null : <button onClick={() => onRemove(menu.id)} className="delete_button"></button>}
                     &nbsp;
                     <h3 className="order_menu_name">
                         {index}.
@@ -95,9 +91,9 @@ const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) 
                         {lang ? `${menu.menuName}` : `${menu.enName}`}
                         &nbsp;&nbsp;&nbsp;
                     </h3>
-                {isModalOpen ? null : <button onClick={decrement}>-</button>}
+                {isModalOpen ? null : <button onClick={decrement} className="decrement_button"></button>}
                 <div className="order_count">{count} {lang ? "개" : "pcs"}</div>
-                {isModalOpen ? null : <button onClick={increment}>+</button>}
+                {isModalOpen ? null : <button onClick={increment} className="increment_button"></button>}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div className="order_price">{pricePerItem * count}{lang ? "원" : " Won"}</div>
             </div>

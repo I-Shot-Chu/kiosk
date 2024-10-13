@@ -54,15 +54,21 @@ const Footer = () =>
     };
 
     return (
-        <>
+        <>  
+        <div className="main_page_cart">
+            <div className="shoppingcart">
+              <ShoppingCart isModalOpen={isModalOpen}/>
+            </div>
             {/* Timer component, passing the timeLeft and reset function */}
-            {/* <Timer timeLeft={timeLeft} resetTime={setTimeLeft} /> */}
-            <button onClick={handleClear}>{lang ? "전체 삭제" : "Clear all"}</button>
-            <h3>{lang ? "선택한 상품: " : null}{cartItems.length} {lang ? "개" : "kind(s) of product"}</h3>
-            <ShoppingCart isModalOpen={isModalOpen} />
-            <br></br>
-            <button onClick={openModal}>{totalPrice()}{lang ? "원" : " Won"} <br></br>{lang ? "결제하기" : "Payment"}</button>
-
+            <div className="cart_button_container">
+            <h3 className="select_menu">{lang ? "선택한 상품: " : null}{cartItems.length} {lang ? "개" : "kind(s) of product"}</h3>
+            <div className="timer_button">
+                <Timer timeLeft={timeLeft} resetTime={setTimeLeft} className="timer"/>
+                <button onClick={openModal} className="cart_pay_button">{totalPrice()}{lang ? "원" : " Won"} <br></br>{lang ? "결제하기" : "Payment"}</button>
+                <button onClick={handleClear} className="all_delete_button">{lang ? "전체삭제" : "Clear all"}</button>
+            </div>
+        </div>
+        </div>
             {/* Modal configuration */}
             <Modal isOpen={modal} ariaHideApp={false} onRequestClose={closeModal} className={'orderList_modal'}>
                 {/* Triggering closeModal function on request close */}
@@ -79,7 +85,7 @@ const Footer = () =>
                     </h3>
                 </div>
                 <div className="button_container">
-                    <button onClick={closeModal} className='back_button'> </button>
+                    <button onClick={closeModal} className='back_button'></button>
                     <button onClick={handlePayment} className="forHere_button">{lang ? "먹고가기" : "For here"}<br/>{lang ? "다회용 컵" : "Reuseable cup"}</button>
                     <button onClick={handlePayment} className="toGo_button">{lang ? "포장하기" : "To go"}<br/>{lang ? "일회용 컵" : "Disposable cup"}</button>
                 </div>

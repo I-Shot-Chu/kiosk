@@ -10,7 +10,7 @@
     border-top-right-radius: 14px;
     border-bottom-left-radius: 14px; /* 모서리 둥글게 */
     border-bottom-right-radius: 14px; /* 모서리 둥글게 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 헤더에 그림자 추가 */
+
 }
 
 .header_lang_img
