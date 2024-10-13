@@ -58,9 +58,6 @@ const ShoppingCart = ({ isModalOpen }) => {
                     ))
                 ) : null}
             </div>
-             <button onClick={submit}>go</button> 
-
-
         </>
     );
 };
