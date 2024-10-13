@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import { drinkgetMenuDetail, dessertgetMenuDetail, mdgetMenuDetail } from "../../features/getMenuDetails";
 import { ExtraIce, ExtraShot, ExtraSugar, ExtraTopping } from "./Option";
-import { useCartStore } from "../../store/store";
+import { language, useCartStore } from "../../store/store";
 import './ShowExtraOptions.css'
 
 const MenuDetail = ({ menuCode, onClickHandler2 }) => {
     
     const { addToCart } = useCartStore();
 
+    const { lang } = language();
+
     const [menu, setMenu] = useState({
         menuName: '',
+        enName:'',
         menuPrice: 0,
         detail: { description: '', image: '' } 
     });
@@ -65,14 +68,14 @@ const MenuDetail = ({ menuCode, onClickHandler2 }) => {
 
     return (
         <>
-            <h2 className="option_title">선택하신 상품의 옵션 상품을 모두 선택해 주세요.</h2>
+            <h2 className="option_title">{lang ? "선택하신 상품의 옵션 상품을 모두 선택해 주세요." : "Choose the option(s) what you want."}</h2>
 
             {menu.menuName ? (
                 <div className="menu_detail_container">
                     <img src={imageUrl} alt={menu.menuName} className="menu_img"/>
                     <div className="menu_text_container">
-                        <h3 className="menu_name">{menu.menuName}</h3>
-                        <h3 className="menu_price">{menu.menuPrice}원</h3>
+                        <h3 className="menu_name">{lang ? `${menu.menuName}` : `${menu.enName}`}</h3>
+                        <h3 className="menu_price">{menu.menuPrice}{lang ? "원" : "Won"}</h3>
                         <p className="menu_desc">{menu.detail.description}</p>
                     </div>
                 </div>

@@ -4,10 +4,8 @@
  * 포인트 적립 / 사용, 각종 페이, 카드 결제, 기프티콘 및 상품권 결제 버튼 구현
 */
 
-
-
 import { useState } from 'react';
-import { useCartStore } from '../../store/store';
+import { language, useCartStore } from '../../store/store';
 import './Payment.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +15,7 @@ const PaymentComponent = () =>
   const [points, setPoints] = useState(0); // 보유 포인트 상태 (숫자로 초기화)
   const [isEarning, setIsEarning] = useState(null); // 포인트 적립/사용 상태
   const { totalPrice } = useCartStore();
+  const { lang } = language()
 
   const navi = useNavigate();
   const applyDiscount = () => {
@@ -68,7 +67,7 @@ const PaymentComponent = () =>
 
   return (
     <div className='payment-container'>
-      <h2 className='payment-header'>결제수단 선택 ({totalPrice()}원)</h2>
+      <h2 className='payment-header'>{lang ? "결제수단 선택" : "Please choose the payment method."} ({totalPrice()}{lang ? "원" : "Won"})</h2>
 
       <h3 className='step-1'>STEP1</h3><br/><br/>
       <h3 className='step-title-1'>제휴할인을 선택해주세요.</h3>

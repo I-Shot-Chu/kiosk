@@ -8,9 +8,10 @@
 }
 
 
-.order_count, .order_price{
-    margin-left: 20px;
-    font-size: 15px;
+.order_count, .order_price
+{
+    margin-inline-start: 0px;
+    font-size: 13px;
 }
 
 
