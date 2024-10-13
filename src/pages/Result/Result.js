@@ -62,15 +62,19 @@ const Result = () =>
 
     return (
         <>
-            <Modal isOpen = {firstModal} ariaHideApp={false}>
-                <h3>
-                    {lang ? "[정상승인]" : "[Approved payment]"} <br></br>
-                    {lang ? "영수증을 출력하시겠습니까?" : "Do you want to print out the receipt?"} <br></br>
-                    {timeLeft}
-                </h3>
-                <button onClick={onClickHandlerYes}>{lang ? "출력" : "Print"}</button>
-                <button onClick={onClickHandlerNo}>{lang ? "미출력" : "Skip"}</button>
-            </Modal>
+            <div className='result_popup'>
+                <Modal isOpen = {firstModal} ariaHideApp={false} className = {"modal"}>
+                    <h3>
+                        {lang ? "[정상승인]" : "[Approved payment]"} <br></br>
+                        {lang ? "영수증을 출력하시겠습니까?" : "Do you want to print out the receipt?"} <br></br>
+                        {timeLeft}
+                    </h3>
+                    <div>
+                        <button className = {"modal_button"} onClick={onClickHandlerYes}>{lang ? "출력" : "Print"}</button>
+                        <button className = {"modal_button"} onClick={onClickHandlerNo}>{lang ? "미출력" : "Skip"}</button>
+                    </div>
+                </Modal>
+            </div>
             <div className="receipt">
                 <h1>{lang ? "주문완료" : "Your order has been placed."}</h1>
                 <h4>{lang ? "결제가 정상적으로 처리되었습니다." : "Your payment was successful."}</h4>
