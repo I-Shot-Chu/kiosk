@@ -14,7 +14,7 @@ const MenuItem = ({ menu }) => {
 
   return (
     <>
-      <div className="item_button_container">
+      <div className="grid_container">
         <button onClick={onClickHandler} className="menu_button">
           <div className="menuItem">
             <img src={imageUrl} alt={menu.menuName} width="100px" />
@@ -26,8 +26,7 @@ const MenuItem = ({ menu }) => {
       <Modal 
         isOpen={modal} 
         ariaHideApp={false} 
-        className={'menu_detail_modal'}
-      >
+        className={'menu_detail_modal'}>
         <MenuDetail menuCode={menu.menuCode} onClickHandler2={onClickHandler2} />
       </Modal>
     </>

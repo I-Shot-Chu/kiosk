@@ -1,6 +1,16 @@
 .header
 {
+    width: 100%;
+    height: 50px; /* 헤더 높이 설정 */
+    background-color: #B8D3ED; /* 헤더 배경색 */
+    display: flex;
+    justify-content: center; /* 텍스트 중앙 정렬 */
     align-items: center;
+    border-top-left-radius: 14px; /* 모서리 둥글게 */
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px; /* 모서리 둥글게 */
+    border-bottom-right-radius: 14px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 헤더에 그림자 추가 */
 }
 
 .header_lang_img
@@ -8,19 +18,41 @@
     position: relative;
     width: 32px; 
     height: 32px;
+    left: 950%;
     padding: 0px; 
-    border: none;
+    border-radius: 70%;
     background-color: #f1f1f1; 
     cursor: pointer;
-    z-index: 1;
 }
 
 .header_lang_button
 {
     position: relative;
-    top: 0%;
-    left: 0%;
+    border: 0;
+    background-color: transparent;
     width: 32px; 
     height: 32px;
-    object-fit: cover;
+    object-fit: fill;
+}
+
+.header_back_img
+{
+    position: relative;
+    width: 32px; 
+    height: 32px;
+    left: -1000%;
+    padding: 0px; 
+    border-radius: 70%;
+    background-color: transparent; 
+    cursor: pointer;
+}
+
+.header_back_button
+{
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    width: 32px; 
+    height: 32px;
+    object-fit: fill;
 }
