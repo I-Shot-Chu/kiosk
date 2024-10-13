@@ -9,6 +9,7 @@
 import { useState } from 'react';
 import { useCartStore } from '../../store/store';
 import './Payment.css';
+import { useNavigate } from 'react-router-dom';
 
 const PaymentComponent = () =>
 {
@@ -17,7 +18,10 @@ const PaymentComponent = () =>
   const [isEarning, setIsEarning] = useState(null); // 포인트 적립/사용 상태
   const { totalPrice } = useCartStore();
 
+  const navi = useNavigate();
   const applyDiscount = () => {
+    navi("/menu/userpoint")
+    
     const price = parseFloat(totalPrice);
     if (isNaN(price)) {
       alert('유효한 결제 금액을 입력하세요.');

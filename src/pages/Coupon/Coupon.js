@@ -7,59 +7,62 @@ import "./Coupon.css";
 export const Coupon = () => {
   const [coupon, setCoupon] = useState(null);
   const [couponCode, setCouponCode] = useState("");
-  const { ftotalPrice, setTotalPrice } = usePriceStore();
-  const [remainingAmount, setRemainingAmount] = useState(ftotalPrice);
+  const { finaltotalPrice, setTotalPrice } = usePriceStore();
+  const [remainingAmount, setRemainingAmount] = useState(finaltotalPrice);
+  const [couponApplied, setCouponApplied] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchCoupon = async () => {
-      if (couponCode.trim()) {
-        try {
-          const fetchedCoupon = await detailCoupon(couponCode.trim());
-          setCoupon(fetchedCoupon);
+    setRemainingAmount(finaltotalPrice);
+  }, [finaltotalPrice]);
 
-          if (fetchedCoupon) {
-            // 쿠폰 가격을 적용한 후 남은 금액 계산
-            const remaining = ftotalPrice - fetchedCoupon.price;
-            setRemainingAmount(remaining >= 0 ? remaining : 0);
-          } else {
-            // 쿠폰이 유효하지 않은 경우 리셋
-            setCoupon(null);
-            setRemainingAmount(ftotalPrice);
-          }
-        } catch (error) {
-          console.error('쿠폰 가져오는 중 오류 발생:', error);
-          alert("쿠폰을 가져오는 중 오류가 발생했습니다.");
-          // 오류 발생 시 총 가격으로 리셋
-          setRemainingAmount(ftotalPrice);
+  const fetchCoupon = async () => {
+    if (couponCode.trim()) {
+      try {
+        const fetchedCoupon = await detailCoupon(couponCode.trim());
+        setCoupon(fetchedCoupon);
+
+        if (fetchedCoupon) {
+          const remaining = finaltotalPrice - fetchedCoupon.price;
+          setRemainingAmount(remaining >= 0 ? remaining : 0);
+          setCouponApplied(false);
+        } else {
+          setCoupon(null);
+          setRemainingAmount(finaltotalPrice);
         }
-      } else {
-        // 쿠폰 코드가 비어있는 경우 리셋
-        setCoupon(null);
-        setRemainingAmount(ftotalPrice);
+      } catch (error) {
+        console.error('쿠폰 가져오는 중 오류 발생:', error);
+        alert("쿠폰을 가져오는 중 오류가 발생했습니다.");
+        setRemainingAmount(finaltotalPrice);
       }
-    };
+    } else {
+      setCoupon(null);
+      setRemainingAmount(finaltotalPrice);
+    }
+  };
 
+  useEffect(() => {
     fetchCoupon();
-  }, [couponCode, ftotalPrice]);
+  }, [couponCode]);
 
   const handleInputChange = (e) => {
     setCouponCode(e.target.value);
   };
 
-  const useCoupon = () => {
+  const applyCoupon = () => {
     if (coupon) {
-      setTotalPrice(remainingAmount); // 총 가격 업데이트
-      alert(`쿠폰이 적용되었습니다! 남은 결제 금액: ${remainingAmount}`);
-      navigate("/result");
+      setTotalPrice(remainingAmount);
+      setCouponApplied(true);
+      alert(`쿠폰이 적용되었습니다! 결제할 금액: ${remainingAmount}`);
+      navigate("/card")
     } else {
       alert("유효한 쿠폰을 입력해주세요.");
     }
   };
 
   const back = () => {
-    navigate("/purchase");
+    navigate("/menu/newdrinks");
   };
 
   return (
@@ -80,7 +83,7 @@ export const Coupon = () => {
             결제할 금액: {remainingAmount}
           </h3>
           <h3 className="remaining">
-            잔여 쿠폰 금액: {coupon.price > ftotalPrice ? coupon.price - ftotalPrice : 0}
+            잔여 쿠폰 금액: {coupon.price > finaltotalPrice ? coupon.price - finaltotalPrice : 0}
           </h3>
         </div>
       ) : (
@@ -88,7 +91,7 @@ export const Coupon = () => {
       )}
       
       <div className="coupon-buttons">
-        <button className="coupon-use-button" onClick={useCoupon}>사용</button>
+        <button className="coupon-use-button" onClick={applyCoupon}>쿠폰 사용</button>
         <button className="coupon-back-button" onClick={back}>돌아가기</button>
       </div>
     </div>
