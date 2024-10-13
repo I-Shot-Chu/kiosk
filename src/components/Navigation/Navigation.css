@@ -1,0 +1,77 @@
+/* 상단 네비게이션 바 스타일 */
+.navbar {
+    background-color: #ff6b6b;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif; /* 전체 네비게이션 바 폰트 설정 */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px; /* 폰트 크기 설정 */
+    font-family: 'Arial', sans-serif; /* 링크 항목 폰트 설정 */
+}
+
+.navbar a:hover {
+    color: #ddd; /* 마우스를 올렸을 때 색상 변경 */
+}/* 네비게이션 바 스타일 */
+.navbar {
+    background-color: #ff6b6b;
+    padding: 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    background-color: #ff6b6b;
+}
+
+.navbar a.active, .navbar a:hover {
+    background-color: #ff856b;
+    color: #fff;
+}
+
+.navbar .selected {
+    background-color: white;
+    color: #ff6b6b;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+}
