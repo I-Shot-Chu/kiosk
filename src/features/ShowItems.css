@@ -1,3 +1,4 @@
+
 .menu_detail_modal{
     position: fixed;  /* 화면에 고정 */
     top: 50%;         /* 화면의 수직 중앙 */
@@ -26,23 +27,15 @@
 }
 
 /* Container for the grid items */
-.item_button_container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 20px; /* Space between items */
-    padding: 20px;
-    justify-items: center; /* Center the items */
-    width: 100%;
-}
 
 .menu_button {
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center;
-    align-items: center;
-    width: 125px; /* Adjust as needed */
+    display: inline-block;
+    width: 115px; /* Adjust as needed */
     height: 200px; /* Adjust as needed */
-    background-color: #fff;
+    margin-top: 7px;
+    margin-left: 6px;
+    margin-right: 3px;
+    background-color: #fdfdfd;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
     text-align: center;
@@ -64,6 +57,8 @@
 .menuItem h4, .menuItem p {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    white-space:nowrap;
 }
 
 .menuItem p {

@@ -5,8 +5,8 @@ body {
 
 .kiosk-container {
     width: 660px;
-    height: 1055px;
-    background-color: #B8D3ED; /* 배경색을 좀 더 밝게 */
+    height: 1050px;
+    background-color: #f0f0f0; /* 배경색을 좀 더 밝게 */
     border: 8px solid #333; /* 테두리를 더 얇게 하고 색상을 어둡게 */
     border-radius: 20px; /* 모서리를 둥글게 */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* 그림자 효과를 부드럽게 */
