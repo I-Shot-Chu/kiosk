@@ -1,21 +1,72 @@
 .order_list{
     font-size: 15px;
     display: flex;
-    border-radius: 14px;
-    background-color: #ffffff;
     align-items: center;
     gap: 10px;
 }
 
 
-.order_count, .order_price
-{
-    margin-inline-start: 0px;
+.order_count{
+    position: absolute;
+    right: 200px;
     font-size: 15px;
 }
 
+.order_price{
+    position: absolute;
+    right: 30px;
+    font-size: 15px;
+}
 
 .order_option{
     margin-top: 0;
     font-size: 13px;
+}
+
+
+.decrement_button{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../assets/images/minus.png);
+    background-size: cover;  /* 이미지가 버튼을 가득 채우게 설정 */
+    background-position: center;  /* 이미지를 버튼 중앙에 배치 */
+    background-repeat: no-repeat;  /* 이미지 반복 방지 */
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    position: absolute;
+    right: 250px;
+}
+
+.delete_button{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../assets/images/delete.png);
+    background-size: cover;  /* 이미지가 버튼을 가득 채우게 설정 */
+    background-position: center;  /* 이미지를 버튼 중앙에 배치 */
+    background-repeat: no-repeat;  /* 이미지 반복 방지 */
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.increment_button{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../assets/images/plus.png);
+    background-size: cover;  /* 이미지가 버튼을 가득 채우게 설정 */
+    background-position: center;  /* 이미지를 버튼 중앙에 배치 */
+    background-repeat: no-repeat;  /* 이미지 반복 방지 */
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    position: absolute;
+    right: 150px;
 }

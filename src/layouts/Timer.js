@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { language } from "../store/store";
+import './Timer.css'
 
 function useInterval(callback, delay) {
     const savedCallback = useRef();
@@ -46,11 +47,10 @@ function useInterval(callback, delay) {
    }, 1000);
 
    return (
-    <>
-       <h3>{lang ? "남은 시간" : null}</h3>
-       <h2>{timeLeft} {lang ? "초" : "second(s) left."}</h2>
-       <br></br>
-    </>
+    <div className="timer_container">
+       <h3 className="timer">{lang ? "남은 시간" : null}</h3>
+       <h2 className="sec">{timeLeft} {lang ? "초" : "second(s) left."}</h2>
+    </div>
     );
 };
 

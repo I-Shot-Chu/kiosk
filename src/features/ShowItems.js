@@ -23,7 +23,7 @@ const MenuItem = ({ menu }) =>
           <div className="menuItem">
             <img src={imageUrl} alt={menu.menuName} width="100px" />
             <h4>{truncateText(lang ? menu.menuName : menu.enName, lang ? 10 : 15)}</h4>
-            <p>{menu.menuPrice}{lang ? "원" : " Won"}</p>
+            <p>{menu.menuPrice.toLocaleString()}{lang ? "원" : " Won"}</p>
           </div>
         </button>
       <Modal 
@@ -32,6 +32,7 @@ const MenuItem = ({ menu }) =>
         className={'menu_detail_modal'}>
         <MenuDetail menuCode={menu.menuCode} onClickHandler2={onClickHandler2} />
       </Modal>
+
     </>
   );
 };

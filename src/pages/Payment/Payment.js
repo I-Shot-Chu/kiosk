@@ -94,7 +94,7 @@ const PaymentComponent = () =>
         <button className='payment-box-MEGApay' onClick={() => completePayment('메가선불페이')}>  </button>
       </div>
 
-      <h3 className='totalmoney'>주문금액: {totalPrice()}원 - 할인금액: 0원 결제금액: {totalPrice()}원</h3>
+      <h3 className='totalmoney'>주문금액: {totalPrice().toLocaleString()}원 - 할인금액: 0원 결제금액: {totalPrice().toLocaleString()}원</h3>
 
       {pointFormVisible && (
         <div>
