@@ -6,18 +6,20 @@
 .idle_image
 {
     position: absolute;
-    width: 600px;
-    height: 800px;
+    width: 650px;
+    height: 870px;
+    top: 5.25%;
+    left: 0.75%;
     z-index: 0;
 }
   
 .idle_image_text
 {
     font-family: "Noto Sans KR";
-    font-size: 28px;
+    font-size: 24px;
     position: absolute;
-    top: 75%;
-    left: 34%;
+    top: 82.5%;
+    left: 50%;
     transform: translate( -50%, -50% );
     color: black;
     text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
@@ -28,8 +30,8 @@
 .idle_lang_button
 {
     position: absolute;
-    top: 2.5%;
-    left: 57.5%;
+    top: 1.1%;
+    left: 94%;
     width: 0px; 
     height: 0px;
     padding: 0px; 

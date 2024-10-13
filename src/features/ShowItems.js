@@ -4,9 +4,7 @@ import MenuDetail from "../pages/option/ShowExtraOptions";
 import { language } from "../store/store";
 import './ShowItems.css';
 
-
-
-const MenuItem = ({ menu, type }) => {
+const MenuItem = ({ menu }) => {
   const imageUrl = require(`../assets/images/images_menus/${menu.menuCode}.jpg`);
   const [modal, setModal] = useState(false);
   const { lang } = language();

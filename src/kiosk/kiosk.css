@@ -5,14 +5,16 @@ body {
 
 .kiosk-container {
     width: 660px;
-    height: 1000px;
+    height: 1055px;
     background-color: #f0f0f0; /* 배경색을 좀 더 밝게 */
     border: 8px solid #333; /* 테두리를 더 얇게 하고 색상을 어둡게 */
     border-radius: 20px; /* 모서리를 둥글게 */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* 그림자 효과를 부드럽게 */
     position: relative;
     overflow: auto;
-    margin: 0 auto; /* 화면 중앙 정렬 */
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column; /* 내부 요소를 수직 정렬 */
 }
@@ -24,8 +26,8 @@ body {
     display: flex;
     justify-content: center; /* 텍스트 중앙 정렬 */
     align-items: center;
-    border-top-left-radius: 20px; /* 모서리 둥글게 */
-    border-top-right-radius: 20px; /* 모서리 둥글게 */
+    border-top-left-radius: 14px; /* 모서리 둥글게 */
+    border-top-right-radius: 14px; /* 모서리 둥글게 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 헤더에 그림자 추가 */
 }
 

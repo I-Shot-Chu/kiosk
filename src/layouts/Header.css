@@ -1,0 +1,26 @@
+.header
+{
+    align-items: center;
+}
+
+.header_lang_img
+{
+    position: relative;
+    width: 32px; 
+    height: 32px;
+    padding: 0px; 
+    border: none;
+    background-color: #f1f1f1; 
+    cursor: pointer;
+    z-index: 1;
+}
+
+.header_lang_button
+{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 32px; 
+    height: 32px;
+    object-fit: cover;
+}
