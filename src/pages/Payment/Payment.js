@@ -67,7 +67,7 @@ const PaymentComponent = () =>
 
   return (
     <div className='payment-container'>
-      <h2 className='payment-header'>{lang ? "결제수단 선택" : "Please choose the payment method."} ({totalPrice()}{lang ? "원" : "Won"})</h2>
+      <h2 className='payment-header'>{lang ? "결제수단 선택" : "Choose the payment method."} ({totalPrice()}{lang ? "원" : "Won"})</h2>
 
       <h3 className='step-1'>STEP1</h3><br/><br/>
       <h3 className='step-title-1'>제휴할인을 선택해주세요.</h3>

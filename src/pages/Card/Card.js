@@ -18,7 +18,7 @@ export const Card = () => {
     <div className="card-container">
       <h2 className="card-title">카드 결제(간편결제)</h2>
       <h3 className="card-instructions">
-        다음 그림과 같이 신용/체크카드를 넣어주세요
+        다음 그림과 같이 신용/체크카드를 넣어주세요.
         <br />
         (삼성/LG페이는 핸드폰을 카드리더기에 터치해주세요.)
       </h3>

@@ -65,11 +65,11 @@ const Footer = () => {
     return (
         <>
             {/* Timer component, passing the timeLeft and reset function */}
-            <Timer timeLeft={timeLeft} resetTime={setTimeLeft} />
+            {/* <Timer timeLeft={timeLeft} resetTime={setTimeLeft} /> */}
             <button onClick={handleClear}>{lang ? "전체 삭제" : "Clear all"}</button>
-            <h3>{lang ? "선택한 상품: " : null}{cartItems.length} {lang ? "개" : "kind(s) of product"}</h3>
             <ShoppingCart isModalOpen={isModalOpen} />
             <br />
+            <h3>{lang ? "선택한 상품: " : null}{cartItems.length} {lang ? "개" : "kind(s) of product"}</h3>
             <button onClick={openModal}>{totalPrice()} {lang ? "원" : " Won"} <br />{lang ? "결제하기" : "Payment"}</button>
 
             {/* Modal configuration */}
@@ -93,7 +93,7 @@ const Footer = () => {
                     <button onClick={handlePayment} className="toGo_button">{lang ? "포장하기" : "To go"}<br />{lang ? "일회용 컵" : "Disposable cup"}</button>
                 </div>
                 <Modal isOpen={secondModal} ariaHideApp={false}>
-                    <PaymentComponent className = {"orderList_modal"}/>
+                    <PaymentComponent/>
                 </Modal>
             </Modal>
         </>

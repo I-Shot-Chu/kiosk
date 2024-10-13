@@ -80,7 +80,7 @@ const MenuDetail = ({ menuCode, onClickHandler2 }) => {
                     </div>
                 </div>
             ) : (
-                <p>메뉴를 불러오는 중 입니다..</p>
+                <p>{lang ? "메뉴를 불러오는 중 입니다.." : "Loading..."}</p>
             )}
 
             {menu.menuCode < 142 ? (
@@ -91,8 +91,8 @@ const MenuDetail = ({ menuCode, onClickHandler2 }) => {
                     <ExtraTopping extraMenu={extraMenu} handleOptionSelect={(option, price) => handleOptionSelect('topping', option, price)} />
                     <h3 className="menu_total_price">총 가격: {finalTotalPrice}원</h3>
                     <div className="button_container">
-                        <button onClick={onClickHandler} className="menu_add_button">주문담기</button>
-                        <button onClick = {onClickHandler2} className="cancel_button">취소</button>
+                        <button onClick={onClickHandler} className="menu_add_button">{lang ? "주문담기" : "Add to list"}</button>
+                        <button onClick = {onClickHandler2} className="cancel_button">{lang ? "취소" : "Cancel"}</button>
                     </div>
                 </>
             ) : (
