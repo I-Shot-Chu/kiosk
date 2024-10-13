@@ -135,7 +135,7 @@ body {
     position: absolute;
     width: 150px;
     height: 100px;
-    background: #FCFBFB url('/src/assets/images/payment/samsungpay.png') no-repeat center;
+    background: #FCFBFB url('/src/assets/images/payment/credit_card.png') no-repeat center;
     background-size: 130px 70px;
     border: 3px solid #B8B8B8;
     border-radius: 10px;

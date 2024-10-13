@@ -108,7 +108,7 @@ const Footer = () =>
                     <button onClick={handlePayment} className="forHere_button">{lang ? "먹고가기" : "For here"}<br/>{lang ? "다회용 컵" : "Reuseable cup"}</button>
                     <button onClick={handlePayment} className="toGo_button">{lang ? "포장하기" : "To go"}<br/>{lang ? "일회용 컵" : "Disposable cup"}</button>
                 </div>
-                <Modal isOpen = {secondModal} ariaHideApp = {false}>
+                <Modal isOpen = {secondModal} ariaHideApp = {false} className={'payment_modal'}>
                     <PaymentComponent/>
                 </Modal>
             </Modal>

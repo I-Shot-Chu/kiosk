@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { language, useCartStore } from '../../store/store';
 import './Payment.css';
 import { useNavigate } from 'react-router-dom';
+import Modal from "react-modal";
+import { UserPoint } from '../Point/UserPoint';
 
 const PaymentComponent = () =>
 {
@@ -15,20 +17,12 @@ const PaymentComponent = () =>
   const [points, setPoints] = useState(0); // 보유 포인트 상태 (숫자로 초기화)
   const [isEarning, setIsEarning] = useState(null); // 포인트 적립/사용 상태
   const { totalPrice } = useCartStore();
-  const { lang } = language()
+  const { lang } = language();
+  const [modal, setModal] = useState(false);
 
-  const navi = useNavigate();
-  const applyDiscount = () => {
-    navi("/menu/userpoint")
-    
-    const price = parseFloat(totalPrice);
-    if (isNaN(price)) {
-      alert('유효한 결제 금액을 입력하세요.');
-      return;
-    }
-    const discount = price * 0.05;
-    const newPrice = price - discount;
-    alert(`5% 할인 적용! 새로운 결제 금액: ${newPrice.toFixed(2)} 원`);
+  const applyDiscount = () => 
+  {
+    setModal(true);
   };
 
   const submitPoints = () => {
@@ -67,16 +61,16 @@ const PaymentComponent = () =>
 
   return (
     <div className='payment-container'>
-      <h2 className='payment-header'>{lang ? "결제수단 선택" : "Choose the payment method."} ({totalPrice()}{lang ? "원" : "Won"})</h2>
+      <h2 className='payment-header'>{lang ? "결제수단 선택" : "Payment method"} ({totalPrice()}{lang ? "원" : "Won"})</h2>
 
       <h3 className='step-1'>STEP1</h3><br/><br/>
-      <h3 className='step-title-1'>제휴할인을 선택해주세요.</h3>
+      <h3 className='step-title-1'>{lang ? "제휴할인을 선택해주세요." : "Choose the discount for the allience."}</h3>
       <button className='option-box-1' onClick={applyDiscount}></button>
       <button className='option-box-2' onClick={applyDiscount}>   </button>
       
       <h3 className='step-2'>STEP2</h3>
-      <h3 className='step-title-2'>결제수단을 선택해주세요.</h3>
-      <button className='payment-card-samsungpay' onClick={() => setPointFormVisible(true)}>   </button>
+      <h3 className='step-title-2'>{lang ? "결제수단을 선택해주세요." : "Choose the payment method."}</h3>
+      <button className='payment-card-samsungpay' onClick={applyDiscount}>   </button>
       <button className='payment-Appcard-QRbarcode' onClick={applyDiscount}>   </button>
 
       <div>
@@ -94,8 +88,10 @@ const PaymentComponent = () =>
         <button className='payment-box-MEGApay' onClick={() => completePayment('메가선불페이')}>  </button>
       </div>
 
-      <h3 className='totalmoney'>주문금액: {totalPrice().toLocaleString()}원 - 할인금액: 0원 결제금액: {totalPrice().toLocaleString()}원</h3>
-
+      <h3 className='totalmoney'>{lang ? "주문금액: " : "Price: "}{totalPrice().toLocaleString()}{lang ? "원 - 할인금액: " : " Won - Discount: "}0{lang ? "원 = 결제금액: " : " Won = Total: "}{totalPrice().toLocaleString()}{lang ? "원" : " Won"}</h3>
+      <Modal isOpen = {modal} ariaHideApp = {false}>
+        <UserPoint/>
+      </Modal>
       {pointFormVisible && (
         <div>
           <input
