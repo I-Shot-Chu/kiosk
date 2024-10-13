@@ -37,7 +37,7 @@ function App()
   return (
 
     <BrowserRouter>
-   <Kiosk>
+   <Kiosk> 
       <Routes>
         {/* Root Redirect */}
         <Route path="/" element={<Redirect/>}/>
@@ -80,7 +80,7 @@ function App()
         <Route path="/card" element={<Card/>}/>
 
       </Routes>
-      </Kiosk>
+      </Kiosk> 
     </BrowserRouter>
    
 
