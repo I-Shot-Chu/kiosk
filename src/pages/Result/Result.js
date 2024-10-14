@@ -70,8 +70,8 @@ const Result = () =>
                         {timeLeft}
                     </h3>
                     <div>
-                        <button className = {"modal_button"} onClick={onClickHandlerYes}>{lang ? "출력" : "Print"}</button>
-                        <button className = {"modal_button"} onClick={onClickHandlerNo}>{lang ? "미출력" : "Skip"}</button>
+                        <button className = "modal_button" onClick={onClickHandlerYes}>{lang ? "출력" : "Print"}</button>
+                        <button className = "modal_button" onClick={onClickHandlerNo}>{lang ? "미출력" : "Skip"}</button>
                     </div>
                 </Modal>
             </div>
