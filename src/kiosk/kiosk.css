@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    overflow: hidden; /* 부모 요소에서 overflow 숨기기 */
+}
+
+.kiosk-container {
+    width: 660px;
+    height: 1050px;
+    background-color: #f0f0f0; /* 배경색을 좀 더 밝게 */
+    border: 8px solid #333; /* 테두리를 더 얇게 하고 색상을 어둡게 */
+    border-radius: 20px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* 그림자 효과를 부드럽게 */
+    position: relative;
+    overflow: auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column; /* 내부 요소를 수직 정렬 */
+}
+
+
+.kiosk-screen {
+    flex: 1; /* 화면 영역을 자동으로 조정 */
+    background-color: #B8D3ED; /* 사용자 설정 배경색 */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Responsive 디자인을 위한 미디어 쿼리 */
+@media (max-width: 600px) {
+    .kiosk-container {
+        width: 100%;
+        height: auto; /* 필요에 따라 높이 자동 조정 */
+    }
+}

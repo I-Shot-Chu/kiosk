@@ -1,70 +1,90 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import IdlePage from "./IdlePage";
-import Redirect from "./Redirect";
-import Result from "./Result";
-import Layout from "./layout/Layout";
-import { useReducer } from "react";
-import { HotCoffee, IceCoffee } from "./main-menu-page/drink/Coffee";
-import { HotTea, IceTea } from "./main-menu-page/drink/Tea";
-import { HotDecaf, IceDecaf } from "./main-menu-page/drink/Decaffein";
-import NewDrinks from "./main-menu-page/drink/NewDrinks";
-import Dessert from "./main-menu-page/dessert-md/Dessert";
-import NewDessert from "./main-menu-page/dessert-md/NewDessert";
-import { Point } from "./Point";
-import Purchase from "./Purchase";
-import MenuDetail from "./MenuDetail"; 
-import ShoppingCart from "./ShoppingCart"; 
-import { UserPoint } from "./UserPoint"; 
-import { Cupon } from "./Cupon"; 
-import AdeAndJuice from "./main-menu-page/drink/AdeAndJuice";
-import SmoothieAndFrappe from "./main-menu-page/drink/SmoothieAndFrappe";
-import { HotDrinks, IceDrinks } from "./main-menu-page/drink/Drinks";
-import MdProduct from "./main-menu-page/dessert-md/Md";
-import cartReducer, { initialState } from "./cartReducer";
 
-function App() {
-  
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+// Pages
+import IdlePage from "./pages/Idle/Idle";
+import Redirect from "./components/Redirect/redirect";
+import Result from "./pages/Result/Result";
+import Layout from "./layouts/Layout";
+import { Point } from "./pages/Point/PointStorage";
+import Purchase from "./pages/Payment/Payment";
+import MenuDetail from "./pages/option/ShowExtraOptions";
+import ShoppingCart from "./store/ShoppingList";
+import { UserPoint } from "./pages/Point/UserPoint";
 
+// Drink Pages
+import { HotCoffee, IceCoffee } from "./features/Drinks/Coffee";
+import { HotTea, IceTea } from "./features/Drinks/Tea";
+import { HotDecaf, IceDecaf } from "./features/Drinks/Decaffein";
+import NewDrinks from "./features/Drinks/NewDrinks";
+import AdeAndJuice from "./features/Drinks/AdeAndJuice";
+import SmoothieAndFrappe from "./features/Drinks/SmoothieAndFrappe";
+import { HotDrinks, IceDrinks } from "./features/Drinks/Drinks";
+
+// Dessert and MD Pages
+import Dessert from "./features/Desserts/Dessert";
+import NewDessert from "./features/Desserts/NewDessert";
+import MdProduct from "./features/Merchandise/Merchandise";
+import { Card } from "./pages/Card/Card";
+import { Coupon } from "./pages/Coupon/Coupon";
+import Kiosk from "./kiosk/kiosk";
+
+
+function App()
+{
+
+ 
 
   return (
+
     <BrowserRouter>
+   <Kiosk> 
       <Routes>
-        <Route path="/" element={<Redirect />} />
-        <Route path="/idle" element={<IdlePage />} />
-        <Route path="/menu" element={<Layout />}>
-          
-          {/* 메뉴별 라우트 설정 */}
-          <Route path="hotcoffee" element={<HotCoffee/>} />
-          <Route path="icecoffee" element={<IceCoffee/>} />
-          <Route path="hottea" element={<HotTea />} />
-          <Route path="icetea" element={<IceTea />} />
-          <Route path="ade&juice" element={<AdeAndJuice />} />
-          <Route path="smoothie&frappe" element={<SmoothieAndFrappe />} />
-          <Route path="hotdecaf" element={<HotDecaf />} />
-          <Route path="icedecaf" element={<IceDecaf />} />
-          <Route path="hotdrinks" element={<HotDrinks />} />
-          <Route path="icedrinks" element={<IceDrinks />} />
-          <Route path="newdrinks" element={<NewDrinks  />} />
-          <Route path="dessert" element={<Dessert />} />
-          <Route path="newdessert" element={<NewDessert />} />
-          <Route path="md" element={<MdProduct />} />
-          <Route path="point" element={<Point />} />
+        {/* Root Redirect */}
+        <Route path="/" element={<Redirect/>}/>
 
-          {/* 추가 메뉴 상세 옵션 */}
-          <Route path=":menuCode" element={<MenuDetail dispatch={dispatch}/>}/>
-          <Route path="shoppingcart" element={<ShoppingCart state={state} dispatch={dispatch} />} />
+        {/* Idle Page */}
+        <Route path="/idle" element={<IdlePage/>}/>
+
+        {/* Main Menu Layout with Nested Routes */}
+        <Route path="/menu" element={<Layout/>}>
+          {/* Drink Routes */}
+          <Route path="hotcoffee" element={<HotCoffee/>}/>
+          <Route path="icecoffee" element={<IceCoffee/>}/>
+          <Route path="hottea" element={<HotTea/>}/>
+          <Route path="icetea" element={<IceTea/>}/>
+          <Route path="ade&juice" element={<AdeAndJuice/>}/>
+          <Route path="smoothie&frappe" element={<SmoothieAndFrappe/>}/>
+          <Route path="hotdecaf" element={<HotDecaf/>}/>
+          <Route path="icedecaf" element={<IceDecaf/>}/>
+          <Route path="hotdrinks" element={<HotDrinks/>}/>
+          <Route path="icedrinks" element={<IceDrinks/>}/>
+          <Route path="newdrinks" element={<NewDrinks />}/>
+
+          {/* Dessert and MD Routes */}
+          <Route path="dessert" element={<Dessert/>}/>
+          <Route path="newdessert" element={<NewDessert/>}/>
+          <Route path="md" element={<MdProduct/>}/>
+
+          {/* Menu Detail and Shopping Cart */}
+          <Route path=":menuCode" element={<MenuDetail/>}/>
+          <Route path="shoppingcart" element={<ShoppingCart />}/>
         </Route>
-        <Route path="/point" element={<Point />} />
-        <Route path="/userpoint" element={<UserPoint />} />
-        <Route path="/cupon" element={<Cupon />} />
-        <Route path="/purchase" element={<Purchase />} />
-        <Route path="/result" element={<Result />} />
-      </Routes>
-      
-    </BrowserRouter>
-  );
-};
 
+        {/* Additional Pages */}
+
+        <Route path="/menu/point" element={<Point/>}/>
+        <Route path="/menu/userpoint" element={<UserPoint/>}/>
+        <Route path="/menu/coupon" element={<Coupon/>}/>
+        <Route path="/payment" element={<Purchase/>}/>
+        <Route path="/result" element={<Result/>}/>
+        <Route path="/card" element={<Card/>}/>
+
+      </Routes>
+      </Kiosk> 
+    </BrowserRouter>
+   
+
+  );
+}
 
 export default App;
