@@ -9,18 +9,10 @@ import { useEffect, useState } from "react";
 import "./Idle.css";
 import { language } from "../../store/store";
 
-<<<<<<< HEAD:src/IdlePage.js
-const img = ["mainpage_first.png", "mainpage_second.png"];
-=======
 const img = [
-    require("../../assets/images/images_idle/bam_port.jpg"), 
-    require("../../assets/images/images_idle/decaff_port.jpg"), 
-    require("../../assets/images/images_idle/genshin_port.jpg"), 
-    require("../../assets/images/images_idle/knotted_port.jpg"), 
-    require("../../assets/images/images_idle/teapleasure_port.jpg"), 
-    require("../../assets/images/images_idle/tumbler_port.jpg")
+    require("../../assets/images/images_idle/mainpage_first2.png"), 
+    require("../../assets/images/images_idle/mainpage_second2.png"), 
 ];
->>>>>>> 88b9e9306c7a64bdc3c9757a80bf6019b7de36a3:src/pages/Idle/Idle.js
 
 const IdlePage = () =>
 {

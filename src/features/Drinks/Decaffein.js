@@ -1,42 +1,24 @@
 import { useEffect, useState } from "react";
-import { hotDecafCoffee, iceDecafCoffee } from "../getMenuDetails";
+import { decafCoffee } from "../getMenuDetails";
 import { DrinkMenu } from "../ShowItems";
 
 
 
-export const HotDecaf = ()=>{
+export const Decaf = ()=>{
 
     const [decafMenu, setDecafMenu] = useState([]);
 
     useEffect(()=>{
-        setDecafMenu(hotDecafCoffee())
+        setDecafMenu(decafCoffee())
     },[]);
 
     return(
         <>
             <div>
-            {decafMenu.map(hotDecaf => <DrinkMenu key={hotDecaf.menuCode} drinkMenu={hotDecaf}/>)}
+            {decafMenu.map(decafCoffee => <DrinkMenu key={decafCoffee.menuCode} drinkMenu={decafCoffee}/>)}
             </div>
         </>
 
     )
-}
-
-
-export const IceDecaf = ()=>{
-
-    const [decafMenu, setDecafMenu] = useState([]);
-
-    useEffect(()=>{
-        setDecafMenu(iceDecafCoffee())
-    },[]);
-
-    return(
-        <>
-            <div>
-            {decafMenu.map(iceDecaf => <DrinkMenu key={iceDecaf.menuCode} drinkMenu={iceDecaf}/>)}
-            </div>
-        </>
-    )
-}
+};
 

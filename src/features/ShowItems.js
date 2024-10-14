@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import MenuDetail from "../pages/option/ShowExtraOptions";
 import { language } from "../store/store";
+import './ShowItem.css';
 
 // 음료
 export const DrinkMenu = ({ drinkMenu }) => {
@@ -24,7 +25,7 @@ export const DrinkMenu = ({ drinkMenu }) => {
     return (
         <>
             <button onClick={onClickHandler}>
-                <div className="DrinkMenuItem">
+                <div className="menu-item">
                     <img src={imageUrl} alt={`${drinkMenu.menuName}`} width="100px" />
                     <h4>{lang ? `${drinkMenu.menuName}` : `${drinkMenu.enName}`}</h4>
                     <ul>{drinkMenu.menuPrice}{lang ? "원" : " Won"}</ul>
@@ -60,7 +61,7 @@ export const DessertMenu = ({ dessertMenu }) => {
     return (
         <>
             <button onClick={onClickHandler}>
-            <div className="DessertMenuItem">
+            <div className="menu-item">
                 <img src={imageUrl} alt={`${dessertMenu.menuName}`} width="100px" />
                 <h4>{lang ? `${dessertMenu.menuName}` : `${dessertMenu.enName}`}</h4>
                 <ul>{dessertMenu.menuPrice}{lang ? "원" : " Won"}</ul>
@@ -95,7 +96,7 @@ export const MdItem = ({ mdProduct }) => {
     return (
         <>
             <button onClick={onClickHandler}>
-            <div className="DessertMenuItem">
+            <div className="menu-item">
                 <img src={imageUrl} alt={`${mdProduct.menuName}`} width="100px" />
                 <h4>{lang ? `${mdProduct.menuName}` : `${mdProduct.enName}`}</h4>
                 <ul>{mdProduct.menuPrice}{lang ? "원" : " Won"}</ul>

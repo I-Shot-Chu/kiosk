@@ -1,40 +1,22 @@
 import { useEffect, useState } from "react";
 import { DrinkMenu } from "../ShowItems";
-import { hotDrinks, iceDrinks } from "../getMenuDetails";
+import { drinks } from "../getMenuDetails";
 
 
 
-export const HotDrinks = ()=>{
+export const Drinks = ()=>{
 
     const [drinksMenu, setDrinksMenu] = useState([]);
 
     useEffect(()=>{
-        setDrinksMenu(hotDrinks())
+        setDrinksMenu(drinks())
     },[]);
 
     return(
         <>
         <div>
-            {drinksMenu.map(hotDrinks => <DrinkMenu key={hotDrinks.menuCode} drinkMenu={hotDrinks}/>)}
+            {drinksMenu.map(drinks => <DrinkMenu key={drinks.menuCode} drinkMenu={drinks}/>)}
         </div>
         </>
     )
-}
-
-
-export const IceDrinks = ()=>{
-
-    const [drinksMenu, setDrinksMenu] = useState([]);
-
-    useEffect(()=>{
-        setDrinksMenu(iceDrinks())
-    },[]);
-
-    return(
-        <>
-        <div>
-            {drinksMenu.map(iceDrinks => <DrinkMenu key={iceDrinks.menuCode} drinkMenu={iceDrinks}/>)}
-        </div>
-        </>
-    )
-}
+};

@@ -1,0 +1,50 @@
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 메뉴 간 간격을 줄임 */
+    justify-content: center;
+    padding: 10px;
+}
+
+.menu-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 150px; /* 메뉴 카드의 너비를 줄임 */
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item img {
+    width: 80%; /* 이미지 크기를 줄임 */
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.menu-item h4 {
+    font-size: 0.9rem; /* 텍스트 크기 줄임 */
+    margin: 5px 0;
+}
+
+.menu-item ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.8rem; /* 가격 텍스트 크기 줄임 */
+    margin: 3px 0;
+}
+
+/* 버튼 스타일 */
+.menu-item button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px; /* 버튼 크기 줄임 */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e7f2fc;
+    border-bottom: 1px solid #ddd;
+}
+
+.header button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.header img {
+    width: 150px;
+}
+
+.header button img {
+    width: 30px;
+    height: auto;
+}

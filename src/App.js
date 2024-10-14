@@ -12,13 +12,13 @@ import ShoppingCart from "./store/ShoppingList";
 import { UserPoint } from "./pages/Point/UserPoint";
 
 // Drink Pages
-import { HotCoffee, IceCoffee } from "./features/Drinks/Coffee";
-import { HotTea, IceTea } from "./features/Drinks/Tea";
-import { HotDecaf, IceDecaf } from "./features/Drinks/Decaffein";
+import { Coffee } from "./features/Drinks/Coffee";
+import { Tea } from "./features/Drinks/Tea";
+import { Decaf } from "./features/Drinks/Decaffein";
 import NewDrinks from "./features/Drinks/NewDrinks";
 import AdeAndJuice from "./features/Drinks/AdeAndJuice";
 import SmoothieAndFrappe from "./features/Drinks/SmoothieAndFrappe";
-import { HotDrinks, IceDrinks } from "./features/Drinks/Drinks";
+import { Drinks } from "./features/Drinks/Drinks";
 
 // Dessert and MD Pages
 import Dessert from "./features/Desserts/Dessert";
@@ -45,16 +45,12 @@ function App()
         {/* Main Menu Layout with Nested Routes */}
         <Route path="/menu" element={<Layout/>}>
           {/* Drink Routes */}
-          <Route path="hotcoffee" element={<HotCoffee/>}/>
-          <Route path="icecoffee" element={<IceCoffee/>}/>
-          <Route path="hottea" element={<HotTea/>}/>
-          <Route path="icetea" element={<IceTea/>}/>
+          <Route path="coffee" element={<Coffee/>}/>
+          <Route path="tea" element={<Tea/>}/>
           <Route path="ade&juice" element={<AdeAndJuice/>}/>
           <Route path="smoothie&frappe" element={<SmoothieAndFrappe/>}/>
-          <Route path="hotdecaf" element={<HotDecaf/>}/>
-          <Route path="icedecaf" element={<IceDecaf/>}/>
-          <Route path="hotdrinks" element={<HotDrinks/>}/>
-          <Route path="icedrinks" element={<IceDrinks/>}/>
+          <Route path="decaf" element={<Decaf/>}/>
+          <Route path="drinks" element={<Drinks/>}/>
           <Route path="newdrinks" element={<NewDrinks />}/>
 
           {/* Dessert and MD Routes */}
