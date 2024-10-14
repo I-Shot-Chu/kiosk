@@ -1,0 +1,24 @@
+[
+    {
+       "couponCode":"a",
+      "name": "1000원 쿠폰",
+      "price": 1000
+  
+     
+    },
+    {
+         "couponCode":"b",
+        "name": "2000원 쿠폰",
+        "price": 2000
+     
+      }
+
+      ,
+    {
+         "couponCode":"c",
+        "name": "3000원 쿠폰",
+        "price": 3000
+      
+      }
+
+  ]
