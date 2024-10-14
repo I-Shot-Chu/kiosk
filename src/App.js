@@ -37,7 +37,11 @@ function App()
   return (
 
     <BrowserRouter>
+<<<<<<< HEAD
    {/* <Kiosk> */}
+=======
+   <Kiosk> 
+>>>>>>> c243d9262ea011a792037e518533477ec5935539
       <Routes>
         {/* Root Redirect */}
         <Route path="/" element={<Redirect/>}/>
@@ -80,7 +84,11 @@ function App()
         <Route path="/card" element={<Card/>}/>
 
       </Routes>
+<<<<<<< HEAD
       {/* </Kiosk> */}
+=======
+      </Kiosk> 
+>>>>>>> c243d9262ea011a792037e518533477ec5935539
     </BrowserRouter>
    
 

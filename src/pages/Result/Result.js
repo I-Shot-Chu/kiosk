@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { useNavigate } from 'react-router-dom';
 import { language } from "../../store/store";
+import "./Result.css";
 
 const Result = () =>
 {
@@ -61,15 +62,17 @@ const Result = () =>
 
     return (
         <>
-            <div className="result_popup">
-                <Modal isOpen = {firstModal} ariaHideApp={false}>
+            <div className='result_popup'>
+                <Modal isOpen = {firstModal} ariaHideApp={false} className = {"modal"}>
                     <h3>
                         {lang ? "[정상승인]" : "[Approved payment]"} <br></br>
                         {lang ? "영수증을 출력하시겠습니까?" : "Do you want to print out the receipt?"} <br></br>
                         {timeLeft}
                     </h3>
-                    <button onClick={onClickHandlerYes}>{lang ? "출력" : "Print"}</button>
-                    <button onClick={onClickHandlerNo}>{lang ? "미출력" : "Skip"}</button>
+                    <div className="modal_buttons_container">
+                        <button className = {"modal_button"} onClick={onClickHandlerYes}>{lang ? "출력" : "Print"}</button>
+                        <button className = {"modal_button"} onClick={onClickHandlerNo}>{lang ? "미출력" : "Skip"}</button>
+                    </div>
                 </Modal>
             </div>
             <div className="receipt">
@@ -80,8 +83,8 @@ const Result = () =>
                     : "Please check your order number on the printed receipt."}
                 </h3>
                 <h2>{lang ? "주문번호" : "Order No."}</h2>
-                <h1>{lang ? null : "No. "}{orderNumber}{lang ? "번" : null}</h1>
-                <h5>주문하신 메뉴를 <br/> 정성껏 준비중입니다.</h5>
+                <h1 className="order_number">{lang ? null : "No. "}{orderNumber}{lang ? "번" : null}</h1>
+                <h5>{lang ? "주문하신 메뉴를 정성껏 준비중입니다." : "We are carefully preparing the menu you ordered."}</h5>
             </div>
         </>
     )

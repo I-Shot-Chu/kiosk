@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { language, useCartStore ,usePriceStore} from "./store"; // Zustand store
 import { useState } from "react";
-
+import './ShoppingList.css'
 
 const ShoppingCart = ({ isModalOpen }) => {
     const { cartItems, removeFromCart, updateItemCount } = useCartStore(); // Zustand actions
@@ -58,9 +58,6 @@ const ShoppingCart = ({ isModalOpen }) => {
                     ))
                 ) : null}
             </div>
-             <button onClick={submit}>go</button> 
-
-
         </>
     );
 };
@@ -83,30 +80,35 @@ const MenuItem = ({ index, menu, onRemove, onCountChange, count, isModalOpen }) 
         onCountChange(menu.id, newCount);
     };
 
+    const truncateText = (text, length) => {
+        return text.length > length ? text.substring(0, length) + "..." : text;
+    };
+
     return (
         <div>
-            <br />
-            <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                {isModalOpen ? null : <button onClick={() => onRemove(menu.id)}>X</button>}
-                &nbsp;
-                {index}
-                &nbsp;&nbsp;&nbsp;
-                {lang ? `${menu.menuName}` : `${menu.enName}`}
-                &nbsp;&nbsp;&nbsp;
-                {isModalOpen ? null : <button onClick={decrement}>-</button>}
-                <h3>{count} {lang ? "개" : "pcs"}</h3>
-                {isModalOpen ? null : <button onClick={increment}>+</button>}
+            <div className="order_list">
+                {isModalOpen ? null : <button onClick={() => onRemove(menu.id)} className="delete_button"></button>}
+                    &nbsp;
+                    <h3 className="order_menu_name">
+                        {index}.
+                        &nbsp;&nbsp;&nbsp;
+                        {truncateText(lang ? menu.menuName : menu.enName, lang ? 20 : 25)}
+                        &nbsp;&nbsp;&nbsp;
+                    </h3>
+                {isModalOpen ? null : <button onClick={decrement} className="decrement_button"></button>}
+                <div className="order_count">{count} {lang ? "개" : "pcs"}</div>
+                {isModalOpen ? null : <button onClick={increment} className="increment_button"></button>}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h3>{pricePerItem * count}{lang ? "원" : " Won"}</h3>
+                <div className="order_price">{(pricePerItem * count).toLocaleString()}{lang ? "원" : " Won"}</div>
             </div>
             {menu.extraMenu && menu.extraMenu.length > 0 ? (
-                <ul>
-                    {menu.extraMenu.map((extra, index) => (
-                        <li key={index}>
-                            {extra.option} - {extra.price}원
-                        </li>
-                    ))}
-                </ul>
+            <ul className="order_option">
+                {menu.extraMenu.map((extra, index) => (
+                    <div key={index}>
+                        - {extra.option} - {extra.price}원
+                    </div>
+                ))}
+            </ul>
             ) : null}
         </div>
     );
