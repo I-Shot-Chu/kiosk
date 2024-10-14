@@ -1,77 +1,89 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import IdlePage from "./IdlePage";
-import Redirect from "./Redirect";
-import Layout from "./layout/Layout";
-import Coffee from "./main-menu-page/drink/Coffee";
-import Tea from "./main-menu-page/drink/Tea";
-import AdeandJuice from "./main-menu-page/drink/Ade-juice";
-import SmoothieandFrappe from "./main-menu-page/drink/Smoothie-frappe";
-import Decaffein from "./main-menu-page/drink/Decaffein";
-import NewDrinks from "./main-menu-page/drink/New-drinks";
-import Dessert from "./main-menu-page/drink/Dessert";
-import NewDessert from "./main-menu-page/drink/New-dessert";
-import { useState } from "react";
-import { Point } from "./Point";
-import ExtraShot from "./ExtraShot";
-import ShoppingCart from "./ShoppingCart";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+// Pages
+import IdlePage from "./pages/Idle/Idle";
+import Redirect from "./components/Redirect/redirect";
+import Result from "./pages/Result/Result";
+import Layout from "./layouts/Layout";
+import { Point } from "./pages/Point/PointStorage";
+import Purchase from "./pages/Payment/Payment";
+import MenuDetail from "./pages/option/ShowExtraOptions";
+import ShoppingCart from "./store/ShoppingList";
+import { UserPoint } from "./pages/Point/UserPoint";
+
+// Drink Pages
+import { HotCoffee, IceCoffee } from "./features/Drinks/Coffee";
+import { HotTea, IceTea } from "./features/Drinks/Tea";
+import { HotDecaf, IceDecaf } from "./features/Drinks/Decaffein";
+import NewDrinks from "./features/Drinks/NewDrinks";
+import AdeAndJuice from "./features/Drinks/AdeAndJuice";
+import SmoothieAndFrappe from "./features/Drinks/SmoothieAndFrappe";
+import { HotDrinks, IceDrinks } from "./features/Drinks/Drinks";
+
+// Dessert and MD Pages
+import Dessert from "./features/Desserts/Dessert";
+import NewDessert from "./features/Desserts/NewDessert";
+import MdProduct from "./features/Merchandise/Merchandise";
+import { Card } from "./pages/Card/Card";
+import { Coupon } from "./pages/Coupon/Coupon";
+import Kiosk from "./kiosk/kiosk";
 
 
 function App()
-{// dsfsfjslfdjslkjf지워줘요
-   const [cart, setCart] = useState([]);
+{
 
- const addCart = (menuItem) => {
-     setCart((prevMenu) => [...prevMenu, menuItem])
-  }
+ 
 
   return (
-    <>
+
     <BrowserRouter>
+   <Kiosk> 
       <Routes>
-        <Route path = "/" element ={<Redirect/>}/>
-        <Route path = "/idle" element ={<IdlePage/>}/>
+        {/* Root Redirect */}
+        <Route path="/" element={<Redirect/>}/>
+
+        {/* Idle Page */}
+        <Route path="/idle" element={<IdlePage/>}/>
+
+        {/* Main Menu Layout with Nested Routes */}
         <Route path="/menu" element={<Layout/>}>
-          <Route path="/menu/hotcoffee" element={<Coffee/>} >
-            <Route path =":menucode" element={<ExtraShot addCart={addCart}/>}/>
-            <Route path="shoppingcart" element={<ShoppingCart cart={cart}/>}/>
-         </Route>
-                    <Route path="/menu/icecoffee">
-            <Route index element={<Coffee/>}/>
-          </Route>
-          <Route path="/menu/hottea">
-            <Route index element={<Tea/>}/>
-          </Route>
-          <Route path="/menu/icetea">
-            <Route index element={<Tea/>}/>
-          </Route>
-          <Route path="/menu/ade&juice">
-            <Route index element={<AdeandJuice/>}/>
-          </Route>
-          <Route path="/menu/smoothie&frappe">
-            <Route index element={<SmoothieandFrappe/>}/>
-          </Route>
-          <Route path="/menu/hotdecaf">
-            <Route index element={<Decaffein/>}/>
-          </Route>
-          <Route path="/menu/icedecaf">
-            <Route index element={<Decaffein/>}/>
-          </Route>
-          <Route path="/menu/newdrinks">
-            <Route index element={<NewDrinks/>}/>
-          </Route>
-          <Route path="/menu/dessert">
-            <Route index element={<Dessert/>}/>
-          </Route>
-          <Route path="/menu/newdessert">
-            <Route index element={<NewDessert/>}/>
-          </Route>
-          <Route path="/menu/point">
-            <Route index element={<Point/>}/>
-          </Route>
+          {/* Drink Routes */}
+          <Route path="hotcoffee" element={<HotCoffee/>}/>
+          <Route path="icecoffee" element={<IceCoffee/>}/>
+          <Route path="hottea" element={<HotTea/>}/>
+          <Route path="icetea" element={<IceTea/>}/>
+          <Route path="ade&juice" element={<AdeAndJuice/>}/>
+          <Route path="smoothie&frappe" element={<SmoothieAndFrappe/>}/>
+          <Route path="hotdecaf" element={<HotDecaf/>}/>
+          <Route path="icedecaf" element={<IceDecaf/>}/>
+          <Route path="hotdrinks" element={<HotDrinks/>}/>
+          <Route path="icedrinks" element={<IceDrinks/>}/>
+          <Route path="newdrinks" element={<NewDrinks />}/>
+
+          {/* Dessert and MD Routes */}
+          <Route path="dessert" element={<Dessert/>}/>
+          <Route path="newdessert" element={<NewDessert/>}/>
+          <Route path="md" element={<MdProduct/>}/>
+
+          {/* Menu Detail and Shopping Cart */}
+          <Route path=":menuCode" element={<MenuDetail/>}/>
+          <Route path="shoppingcart" element={<ShoppingCart />}/>
         </Route>
+
+        {/* Additional Pages */}
+
+        <Route path="/menu/point" element={<Point/>}/>
+        <Route path="/menu/userpoint" element={<UserPoint/>}/>
+        <Route path="/menu/coupon" element={<Coupon/>}/>
+        <Route path="/payment" element={<Purchase/>}/>
+        <Route path="/result" element={<Result/>}/>
+        <Route path="/card" element={<Card/>}/>
+
       </Routes>
+      </Kiosk> 
     </BrowserRouter>
-    </>
+   
+
   );
 }
 
