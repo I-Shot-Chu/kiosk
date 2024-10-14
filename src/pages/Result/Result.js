@@ -69,7 +69,7 @@ const Result = () =>
                         {lang ? "영수증을 출력하시겠습니까?" : "Do you want to print out the receipt?"} <br></br>
                         {timeLeft}
                     </h3>
-                    <div>
+                    <div className="modal_buttons_container">
                         <button className = {"modal_button"} onClick={onClickHandlerYes}>{lang ? "출력" : "Print"}</button>
                         <button className = {"modal_button"} onClick={onClickHandlerNo}>{lang ? "미출력" : "Skip"}</button>
                     </div>
