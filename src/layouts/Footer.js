@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { language, useCartStore, usePriceStore } from "../store/store";
 import Timer from "./Timer";
 import PaymentComponent from "../pages/Payment/Payment";
+import { useNavigate } from "react-router-dom";
 import './Footer.css'
 
 const Footer = () =>
@@ -21,6 +22,8 @@ const Footer = () =>
     const { lang } = language();
 
     const { setTotalPrice } = usePriceStore();
+
+    const navigate = useNavigate();
 
     // Reset timer when cart contents change
     useEffect(() =>
@@ -72,6 +75,12 @@ const Footer = () =>
         setSecondModal(true);
     };
 
+
+    const payMent = () => 
+        {
+            navigate('/payment');
+        }
+    
     return (
         <>  
         <div className="main_page_cart">
@@ -82,7 +91,7 @@ const Footer = () =>
             <div className="cart_button_container">
             <h3 className="select_menu">{lang ? "선택한 상품: " : null}{cartItems.length} {lang ? "개" : "kind(s) of product"}</h3>
             <div className="timer_button">
-                {/* <Timer timeLeft={timeLeft} resetTime={setTimeLeft} className="timer"/> */}
+                <Timer timeLeft={timeLeft} resetTime={setTimeLeft} className="timer"/>
                 <button onClick={openModal} className="cart_pay_button">{totalPrice().toLocaleString()}{lang ? "원" : " Won"} <br></br>{lang ? "결제하기" : "Payment"}</button>
                 <button onClick={handleClear} className="all_delete_button">{lang ? "전체삭제" : "Clear all"}</button>
             </div>
@@ -105,8 +114,8 @@ const Footer = () =>
                 </div>
                 <div className="button_container">
                     <button onClick={closeModal} className='back_button'></button>
-                    <button onClick={handlePayment} className="forHere_button">{lang ? "먹고가기" : "For here"}<br/>{lang ? "다회용 컵" : "Reuseable cup"}</button>
-                    <button onClick={handlePayment} className="toGo_button">{lang ? "포장하기" : "To go"}<br/>{lang ? "일회용 컵" : "Disposable cup"}</button>
+                    <button onClick={payMent } className="forHere_button">{lang ? "먹고가기" : "For here"}<br/>{lang ? "다회용 컵" : "Reuseable cup"}</button>
+                    <button onClick={payMent } className="toGo_button">{lang ? "포장하기" : "To go"}<br/>{lang ? "일회용 컵" : "Disposable cup"}</button>
                 </div>
                 <Modal isOpen = {secondModal} ariaHideApp = {false} className={'payment_modal'}>
                     <PaymentComponent/>

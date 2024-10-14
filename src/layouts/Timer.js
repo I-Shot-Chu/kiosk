@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { language } from "../store/store";
+import { language, useCartStore } from "../store/store";
 import './Timer.css'
 
 function useInterval(callback, delay) {
@@ -27,7 +27,10 @@ function useInterval(callback, delay) {
 
     const { lang } = language();
 
-    const message = () =>{
+    const { clearCart } = useCartStore();
+
+    const message = () =>
+    {
         if(lang){
         alert("제한 시간이 지나 초기 화면으로 돌아갑니다.");
         }
@@ -42,6 +45,7 @@ function useInterval(callback, delay) {
         resetTime(timeLeft - 1);
         } else {
         message();
+        clearCart();
         navigate("/idle");
         }
    }, 1000);

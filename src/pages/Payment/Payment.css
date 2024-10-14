@@ -1,18 +1,17 @@
-body {
-    background-color: #f2f2f2;
-    font-family: 'Arial', sans-serif;
-}
+
 
 /* 결제수단 선택 창 전체 바탕 */
 .payment-container {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    height: 800px;
+    height: 850px;
     width: 600px;
     margin: 20px auto;
     padding: 20px;
     position: relative;
+    z-index: 1;
+    overflow: auto;
 }
 
 
@@ -24,7 +23,6 @@ body {
     font-size: 27px;
     color: #333;
     margin-bottom: 10px;
-    /* background-color: rgb(140, 199, 224); */
 
 }
 
@@ -120,6 +118,25 @@ body {
 
 }
 
+/* 클릭 시 포인트 사용 페이지로 넘어감 */
+.pointuse {
+    box-sizing: border-box;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    transform: translateY(-30px);
+    margin-left: 319px;
+    background: #FCFBFB;
+    border: 3px solid #B8B8B8;
+    border-radius: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 800;
+    font-style: oblique;
+
+}
+
 /* .option-box-2:hover {
     background-color: rgb(138, 138, 138);
     cursor: pointer;
@@ -135,7 +152,7 @@ body {
     position: absolute;
     width: 150px;
     height: 100px;
-    background: #FCFBFB url('/src/assets/images/payment/credit_card.png') no-repeat center;
+    background: #FCFBFB url('/src/assets/images/payment/samsungpay.png') no-repeat center;
     background-size: 130px 70px;
     border: 3px solid #B8B8B8;
     border-radius: 10px;
@@ -150,6 +167,28 @@ body {
 } */
 
 .payment-card-samsungpay:active {
+    background: #555555;
+}
+
+.payment-card {
+    box-sizing: border-box;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background: #FCFBFB url('/src/assets/images/payment/card.png') no-repeat center;
+    background-size: 160px 145px;
+    border: 3px solid #B8B8B8;
+    border-radius: 10px;
+    font-size: 20px;
+    transform: translateY(90px);
+    margin-left: 320px;
+    cursor: pointer;    
+    background-size: cover;  /* 이미지가 버튼을 가득 채우게 설정 */
+    background-position: center;  /* 이미지를 버튼 중앙에 배치 */
+    background-repeat: no-repeat;  /* 이미지 반복 방지 */
+}
+
+.payment-card:active {
     background: #555555;
 }
 
@@ -409,4 +448,7 @@ body {
 .totalmoney {
     transform: translateY(545px);
 }
+
+
+
 

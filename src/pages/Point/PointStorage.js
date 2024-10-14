@@ -66,7 +66,7 @@ export const Point = () => {
         <div>
           <h2 className="user-point-title">포인트 적립하시겠습니까?</h2>
           <button onClick={() => setIsOk(true)} className="point-use-button">네</button>
-          <button onClick={() => navigate("/result")} className="point-no-button">아니오</button>
+          <button onClick={() => navigate("/card")} className="point-no-button">아니오</button>
         </div>
       ) : (
         <div>
