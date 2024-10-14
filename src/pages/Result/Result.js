@@ -24,6 +24,8 @@ const Result = () =>
 
     //const [receipt, setReceipt] = useState(false);
 
+    
+
     useEffect(() => 
     {
         setOrderNumber(Math.floor(Math.random() * 100) + 1);
