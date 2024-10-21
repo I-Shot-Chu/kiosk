@@ -1,0 +1,36 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(227, 227, 227, 0.7); /* 반투명 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    width: 500px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 500px; /* 최대 너비 설정 */
+    width: 100%; /* 너비는 100% */
+  }
+
+.close-button {
+    border: 5px;
+    color: black;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.close-button:hover {
+    color: #ff0000;
+    font-weight: bold;
+}

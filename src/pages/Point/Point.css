@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   background-color: #f0f8ff; /* 배경 색상 */
   display: flex;
@@ -36,6 +37,52 @@ body {
   border: 2px solid #007bff;
   border-radius: 10px;
   margin-bottom: 20px;
+=======
+
+
+.user-point-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* 배경색을 흰색으로 변경 */ 
+    width: 600px;
+    height: 800px;
+    margin: auto;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+.user-point-title {
+  font-size: 26px; /* Slightly larger title for better visibility */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00796b; /* Dark green for titles */
+}
+
+.user-point-price {
+  font-size: 22px; /* Slightly larger price text */
+  margin-bottom: 15px; /* Increased margin for better spacing */
+  color: #00796b; /* Dark green for price */
+}
+
+.user-point-input-section {
+  width: 100%;
+  max-width: 500px; /* Reduced max-width to fit screen better */
+  text-align: center;
+}
+
+.user-point-input {
+  width: 100%;
+  padding: 14px; /* Slightly larger padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #26a69a; /* Teal border */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
 }
 
 .user-point-button-grid {
@@ -48,21 +95,36 @@ body {
 .user-point-number-button,
 .user-point-delete-button {
   padding: 15px;
+<<<<<<< HEAD
   font-size: 18px;
   background-color: #007bff;
   color: #fff;
   border: 2px solid #0056b3;
   border-radius: 8px;
   cursor: pointer;
+=======
+  font-size: 20px; /* Increased font size for buttons */
+  background-color: #4db6ac; /* Light teal color */
+  color: #fff; /* White text */
+  border: 2px solid #00796b; /* Dark green border */
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
 }
 
 .user-point-number-button:hover,
 .user-point-delete-button:hover {
+<<<<<<< HEAD
   background-color: #0056b3;
+=======
+  background-color: #009688; /* Darker teal on hover */
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
 }
 
 .user-point-actions {
   display: flex;
+<<<<<<< HEAD
   justify-content: space-between; /* 버튼 간의 간격을 동일하게 */
   margin-bottom: 20px;
   gap: 10px; /* 버튼 간격 */
@@ -96,12 +158,83 @@ body {
 
 .user-point-message {
   color: #e74c3c;
+=======
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+/* point-use-button" */
+.user-point-use-button {
+  width: 160px; /* Adjusted width for consistency */
+  padding: 12px 0; /* Increased padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #00796b; /* Dark green */
+  color: #fff; /* White text */
+  border: 2px solid #26a69a; /* Teal border */
+}
+
+.point-use-button {
+  width: 160px; /* Adjusted width for consistency */
+  padding: 12px 0; /* Increased padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #00796b; /* Dark green */
+  color: #fff; /* White text */
+  border: 2px solid #26a69a; /* Teal border */
+}
+
+.user-point-use-button:hover {
+  background-color: #004d40; /* Darker green on hover */
+}
+
+.user-point-no-point-button {
+  background-color: #fff; /* White background */
+  color: #00796b; /* Dark green text */
+  border: 2px solid #00796b; /* Dark green border */
+  width: 500px; /* Adjusted width for consistency */
+  height: 50px; /* Increased height for better touch area */
+  border-radius: 5px;
+}
+
+.point-no-button {
+  width: 160px; /* Adjusted width for consistency */
+  padding: 12px 0; /* Increased padding for better touch area */
+  font-size: 18px; /* Increased font size */
+  
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #fcfcfc; /* Dark green */
+  color: #26a69a; /* White text */
+  border: 2px solid #26a69a; /* Teal border */
+}
+
+.user-point-no-point-button:hover {
+  background-color: #f0f0f0; /* Light grey on hover */
+}
+
+.user-point-message {
+  color: #d32f2f; /* Red for error messages */
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
   font-size: 14px;
   margin-top: 10px;
 }
 
+<<<<<<< HEAD
 .user-point-summary {
   margin-top: 20px;
   font-size: 14px;
   color: #333;
+=======
+/* Summary Styles */
+.user-point-summary {
+  margin-top: 20px;
+  font-size: 20px; /* Increased font size for summary */
+  color: #3b3b3b; /* Dark grey */
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
 }

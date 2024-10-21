@@ -1,36 +1,54 @@
-.user-point-container {
+.user-point-container1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
+<<<<<<< HEAD
     background-color: #e0f7f2; /* 민트색 배경 */
     border-radius: 15px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     width: 400px; /* 고정 너비 */
     text-align: center;
+=======
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* 배경색을 흰색으로 변경 */
+    width: 600px;
+    height: 800px;
+    margin: auto;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
 }
 
-.user-point-title {
+.user-point-title1 {
     font-size: 24px;
     font-weight: bold;
+<<<<<<< HEAD
     margin-bottom: 10px;
     color: #00796b; /* 어두운 민트색 */
+=======
+    margin-bottom: 20px;
+    color: #00796b;
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
 }
 
-.user-point-price {
+.user-point-price1 {
     font-size: 20px;
+<<<<<<< HEAD
     margin-bottom: 20px;
+=======
+    margin-bottom: 10px;
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
     color: #00796b;
 }
 
-.user-point-input-section {
+.user-point-input-section1 {
     width: 100%;
     max-width: 400px;
     text-align: center;
 }
 
-.user-point-input {
+.user-point-input1 {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -40,15 +58,15 @@
     border-radius: 5px;
 }
 
-.user-point-button-grid {
+.user-point-button-grid1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.user-point-number-button,
-.user-point-delete-button {
+.user-point-number-button1,
+.user-point-delete-button1 {
     padding: 15px;
     font-size: 18px;
     background-color: #4db6ac;
@@ -59,19 +77,29 @@
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .user-point-number-button:hover,
 .user-point-delete-button:hover {
+=======
+.user-point-number-button1:hover,
+.user-point-delete-button1:hover {
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
     background-color: #009688;
 }
 
-.user-point-actions {
+.user-point-actions1 {
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     gap: 10px; /* 버튼 간의 간격 */
+=======
+    gap: 10px;
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
     margin-bottom: 20px;
     width: 100%;
 }
 
+<<<<<<< HEAD
 .user-point-use-button,
 .user-point-no-point-button {
     flex: 1;
@@ -93,13 +121,42 @@
 
 .user-point-use-button:hover {
     background-color: #004d40;
+=======
+.user-point-use-button1 {
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #00796b;
+    color: #fff;
+    border: 2px solid #26a69a;
 }
 
-.user-point-no-point-button:hover {
-    background-color: #f0f0f0; /* 호버 시 약간의 밝은 회색 */
+.user-point-use-button1:hover {
+    background-color: #004d40;
 }
 
+.user-point-no-point-button1 {
+    background-color: #fff;
+    color: #00796b;
+    border: 2px solid #00796b;
+    width: 400px;
+    height: 45px;
+    border-radius: 5px;
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
+}
+
+.user-point-no-point-button1:hover {
+    background-color: #f0f0f0;
+}
+
+<<<<<<< HEAD
 .user-point-message {
+=======
+.user-point-message1 {
+>>>>>>> e04aab92cc0bf821cbed55b99ae8ef6b82fb81b4
     color: #d32f2f;
     font-size: 14px;
     margin-top: 10px;

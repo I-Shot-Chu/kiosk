@@ -1,0 +1,53 @@
+/* 전체 네비게이션 컨테이너 */
+.nav_container {
+    width: 100%;               /* 화면 전체 너비 사용 */
+    text-align: center;        /* 텍스트 중앙 정렬 */
+    display: flex;             /* 수평 배치 */
+    justify-content: center;   /* 수평 중앙 정렬 */
+    flex-wrap: wrap;           /* 화면 너비에 맞춰 여러 줄로 배치 */
+    padding: 20px 0;           /* 상하 여백 */
+}
+  
+  /* 각 네비게이션 아이템 스타일 */
+.nav_item {
+    width: 90px;               /* 고정 너비 */
+    height: 15px;              /* 고정 높이 */
+    border: 2px solid #2F2B2B; 
+    border-radius: 30px;       /* 둥근 모서리 */
+    margin: 5px 10px;          /* 좌우 간격 */
+    color: #000;               /* 기본 텍스트 색상 */
+    font-size: 11px;           /* 텍스트 크기 */
+    font-weight: 550;          /* 굵은 글씨 */
+    padding: 10px 5px;         /* 패딩 조정 */
+    display: inline-flex;      /* 수평 배치 */
+    align-items: center;       /* 수직 중앙 정렬 */
+    justify-content: center;   /* 수평 중앙 정렬 */
+    background-color: #f5f5f500; /* 기본 배경 색상 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 부드러운 전환 */
+
+    /* Natural shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), /* subtle drop shadow */
+                0px 1px 3px rgba(0, 0, 0, 0.08); /* lighter ambient shadow */
+}
+  
+  /* 네비게이션 아이템 호버 상태 */
+.nav_item:hover {
+    background-color: #2F2B2B; /* 배경 색상 변경 */
+    color: #fff;               /* 텍스트 색상 변경 */
+}
+  
+  /* 활성화된 상태 */
+.nav_item.active {
+    background-color: #2F2B2B; /* 배경 색상 고정 */
+    color: #fff;               /* 텍스트 색상 고정 */
+}
+  
+
+.nav_link {
+    text-decoration: none;      /* 밑줄 제거 */
+    color: inherit;             /* 부모로부터 색상 상속받음 */
+    display: block;             /* 블록 레벨로 표시 */
+    width: 100%;                /* 전체 너비 차지 */
+    height: 100%;               /* 전체 높이 차지 */
+    text-align: center;         /* 텍스트 중앙 정렬 */
+}
