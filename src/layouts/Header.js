@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { language } from "../store/store";
-import "./Header.css";
+import './Header.css';
 
 
 const Header = () =>
@@ -22,11 +22,9 @@ const Header = () =>
     return (
         <header>
             <div className="header">
-                <button onClick = {onClickHandler2} className="header_back_button">
-                    <img src = {require("../assets/images/back.png")} className = "header_back_img" alt = "back"/>
-                </button>
-                <img src = {require("../assets/images/logo.png")} alt="logo" width="40%"/>
-                <button onClick={onClickHandler} className="header_lang_button">
+                <button onClick = {onClickHandler2}>{lang ? "뒤로가기" : "Back"}</button>
+                <img src = {require("../assets/images/logo2.png")} alt="logo" width="20%"/>
+                <button onClick={onClickHandler}>
                     <img src = {lang ? require("../assets/images/images_idle/flag3dusa.png") : require("../assets/images/images_idle/flag3dkor.png")} className = "header_lang_img" alt = "lang"/>
                     </button>
             </div>

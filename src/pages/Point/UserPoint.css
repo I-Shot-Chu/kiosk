@@ -4,24 +4,23 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff; /* 배경색을 흰색으로 변경 */
-    width: 600px;
-    height: 800px;
-    margin: auto;
-    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+    background-color: #e0f7f2; /* 민트색 배경 */
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 400px; /* 고정 너비 */
+    text-align: center;
 }
 
 .user-point-title1 {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #00796b;
+    margin-bottom: 10px;
+    color: #00796b; /* 어두운 민트색 */
 }
 
 .user-point-price1 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #00796b;
 }
 
@@ -60,48 +59,47 @@
     font-weight: bold;
 }
 
-.user-point-number-button1:hover,
-.user-point-delete-button1:hover {
+.user-point-number-button:hover,
+.user-point-delete-button:hover {
     background-color: #009688;
 }
 
 .user-point-actions1 {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 10px; /* 버튼 간의 간격 */
     margin-bottom: 20px;
+    width: 100%;
 }
 
-.user-point-use-button1 {
-    width: 150px;
-    padding: 10px 20px;
+.user-point-use-button,
+.user-point-no-point-button {
+    flex: 1;
+    padding: 10px;
     font-size: 16px;
+    background-color: #00796b; /* 기본 버튼 색상 */
+    color: #fff;
+    border: 2px solid #26a69a;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    background-color: #00796b;
-    color: #fff;
-    border: 2px solid #26a69a;
 }
 
-.user-point-use-button1:hover {
-    background-color: #004d40;
-}
-
-.user-point-no-point-button1 {
-    background-color: #fff;
+.user-point-no-point-button {
+    background-color: #fff; /* 포인트 없이 결제 버튼은 흰색 */
     color: #00796b;
     border: 2px solid #00796b;
-    width: 400px;
-    height: 45px;
-    border-radius: 5px;
+}
+
+.user-point-use-button:hover {
+    background-color: #004d40;
 }
 
 .user-point-no-point-button1:hover {
     background-color: #f0f0f0;
 }
 
-.user-point-message1 {
+.user-point-message {
     color: #d32f2f;
     font-size: 14px;
     margin-top: 10px;

@@ -6,6 +6,12 @@
  */
 
 import "./Idle.css";
+import { language } from "../../store/store";
+
+const img = [
+    require("../../assets/images/images_idle/mainpage_first2.png"), 
+    require("../../assets/images/images_idle/mainpage_second2.png"), 
+];
 
 const IdlePage = () =>
 {

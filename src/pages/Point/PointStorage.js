@@ -90,7 +90,7 @@ export const Point = () => {
             </div>
             <div className="user-point-actions">
               <button className="user-point-use-button" onClick={pointPlus}>적립하기</button>
-              <button className="user-point-no-point-button" onClick={() => navigate("/card")}>넘어가기</button>
+              <button className="user-point-no-point-button" onClick={() => navigate("/result")}>넘어가기</button>
             </div>
           </div>
           {currentCustomer && (

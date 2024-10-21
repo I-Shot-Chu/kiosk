@@ -1,38 +1,20 @@
 import { useEffect, useState } from "react";
-import { hotTea, iceTea } from "../getMenuDetails";
+import { tea } from "../getMenuDetails";
 import { DrinkMenu } from "../ShowItems";
 
-export const HotTea = ()=>{
+export const Tea = ()=>{
 
     const [teaMenu, setTeaMenu] = useState([]);
 
     useEffect(()=>{
-        setTeaMenu(hotTea())
+        setTeaMenu(tea())
     },[]);
 
     return(
         <>
         <div>
-            {teaMenu.map(hotTea => <DrinkMenu key={hotTea.menuCode} drinkMenu={hotTea}/>)}
+            {teaMenu.map(tea => <DrinkMenu key={tea.menuCode} drinkMenu={tea}/>)}
         </div>
         </>
     )
-}
-
-
-export const IceTea = ()=>{
-
-    const [teaMenu, setTeaMenu] = useState([]);
-
-    useEffect(()=>{
-        setTeaMenu(iceTea())
-    },[]);
-
-    return(
-        <>
-        <div>
-            {teaMenu.map(iceTea => <DrinkMenu key={iceTea.menuCode} drinkMenu={iceTea}/>)}
-        </div>
-        </>
-    )
-}
+};

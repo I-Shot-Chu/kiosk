@@ -5,32 +5,18 @@ import newMenu from "../json/newMenu.json"
 
 
 // 커피 
-const isHotCoffee = (drinkMenus)=>
-{
+const Coffee2 = (drinkMenus)=>{
     if(drinkMenus.categoryName === "커피"){return true}
 }
-export const hotCoffee = () => { return drinkMenus.filter(isHotCoffee) }
-
-const isIceCoffee = (drinkMenus)=>
-{
-    if(drinkMenus.categoryName === "커피"){return true}
-}
-export const iceCoffee = () => { return drinkMenus.filter(isIceCoffee) }
+export const coffee = ()=> { return drinkMenus.filter(Coffee2) }
 
 
 
 // 티
-const isHotTea = (drinkMenus)=>
-{
+const Tea = (drinkMenus)=>{
     if(drinkMenus.categoryName === "티"){return true}
 }
-export const hotTea = () => { return drinkMenus.filter(isHotTea) }
-
-const isIceTea = (drinkMenus)=>
-{
-    if(drinkMenus.categoryName === "티"){return true}
-}
-export const iceTea = () => { return drinkMenus.filter(isIceTea) }
+export const tea = ()=>{ return drinkMenus.filter(Tea) }
 
 
 // 에이드, 주스 
@@ -50,28 +36,16 @@ export const smoothieAndFrappe = () => { return drinkMenus.filter(isSmoothieAndF
 
 
 // 디카페인
-const isHotDecafCoffee = (drinkMenus)=>{
+const DecafCoffee = (drinkMenus)=>{
     if(drinkMenus.categoryName === "디카페인"){return true}
 }
-export const hotDecafCoffee = ()=>{ return drinkMenus.filter(isHotDecafCoffee) }
-
-const isIceDecafCoffee = (drinkMenus)=>{
-    if(drinkMenus.categoryName === "디카페인"){return true}
-}
-export const iceDecafCoffee = ()=>{ return drinkMenus.filter(isIceDecafCoffee) }
-
-
+export const decafCoffee = ()=>{ return drinkMenus.filter(DecafCoffee) }
 
 //음료
-const isHotDrinks = (drinkMenus)=>{
+const Drinks = (drinkMenus)=>{
     if(drinkMenus.categoryName === "음료"){return true}
 }
-export const hotDrinks = ()=>{ return drinkMenus.filter(isHotDrinks) }
-
-const isIceDrinks = (drinkMenus)=>{
-    if(drinkMenus.categoryName === "음료"){return true}
-}
-export const iceDrinks = ()=>{ return drinkMenus.filter(isIceDrinks) }
+export const drinks = ()=>{ return drinkMenus.filter(Drinks) }
 
 
 // 디저트
